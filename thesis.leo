@@ -6,7 +6,8 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="gcross.20110314174620.1274" a="E"><vh>@file thesis.tex</vh></v>
+<v t="gcross.20110316123044.1279"><vh>@file CMakeLists.txt</vh></v>
+<v t="gcross.20110314174620.1274"><vh>@file thesis.tex</vh></v>
 </vnodes>
 <tnodes>
 </tnodes>
