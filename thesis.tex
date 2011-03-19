@@ -4,14 +4,67 @@
 
 %@+<< Prelude >>
 %@+node:gcross.20110314174620.1275: ** << Prelude >>
-\documentclass{book}
+\documentclass{amsbook}
 
-\usepackage{cite}
+\usepackage{
+    amsmath,
+    amssymb,
+    amsthm,
+    booktabs,
+    cite,
+    clrscode,
+    graphicx,
+    mathrsfs,
+    subfig
+}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\lst}{\vec}
+\newcommand{\set}{\tilde}
+
+\newcommand{\genfun}{\tilde{\mathcal{G}}}
+\newcommand{\pauligroup}{{\set{\mathfrak{P}}}}
+\newcommand{\powerset}{\set{\mathcal{P}}}
+\newcommand{\centralizer}{\set{\mathcal{C}}}
+\newcommand{\pseudoproduct}{\set\Pi}
+\newcommand{\unpack}{\set U}
+\newcommand{\optimizer}{\lst{\mathcal{O}}}
 %@-<< Prelude >>
 
 \begin{document}
 
 %@+others
+%@+node:gcross.20110318151522.1291: ** Title Page
+\title{Thesis Title}
+
+\author{Gregory M. Crosswhite}
+%\affiliation{Department of Physics, University of Washington, Seattle, 98195}
+
+\email{gcross@phys.washington.edu}
+
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
+\maketitle
+
+\newpage
+%@+node:gcross.20110318151522.1293: ** List of Tables
+\listoftables
+%@+node:gcross.20110318151522.1295: ** Table of Contents
+\tableofcontents
 %@+node:gcross.20110314174620.1276: ** Introduction
 \chapter{Introduction}
 
