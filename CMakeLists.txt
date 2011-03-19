@@ -3,5 +3,8 @@
 cmake_minimum_required(VERSION 2.6)
 project(Thesis NONE)
 include(UseLATEX.cmake)
-add_latex_document(thesis.tex BIBFILES thesis.bib)
+add_latex_document(thesis.tex
+    BIBFILES thesis.bib
+    IMAGE_DIRS images
+)
 #@-leo
