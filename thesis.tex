@@ -2833,34 +2833,10 @@ Given this approximate matrix product factorization, we applied the algorithm in
 \end{figure}
 
 For the 9-term expansion, we also computed the two-point correlator -- that is, $C(r):=\exp{\sigma^X \otimes I^{\otimes (r-1)}\otimes\sigma^X}$ -- using the algorithm given in section \ref{exp-algorithm} for computing the expected value of a local operator.  The result for several values of $\chi$ is plotted in Fig. \ref{correlator} against the exact value from Ref. \cite{PhysRevLett.60.639}.  Note that our approximation gets good agreement up to some length, after which it becomes a constant.  This is because the algorithm is attempting to approximate this correlator using a sum of decaying exponentials plus a constant term, analagously to how we used a sum of decaying exponentials to approximate the $1/r^2$ interactions;  by increasing $\chi$, we are increasing the number of terms available to track the correlator, which results in systematic improvement.
-%@+node:gcross.20110326130640.1399: *5* Conclusion
-\subsection{Conclusion}
-
-To summarize, in this section we have presented an algorithm for
-computing the ground state of infinite 1D systems. This algorithm
-differs from the iTEBD algorithm\cite{cond-mat/0605597} in that
-it uses a variational approach instead of imaginary time evolution,
-and from the PWFRG\cite{Nishino:1995kx} in that it considers an
-infinite system from the start. Furthermore, since the algorithm
-itself employs matrix product operators, it has the important
-advantage of being capable of modelling long range interactions, and
-in particular any interaction which can be approximated by a sum of
-decaying exponentials. In order to benchmark the algorithm, we have
-computed an infinite MPS for the ground state of the Haldane-Shastry
-model. The corresponding two-point correlators are in remarkable
-agreement with the exact solution up to distances above a thousand
-spins.
-
-In conclusion, our results indicate that this algorithm adds
-significantly to the existent tools to address 1D many-body systems
-since it allows the properties of bulk-scale materials to be studied
-for realistic long-range potentials. Furthermore, it admits a natural
-extension to lattice systems in higher spatial dimensions, for which
-work is currently in progress.
 %@+node:gcross.20110318151522.1483: *4* Conclusion
 \section{Conclusion}
 
-In this chapter, we have introduced a new type of diagram for representing matrix product states.  We used this to demonstrate that there is a formal equivalence between matrix product states/operators and complex-weighted finite state automata.  This equivalence was used to present a systematic method by which one could factor a matrix product operator.  We then showed how a matrix product factorization of an operator allows one to compute expectations of that operator in $O(N)$ time, and to perform energy minimization at an amortized cost of only $O(1)$ per step.  A generalization of this procedure was presented that allows one to carry the same process through for systems with many dimensions.
+In this chapter, we have introduced a new type of diagram for representing matrix product states.  We used this to demonstrate that there is a formal equivalence between matrix product states/operators and complex-weighted finite state automata.  This equivalence was used to present a systematic method by which one could factor a matrix product operator.  We then showed how a matrix product factorization of an operator allows one to compute expectations of that operator in $O(N)$ time, and to perform energy minimization at an amortized cost of only $O(1)$ per step.  A generalization of this procedure was presented that allows one to carry the same process through for systems with many dimensions.  A variant of this procedure was presented that allows one to work with infinitely large systems.
 
 As a closing remark, we note that this new formalism is interesting not only because of its practical application in simulating physical systems, but also because it relates our ability to efficiently simulate physical systems with a broader theory (the automata hierarchy/formal language theory) which deals with the fundamental limits of computation.  It would be interesting to see whether there are other insights from this theory that could be used to improve techniques for simulating physical systems.
 %@+node:gcross.20110318151522.1487: *3* Practice
