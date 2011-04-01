@@ -109,6 +109,7 @@ For both ground state quantum computing and adiabatic quantum computing, the key
 In Part 2 of this thesis, we discuss a representation that meets all of these criteria known as ``matrix product states'' that have been shown to work very well in practice.  We shall present our own important insight that they are deeply connected to the formalism of \emph{finite state automata} (a fundamental construction in formal language theory) and show how this connection can be leveraged to simulate non-trivial Hamiltonians, including those with long-range interactions.  Finally, we shall present a simulation code that was written using these ideas, and show how it has been used to compute energy gaps in systems relevent to ground state and adiabatic computing, hence giving us insight into the viability of these methods.
 %@+node:gcross.20110318151522.1287: ** CodeQuest
 \part{CodeQuest}
+\label{part:CodeQuest}
 %@+node:gcross.20110318151522.1297: *3* Prelude
 Quantum computers are a technological possibility because there exist methods for building these computers out of physical components that fail to operate in an error-free manner.  The theory behind achieving this makes up the field of quantum error correction~\cite{Shor:95a,Steane:96a,Steane:96b,Steane:96c,Knill:97a,Gottesman:97a} and fault-tolerant quantum computing~\cite{Shor:96a,Aharonov:97a,Knill:98a,Knill:98b,Preskill:98a,Aliferis:05a}. Of particular note is the threshold theorem for fault-tolerant quantum computing~\cite{Aharonov:97a,Knill:98a,Knill:98b,Aliferis:05a}.  This theorem says that if a quantum system decoheres slowly enough, and sufficiently precise control is maintained over the system, then effectively arbitrary error-free quantum computations can be performed.  The way that this is achieved is through the use of quantum information which is encoded across multiple quantum subsystems into a quantum error correcting code.
 
@@ -1901,6 +1902,7 @@ In this part we have presented an algorithm for computing the optimal quantum su
 This algorithm should prove helpful in two kinds of ways in particular.  First, it can be applied in an exploratory setting to do the tedious work of computing the code resulting from a set of measurements so that the researcher can experiment with new ideas for choices of measurement to see how well they work.  Second, it can be applied to hone a `rough' idea for how a code might be implemented (such as a particular lattice configuration) into a concrete idea by scanning through the possible choices of the degrees of freedom to see if any result in useful codes; of course, cleverness can often come up with an answer more quickly than a computationally intensive search, but it is good to have the alternative of brute-force computation to fall back on when brute-force cleverness fails.
 %@+node:gcross.20110318151522.1469: ** Matrix Product States
 \part{Matrix Product States}
+\label{part:Matrix Product States}
 %@+node:gcross.20110318151522.1484: *3* Theory
 \chapter{Theory}
 \label{sec:MPSTheory}
@@ -2860,6 +2862,12 @@ In this chapter we shall specifically consider two candidates for adiabatic quan
 %@+node:gcross.20110331165234.1398: *4* Bacon-Flammia Model
 \section{Bacon-Flammia Model}
 \label{sec:BaconFlammiaModel}
+%@+node:gcross.20110331165234.1399: ** Conclusion
+\part{Conclusion}
+
+Quantum computing has the potential to open new frontiers to humanity by unlocking problems that are currently intractible.  However, in order for this potential to be fulfilled we need to be able to engineer systems that can perform quantum computations reliably.  In this thesis we have discussed the theory and practice behind two computation tools that have been created to advance this end.  In Part \ref{part:CodeQuest} we discussed \texttt{CodeQuest}, which assists us in designing error-correcting codes for shielding quantum information from errors, and in Part \ref{part:Matrix Product States} we discussed \emph{matrix product states}, which assist us in designing Hamiltonians with have strong energetic barriers to provide protection against nose.  Althose these two tools are very different in the particular problems that they solve and the techniques used to solve them, they are united in their ultimate goal of advancing our ability to engineer robust systems for quantum computing.
+
+Although we do not yet have quantum computers available to help us solve the engineering difficulties we face in building them, we do have powerful classical computers that we can use to bootstrap our way there.  The ultimate end of the specific techniques advanced in this thesis is to make themselves obselete by enabing the construction of the first quantum computer, which will open the door to the use of quantum algorithms that will hopefully be far more powerful for solving quantum engineering challanges than the classical algorithms we have just discussed.
 %@+node:gcross.20110316123044.1278: ** Bibliography
 \bibliography{thesis}
 \bibliographystyle{plain}
