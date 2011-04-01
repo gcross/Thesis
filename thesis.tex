@@ -1903,6 +1903,7 @@ This algorithm should prove helpful in two kinds of ways in particular.  First, 
 \part{Matrix Product States}
 %@+node:gcross.20110318151522.1484: *3* Theory
 \chapter{Theory}
+\label{sec:MPSTheory}
 %@+node:gcross.20110318151522.1486: *4* Motivation
 \section{Motivation}
 
@@ -2841,6 +2842,24 @@ In this chapter, we have introduced a new type of diagram for representing matri
 As a closing remark, we note that this new formalism is interesting not only because of its practical application in simulating physical systems, but also because it relates our ability to efficiently simulate physical systems with a broader theory (the automata hierarchy/formal language theory) which deals with the fundamental limits of computation.  It would be interesting to see whether there are other insights from this theory that could be used to improve techniques for simulating physical systems.
 %@+node:gcross.20110318151522.1487: *3* Practice
 \chapter{Practice}
+%@+node:gcross.20110331165234.1396: *4* Adiabatic Quantum Computing
+\section{Adiabatic Quantum Computing}
+
+In the previous chapter we presented an algorithm for simulating finite one-dimensional systems.  In this chapter shall demonstrate how this algorithm can be used to gather important information about physical systems that are important to the field of quantum computing.
+
+Recall that an important consideration when designing a quantum computer is ensuring that the computation is protected from from noise.  Part of the solution to this is to embed the quantum information inside an error-correcting code (as discussed in Part 1 of this thesis), but ideally in addition to performing a continuous error-correction process there would also be some sort of physical barrier that as much as possible prevented errors from occurring in the first place.  For example, one could engineer a physical system whose ground state was a representation of the result of the computation and such that there was a sufficiently large energy gap that it would be difficult for the environment to excite the system out of this state.  This idea, known as \emph{ground state quantum computing}, was first proposed by Ari Mizel, M. W. Mitchell, and Marvin L. Cohen~\cite{PhysRevA.63.040302}.  The down-side of this approach, though, is that it assumes that one can cool down the system down into its ground state, but in general this could be very difficult since many transitions between energy states are forbidden (for example, by conservation of angular momentum) and so it is possible for systems to get stuck in an excited state even when cooled to temperatures far below the excited state energy.
+
+Fortunately, there is a variant on the approach of ground-state quantum computing that solves the problem of cooling, known as \emph{adiabatic quantum computing}.  In this formalism (first introduced by Edward Farhi et al.~\cite{Farhi2000}), one does not start with a Hamiltonian whose ground state represents the result of the compution but rather one starts with a Hamiltonian with the property that it is very easy to cool a system down to the its ground state.   Once the system is in the ground state, one then \emph{adiabatically} (that is, so slowly that the system barely even notices) changes the Hamiltonian into one where the ground state embodies the desired computation;  the Adiabatic Theorem guarantees that if this is done sufficiently slowly then the system will remain in its ground state during this entire process~\cite{JPSJ.5.435}.
+
+The key factor that determines the running time of an adiabatic quantum computation is the size of the gap between the ground and lowest excited states, since this dictates how quickly one can change the Hamiltonian while staying in the adiabatic regime.  In general computing this quantity analytically is very difficult, and this is where the formalism in the previous chapter comes into play.  We have written a code we call \texttt{Nutcracker} which implements the ideas presented in \ref{sec:MPSTheory} in a very efficient manner.  This provides us with a computional tool that we can use to numerically estimate the energy gaps of Hamitlonians and hence evaluate the viability of candidate systems for adiabatic quantum computation.
+
+In this chapter we shall specifically consider two candidates for adiabatic quantum computing that share a similar philosophy in their apprach:  they both contain particles arranged in a one-dimensional chain, and the Hamiltonians are designed such that at the beginning of the computation the information is localized at the left hand of the chain and at the end of the computation the information is localized at the right side of the chain.  That is, as the Hamiltonian is adiabatically transformed from its initial to its final configuration, the quantum information is telported across the system and simultaneously has some number of quantum gates applied to it.  In Section \ref{sec:MizelModel} we shall discuss and numerically analyze the Hamiltonian presented by Mizel in~\cite{Mizel2010}, and in Section \ref{sec:BaconFlammiaModel} we shall discuss and numerically analyze the Hamiltonian presented by Bacon and Flammia in~\cite{Bacon2009}.
+%@+node:gcross.20110331165234.1397: *4* Mizel Model
+\section{Mizel Model}
+\label{sec:MizelModel}
+%@+node:gcross.20110331165234.1398: *4* Bacon-Flammia Model
+\section{Bacon-Flammia Model}
+\label{sec:BaconFlammiaModel}
 %@+node:gcross.20110316123044.1278: ** Bibliography
 \bibliography{thesis}
 \bibliographystyle{plain}
