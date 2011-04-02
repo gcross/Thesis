@@ -54,6 +54,8 @@
 \newcommand{\eqn}[2][]{\begin{equation}\label{#1}#2\end{equation}}
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\ket}[1]{\left|#1\right>}
+\newcommand{\bra}[1]{\left<#1\right|}
+\newcommand{\ketbra}[2]{\ket{#1}\!\!\bra{#2}}
 \newcommand{\om}{\omega}
 \newcommand{\paren}[1]{\left(#1\right)}
 \newcommand{\tr}{\text{tr}\,}
@@ -2859,6 +2861,44 @@ In this chapter we shall specifically consider two candidates for adiabatic quan
 %@+node:gcross.20110331165234.1397: *4* Mizel Model
 \section{Mizel Model}
 \label{sec:MizelModel}
+
+In 2001, Ari Mizel, M. W. Mitchell, and Marvin L. Cohen proposed a model for \emph{ground-state quantum computing}~\cite{PhysRevA.63.040302}.  The basic idea is as follows.  For simplicity, assume that we are modeling a computation consisting of $N$ unitary gates $\{U_1,\dots,U_N\}$ acting on a single qubit in the initial state $\ket{0}$.  We define a Hilbert space with $2(N+1)$ basis vectors which are labeled $\ket{b_t}$ where $t\in\{0\dots N\}$ labels the value of the time and $b\in\{0,1\}$ labels the values of the qubit at time $t$.  Mizel at all demonstrated that there was a Hamiltonian such that the ground state, $\ket{\Psi}$, was given by $$\ket{\Psi}=\sum_{t=0}^N \paren{\prod_{i=1}^{t}[U_i]_i A_{i,i-1}}\ket{0_0},$$ where $[U_i]_i$ is the single-qubit unitary $U_i$ acting non-trivially only on the subspace at time $i$ (that is, $\ket{b_i}$ with $b=0,1$) and $A_{i,j}$ is the time-evolution defined by $A_{i,j} := \ketbra{0_i}{0_j} + \ketbra{1_i}{1_j}$ operator.  $\ket{\Psi}$ is known as a \emph{history} state because it is a superposition over all time steps in a quantum circuit.  Measuring $\ket{\Psi}$ obtains a random time step in the quantum circuit, which in general will \emph{not} be the final state of the circuit;  in fact, the probability of being in the final state of the circuit is only $1/(N+1)$.  This probability can be arbitrarily amplified by adding an arbitrary number of no-op gates to the end of the circuit, but it is still less than ideal.
+
+In 2010, Ari Mizel proposed a modification to this model that added a teleportation step (inspired by \emph{gate-teleportation} first introduced in \cite{Gottesman1999}) to help ensure that each time step actually took place~\cite{Mizel2010}.  To understand how this works, we shall start with a simplified version of the model and then build our way up to the full model.  We start with the model discussed in the previous paragraph with only a single time step --- that is, a Hilbert space with 4 basis vectors which are labeled $\ket{b_t}$ with $b\in\{0,1\}$ and $t\in\{0,1\}$.  Since we want to teleport our quantum information, we need an additional pair of qubits to act as a the entangled pair resource for the teleportation;  hence, we add an additional pair of qubits to our Hilbert space so that it becomes $\mathbb{C}^2\otimes\mathbb{C}^2\otimes\mathbb{C}^4$.  If the teleportation is successful, then the information will have been moved into the leftmost of the three subspaces, and hence after this is done we want the other two spaces to be in a ``null'' state to explicitly indicate that there is no longer any information in them.  Thus, the final Hilbert space for a single gate is $\mathbb{C}^2\otimes\mathbb{C}^3\otimes\mathbb{C}^5\equiv\mathbb{Q}\otimes\mathbb{R}\otimes\mathbb{S}$ where $\mathbb{Q}:=\text{span}\{\ket{0},\ket{1}\}$, $\mathbb{R}:=\text{span}\{\ket{0},\ket{1},\ket{\text{null}}\}$, and $\mathbb{S}:=\text{span}\{\ket{0_0},\ket{1_0},\ket{0_1},\ket{1_1},\ket{\text{null}}\}$;  for $N$ gates, the Hilbert space is $\mathbb{Q}\otimes\paren{\mathbb{R}\otimes\mathbb{S}}^{\otimes N}$.
+
+The Hamiltonian defined by Mizel is $$H(\Lambda) := H_{\text{initialize}} + \sum_{i=1^N}\paren{H_{\text{singlet}}^i + H_{\text{gate}}^i + H_\text{teleport}(\Lambda)}^i,$$ where the terms are defined as follows --- note that we use the notation $\mathbb{R}_i$ and $\mathbb{S}_i$ to denote the $i$th instances of the $\mathbb{R}$ and $\mathbb{S}$ subsystems \emph{from the right}, starting with $i=1$. 
+The first term initializes the qubit at time step zero to $\ket{0}$,
+$$H_{\text{initialize}} := [\ketbra{1_0}{1_0}]_{\mathbb{S}_0}.$$
+The second term forces the teleportation resource state into the Bell singlet state,
+$$H_{\text{singlet}}^i := I - \ket{\phi^{-}}^i\bra{\phi^{-}}^i,$$
+where
+$$\ket{\phi^{-}}^i := \frac{1}{\sqrt{2}}\paren{\ket{0_0}_{\mathbb{S}_{i+1}}\ket{1}_{\mathbb{R}_i}-\ket{1_0}_{\mathbb{S}_{i+1}}\ket{0}_{\mathbb{R}_i}}.$$
+The third term applies a gate and advances the time step,
+$$\frac{1}{2}\begin{bmatrix}
+1 & 0 & -U_{i,00}^* & -U_{i,01}^* & 0\\
+0 & 1 & -U_{i,10}^* & -U_{i,11}^* & 0\\
+-U_{i,00} & U_{i,10} & 1 & 0 & 0\\
+-U_{i,01} & U_{i,11} & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0\\
+\end{bmatrix}_{\mathbb{S}_i},$$
+where recall that $\mathbb{S}:=\text{span}\{\ket{0_0},\ket{1_0},\ket{0_1},\ket{1_1},\ket{\text{null}}\}$ is the ordering of the basis vectors.  Finally, the last term teleports the results of applying the gate to the qubit,
+$$H_{\text{teleportation}}^i(\Lambda) := \ket{\Lambda}^i\bra{\Lambda}^i + H_{\text{null}}^i,$$
+where
+$$\ket{\Lambda}^i := \frac{1}{\sqrt{1+\Lambda^2}}\paren{\frac{\Lambda}{\sqrt{2}}(\ket{1_1}_{\mathbb{R}_i}\ket{0}_{\mathbb{S}_i}-\ket{0_1}_{\mathbb{R}_i}\ket{1}_{\mathbb{S}_i})+\ket{\text{null}}_{\mathbb{R}_i}\ket{\text{null}}_{\mathbb{S}_i}}$$
+and
+$$H_{\text{null}}^i := [\ketbra{\text{null}}{\text{null}}]_{\mathbb{R}_i}\otimes\paren{I-[\ketbra{\text{null}}{\text{null}}]_{\mathbb{S}_i}}+\paren{I-[\ketbra{\text{null}}{\text{null}}]_{\mathbb{R}_i}}\otimes[\ketbra{\text{null}}{\text{null}}]_{\mathbb{S}_i}.$$
+
+It can be shown that the ground state overlaps with a configuration where all of the subsystems save $\mathbb{Q}$ are $\ket{\text{null}}$, and the qubit in $\mathbb{Q}$ is equal to $U_N U_{N-1}\dots U_1\ket{0}$.  Furthermore, this overlap is proportional to $\Lambda$, so the probability of observing it relative to the other configurations can be made arbitrarily large by cranking up $\Lambda$.  Thus, this model can be used for adiabatic quantum computation:  we start with $\Lambda=0$, and then gradually increase $\Lambda$ until we reach some $\Lambda_{\text{max}}$.
+
+Although Mizel provided arguments suggesting that the system had a constant energy gap as a function of $N$, he did not provide concrete evidence.  Thus, I was invited into a collaboration with Steven Flammia to apply my Matrix Product State code to investigate this Hamiltonian numerically.   The encoding of the Hamiltonian into matrix product operator form was relatively straightforwards;  the only additional aspect that was non-trivial was the fact that there were terms that were not expressed as tensor products of single-body matrices, which we easily got around by using singular value decompositions to rewrite them as sums of tensor products of single-body matrices.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{images/mizel}
+\caption{Plots of the energy gap for the Mizel model as a function of $\Lambda$ and the number of sites in the system.}
+\label{plot:mizel}
+\end{figure}
+
+The results are plotted in Figure \ref{plot:mizel}.  They provide strong evidence that the energy gap does indeed asymptotically converge to a constant as the size of the system grows in size.  This was actually somewhat surprising since it is rare to run into this kind of ``good news'' when studying candidates for adiabatic quantum computing.  Unfortunately, these results also show that the energy gap shrinks precipitously as $\Lambda$ increases, which is a large strike against this model.  For this reason and others we eventually decided against putting more resources into studying this particular model.
 %@+node:gcross.20110331165234.1398: *4* Bacon-Flammia Model
 \section{Bacon-Flammia Model}
 \label{sec:BaconFlammiaModel}
