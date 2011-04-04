@@ -2902,6 +2902,28 @@ The results are plotted in Figure \ref{plot:mizel}.  They provide strong evidenc
 %@+node:gcross.20110331165234.1398: *4* Bacon-Flammia Model
 \section{Bacon-Flammia Model}
 \label{sec:BaconFlammiaModel}
+
+In 2001, Robert Raussendorf and Hans J. Briegel introduced a model known as \emph{one-way} or \emph{measurement-based} quantum computation in which a quantum computation is implemented by preparing a system in a special state and then applying a series of measurements~\cite{PhysRevLett.86.5188}.  The advantage of this model over others (such as the standard ``gate'' model) is that state preparation and measurements are the only physical control operations that are needed.  In 2009, Dave Bacon and Steven T. Flammia showed that even the measurement operations in this model were not strictly necessary by demonstrating that one could replace the state preparation with a step that cooled the system into the ground state of an initial Hamiltonian and the sequence of measurements with a sequence of adiabatic transitions that changed the Hamiltonian term by term until it took a specific form~\cite{Bacon2009}.
+
+Specifically what they showed was as followed.  Assume we have a one-dimensional chain of $n$ physical qubits.  Define the following sequence of Hamiltonians $\{H_i\}_{i=0\dots n-1}$ by
+$$H_i := -\Delta\sum_{j=1}^{i} [X]_j - \Delta\sum_{j=i+1}^{n-1} S_j$$
+where
+$$S_j :=
+\begin{cases}
+[Z]_j\left[e^{-i\theta_jZ/2}Xe^{+i\theta_jZ/2}\right]_{j+1}[Z]_{j+2} & 1 \le j \le n-2 \\
+[Z]_j\left[e^{-i\theta_jZ/2}Xe^{+i\theta_jZ/2}\right]_{j+1} & j = n-1 \\
+\end{cases}
+$$
+and $\{\theta_j\}_{j=1\dots n-1}$ are arbitrarily chosen real parameters.  Assume that we have a qubit initialized in some state $\ket{\psi}$ encoded in this chain such that its logical operators are given by $\bar X = [X]_1[Z]_2$ and $\bar Z = [Z]_1$.  Then if we perform a sequence of stepwise adiabatic transitions, $H_0\to H_1\to H_2\to \cdots \to H_{n-1}$, then at time step $t$ the encoded qubit will be in the state $\paren{\prod_{i=1}^te^{-i\theta_iZ/2}H}\ket{\psi}$ and its logical operators will be given by $\bar X = [X]_{t+1}[Z]_{t+2}$ and $\bar Z = [Z]_{t+1}$.  Because the choice of $\{\theta_i\}_i$ is arbitrary, this scheme allows for universal computation on a single qubit.  It is possible to also perform universal computation on multiple qubits using this scheme, but we will not discuss this here;  see \cite{Bacon2009} for the details.
+
+The disadvantage of the scheme just discussed is that it requires a great deal of precise engineering in order perform the requires sequence of local changes to the individual terms of the Hamiltonian.  It would be better if one could instead apply a global control that changed all of the terms at once.  It is not too hard to show that doing so has the same computational effect on the input qubit\cite{TheFuture}, but it is not immediately obvious that the energy gap scales polynomially with the size of the system.  In order to determine whether this is the case, we applied my Matrix Product State code to investigate this model numerically.  We took advantage of the fact that when the choice of the parameters is mirror symmetric about the center of the system --- that is, $\theta_1 = \theta_{n-1}$, $\theta_2=\theta_{n-2}$, etc. --- then the minimum energy gap occurs at the center of the adiabatic transition (as proven in \cite{TheFuture}), and so this is the only point that we needed to examine in our simulations.  For selected values of $n$, we generated 200 random choices of $\{\theta_i\}_{i=1\dots n-1}$, subject to the mirror symmetry condition just discussed.  The results are shown in Figure \ref{plot:qtrans}.  They provide strong numerical evidence that the gap scales inversely with the size of the system, which means that amount of time needed for the adiabatic transition scales only linearly with the size of the system.  This result implies that this model is indeed a viable means of performing adiabatic quantum computation.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{images/qtrans}
+\caption{
+\label{plot:qtrans}
+For selected system sizes we generated 200 random choices of $\{\theta\}_i$ and computed the energy gap.  Above are plotted the minimum, maximum, average, and standard deviation of these data for each system size;  note that the plot uses a log-log scale.  Also plotted is the exact solution for the ``non-twisted'' (i.e., $\forall_i\theta_i=0$) case, as well as the polynomial $4.97n^{-1}$ obtained from a least-squares fit to the data.}
+\end{figure}
 %@+node:gcross.20110331165234.1399: ** Conclusion
 \part{Conclusion}
 
