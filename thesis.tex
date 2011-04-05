@@ -1940,11 +1940,8 @@ This algorithm should prove helpful in two kinds of ways in particular.  First, 
 %@+node:gcross.20110318151522.1469: ** Matrix Product States
 \part{Matrix Product States}
 \label{part:Matrix Product States}
-%@+node:gcross.20110318151522.1484: *3* Theory
-\chapter{Theory}
-\label{sec:MPSTheory}
-%@+node:gcross.20110318151522.1486: *4* Motivation
-\section{Motivation}
+%@+node:gcross.20110318151522.1486: *3* Motivation
+\chapter{Introduction}
 
 Straightforward representations of quantum systems tend to grow exponentially with increasing system size.  Thus, if one wants to have a hope of simulating a large quantum system, one needs to pick a clever method for representing it.  Such a representation needs to have three properties:  it must have a scaling law that makes large systems tractable, it needs to faithfully duplicate the properties of the original system, and it needs to allow one to compute expectation values without returning to the expensive representation.
 
@@ -1959,6 +1956,9 @@ In the past, this $O(1)$ behavior has typically been achieved by writing a speci
 Thus we see that it is incredibly useful to be able to write down a matrix factorization for operators of interest.  This has already been done for many operators \cite{cond-mat/0701428}, but to date no systematic method has been presented to do this for any operator.
 
 In this part, we shall present such a method.  We shall begin with some background material that presents a pedagogical introduction to matrix product states.  Then we will introduce the key to our method:  a new type of diagram which allows one to visualize matrix product states in a way that makes transparent the type of state that they generate.  Although the application of these diagrams to matrix product states is novel, the diagrams themselves are not:  rather, they will be shown to be merely variants of complex weighted finite state automata.  Once this connection has been made, it will be shown how one can obtain a matrix product factorization of a state or operator by starting with an automaton which generates the ``pattern'' of the operator, and then translating this automaton into a set of matrix factors.  It will then be shown how this process generalizes to multiple dimensions.
+%@+node:gcross.20110318151522.1484: *3* Theory
+\chapter{Theory}
+\label{sec:MPSTheory}
 %@+node:gcross.20110318151522.1471: *4* One-Dimensional Chains
 \section{One-Dimensional Chains}
 %@+node:gcross.20110318151522.1472: *5* Background
