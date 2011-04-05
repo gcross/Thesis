@@ -286,7 +286,7 @@ Now suppose that we know the proposition holds for sequences of length $N-1$, an
 
 If $s$ is the identity operator, then let $\lst S:=\lst S'$ and $p:=p$ and we are done.  Otherwise, we shall now show that there must exist integers $j\in\{1,\dots,N\}\backslash\{\lst k'_i\}$ and $l\in\{0,1\}$ such that $s$ anti-commutes with $P_{j}^{[l]}$, by demonstrating that if this were not the case then $s$ would have to anti-commute with some element in $\lst S'$, leading to a contradiction.
 
-Assume that $s$ commutes with every operator in the set $\left\{P_j^{[l]}:\quad j\in\{1,\dots,N\}\backslash\{\lst k'_i\}, \quad l\in\{0,1\}\right\}.$  Recalling that $s$ is a member of the Pauli group and thus a tensor product of single-particle Pauli spin matrices, and also that $s$ commutes with every member of the set $\{P_{\lst k'_i}^{[p'(i)]}\}_{i=1\dots n-1}$, we see therefore that $s$ must be a product of elements from this set --- that is, there is some subset $\emptyset \ne \set F \subseteq \{P_{\lst k'_i}^{[p'(i)]}\}_{i=1\dots n-1}$ such that $s=\prod_{o\in \set F} o$.  However, from our inductive hypothesis we know that for every operator $f\in\set F$ there is an operator $s'\in\lst S'$ that anti-commutes with $f$ but commutes with the operators in $\set F\backslash\{f\}$.  Since $s$ is therefore a product of a single operator that anti-commutes with $s'$ and more operators that commute with $s'$, we conclude that $s$ and $s'$ anti-commute, which contradicts our earlier conclusion that $s$ commutes with every operator in $\lst S'$.
+Assume that $s$ commutes with every operator in the set $$\left\{P_j^{[l]}:\quad j\in\{1,\dots,N\}\backslash\{\lst k'_i\}, \quad l\in\{0,1\}\right\}.$$  Recalling that $s$ is a member of the Pauli group and thus a tensor product of single-particle Pauli spin matrices, and also that $s$ commutes with every member of the set $\{P_{\lst k'_i}^{[p'(i)]}\}_{i=1\dots n-1}$, we see therefore that $s$ must be a product of elements from this set --- that is, there is some subset $\emptyset \ne \set F \subseteq \{P_{\lst k'_i}^{[p'(i)]}\}_{i=1\dots n-1}$ such that $s=\prod_{o\in \set F} o$.  However, from our inductive hypothesis we know that for every operator $f\in\set F$ there is an operator $s'\in\lst S'$ that anti-commutes with $f$ but commutes with the operators in $\set F\backslash\{f\}$.  Since $s$ is therefore a product of a single operator that anti-commutes with $s'$ and more operators that commute with $s'$, we conclude that $s$ and $s'$ anti-commute, which contradicts our earlier conclusion that $s$ commutes with every operator in $\lst S'$.
 
 Now that we have shown that there exist integers $j\in\{1,\dots,N\}\backslash\{\lst k'_i\}$ and $l\in\{0,1\}$ such that $s$ anti-commutes with $P_{j}^{[l]}$, in terms of these integers we define
 $$
@@ -331,8 +331,8 @@ Suppose that we have been given the objects described in 1-3 of Proposition \ref
 Recalling that $n$ is the number of elements in $\lst S$ (and $\set S$), let $\lst l$ be some sequential ordering of $\{1 \dots N\}\backslash\{\vec k_i\}_i$, and then let $\set L:=\{\lst A_i\}_i\cup\{\lst B_i\}_i$ where
 $$
 \begin{aligned}
-\lst A_i &:= P_{\lst l_i}^{[1]}\cdot \prod_{j=1\dots n\atop \{P_{l_i}^{[1]},\lst S_j\}=0} P_{\lst k_j}^{[s(j)]},\\
-\lst B_i &:= P_{\lst l_i}^{[0]}\cdot \prod_{j=1\dots n\atop \{P_{l_i}^{[0]},\lst S_j\}=0} P_{\lst k_j}^{[s(j)]}.\\
+\lst A_i &:= P_{\lst l_i}^{[1]}\cdot \paren{\prod_{j=1\dots n,\,\,\{P_{l_i}^{[1]},\lst S_j\}=0} P_{\lst k_j}^{[s(j)]}},\\
+\lst B_i &:= P_{\lst l_i}^{[0]}\cdot \paren{\prod_{j=1\dots n,\,\,\{P_{l_i}^{[0]},\lst S_j\}=0} P_{\lst k_j}^{[s(j)]}}.\\
 \end{aligned}
 $$
 
@@ -340,7 +340,7 @@ To see that property \ref{L-are-independent} is satisfied, observe the following
 
 Next, to see that property \ref{L-are-conjugal-pairs} holds, observe that for every choice of operators $\lst A_i$ and $\lst S_j$ we have (by intentional construction) that $\lst S_j$ either anti-commutes with two of the operators in the product forming $\lst A_i$ or none at all, and so $[\lst S_i,\lst A_j]=0$ for all $i=1\dots n$ and $j=1\dots |\lst l|$;  by the same reasoning we see also that $[\lst S_i,\lst B_j]=0$ for all $i=1\dots n$ and $j=1\dots |\lst l|$.  Furthermore, each operator $\lst A_i$ commutes with every operator in $\set L$ except for its conjugal partner $\lst B_i$, since the only factor in $\lst A_i$ that could anti-commute with a factor contained within another operator in $\set L$ is $P_{l_i}^{[1]}$, and $\lst B_i$ is the only operator in $\set L$ that contains a factor $P_{l_i}^{[0]}$ that anti-commutes with $\lst X_{l_i}$;  reversing this argument, we also see that $\lst B_i$ commutes with every operator in $\set L$ except for $\lst A_i$.  Thus, every operator in $\set L$ is a member of a conjugal pair with respect to $\set L\cup\set S$.
 
-Finally, to see that property \ref{L-completes-the-generators} holds, observe that since the operators in $\set S$ commute they can therefore be simultaneously diagonalized, which means that there is an automorphism on $\pauligroup$ that takes $\lst S_i\mapsto P_i^{[1]}$ for every $i=1 \dots n$.  The only operators that commute with every such $P_i^{[1]}$ are those which do not contain any factor of $P_i^{[0]}$ for $i=1 \dots n$, and so $\centralizer_\pauligroup\paren{\{P_i^{[0]}\}_{i=1\dots n}} = \genfun\paren{\{P_i^{[1]}\}_{i=1 \dots n}\cup \{P_i^{[l]}\}_{i=n+1 \dots N, \,\, l=0,1}}$, which has $2N-n$ generators.  Since the automorphism preserves the number of generators in the centralizer, we thus conclude that $\centralizer_\pauligroup(\set S)$ has exactly $2N-n$ generators.  Since $\set S\cup\set L$ contains independent operators which commute with every member of $\set S$, and furthermore $|\set S\cup\set L|=2N-n$, we thus conclude that $\genfun\paren{\set S\cup\set L}=\centralizer_\pauligroup(\set S)$.
+Finally, to see that property \ref{L-completes-the-generators} holds, observe that since the operators in $\set S$ commute they can therefore be simultaneously diagonalized, which means that there is an automorphism on $\pauligroup$ that takes $\lst S_i\mapsto P_i^{[1]}$ for every $i=1 \dots n$.  The only operators that commute with every such $P_i^{[1]}$ are those which do not contain any factor of $P_i^{[0]}$ for $i=1 \dots n$, and so $$\centralizer_\pauligroup\paren{\{P_i^{[0]}\}_{i=1\dots n}} = \genfun\paren{\{P_i^{[1]}\}_{i=1 \dots n}\cup \{P_i^{[l]}\}_{i=n+1 \dots N, \,\, l=0,1}},$$ which has $2N-n$ generators.  Since the automorphism preserves the number of generators in the centralizer, we thus conclude that $\centralizer_\pauligroup(\set S)$ has exactly $2N-n$ generators.  Since $\set S\cup\set L$ contains independent operators which commute with every member of $\set S$, and furthermore $|\set S\cup\set L|=2N-n$, we thus conclude that $\genfun\paren{\set S\cup\set L}=\centralizer_\pauligroup(\set S)$.
 \end{proof}
 %@+node:gcross.20110318151522.1376: *5* Prove main theorem
 With these building blocks in place, we now prove the main theorem:
@@ -349,7 +349,7 @@ With these building blocks in place, we now prove the main theorem:
 By Proposition \ref{proposition-SG}, we know that there exists a list of operators $\lst S$ and a set of independent operators $\set G$ satisfying the properties that are listed there.  By Proposition \ref{make-independent-using-elimination}, we know that there is an independent set of operators $\set S$ that generate the same subgroup as $\lst S$.  
 
 Now let $\set F$ be a maximal subset of commuting operators in $\set G$ --- i.e., for each conjugal pair in $\set G$ take one of the two operators --- and then let $\set O := \set F \cup \set S$.  Since all of the operators in $\set O$ commute, we apply Proposition \ref{make-independent-using-elimination} again to conclude the existence of the objects listed there, and then we immediately apply Proposition \ref{construction-of-logicals} to show that a set $\set M$ exists with the properties listed there.  We are not done yet, however, since there might be operators in $\set G$ with which operators in $\set M$ anti-commute, so we let
-$$\set L := \{m\cdot\prod_{f\in \set F\atop \{M,\text{conj}_{\set G}(f)\}=0} f :\quad m \in\set M\}$$
+$$\set L := \left\{m\cdot\paren{\prod_{f\in \set F,\,\,\{m,\text{conj}_{\set G}(f)\}=0} f }:\quad m \in\set M\right\}$$
 where $\text{conj}_{\set G}(F)$ is the conjugal partner of $F$ in the set $\set G$.  This guarantees that the operators in $\set L$ commute with every operator in $\set S\cup\set G$, and so we are done.
 \end{proof}
 %@+node:gcross.20110318151522.1377: *5* Pseudo-code
@@ -360,6 +360,7 @@ A pseudo-code representation of the algorithm described by Theorem \ref{theorem-
 %@+others
 %@+node:gcross.20110318151522.1378: *6* Compute-Subsystem-Code
 \begin{table}
+{\scriptsize
 \begin{codebox}
 \Procname{$\proc{Compute-Subsystem-Code}(\lst O)$}
 \li $\lst S \gets []$
@@ -422,10 +423,12 @@ A pseudo-code representation of the algorithm described by Theorem \ref{theorem-
       \End
 \li \Return $(\lst S,\lst G,\lst L)$
 \end{codebox}
-\caption[Algorithm \proc{Compute-Subsystem-Code}]{Algorithm which computes the subsystem code generated by a given list of measurement operators $\lst O$.  The subroutine \textsc{Gaussian-Elimination} is listed in Table \ref{table:gaussian-elimination}.} \label{table:algo1}
+}
+\caption[Algorithm \proc{Compute-Subsystem-Code}]{\small Algorithm which computes the subsystem code generated by a given list of measurement operators $\lst O$.  The subroutine \textsc{Gaussian-Elimination} is listed in Table \ref{table:gaussian-elimination}.} \label{table:algo1}
 \end{table}
 %@+node:gcross.20110318151522.1379: *6* Gaussian-Elimination
 \begin{table}
+{\footnotesize
 \begin{codebox}
 \Procname{$\proc{Gaussian-Elimination}(\lst S,i,\lst I,\lst P)$}
 \li \While $i < |\lst S|$ \label{li:while-loop}
@@ -486,7 +489,8 @@ A pseudo-code representation of the algorithm described by Theorem \ref{theorem-
 \li   $i \gets i + 1$
     \End
 \end{codebox}
-\caption[Algorithm \proc{Gaussian-Elimination}]{Subroutine which performs a procedure analogous to Gaussian-elimination on $\vec S$ to distill a set of independent operators from a possible dependent set of operators.  This subroutine is called by the main subsystem code algorithm in Table \ref{table:algo1}.}
+}
+\caption[Algorithm \proc{Gaussian-Elimination}]{\small Subroutine which performs a procedure analogous to Gaussian-elimination on $\vec S$ to distill a set of independent operators from a possible dependent set of operators.  This subroutine is called by the main subsystem code algorithm in Table \ref{table:algo1}.}
 \label{table:gaussian-elimination}
 \end{table}
 %@-others
@@ -513,6 +517,8 @@ Given conjugal pairs $Q:=(a,b)$ and $R:=(c,d)$ in relation to some set $\set X$ 
 \end{lemma}
 
 \begin{proof}
+$\,$
+
 \begin{enumerate}
 \item Since $[a,c]=[a,d]=[b,c]=[b,d]=\{a,b\}=\{c,d\}=0$, we see therefore that $[a\cdot c,c]=[a\cdot c,d\cdot b]=[b,c]=[b,d\cdot b]=\{a\cdot c,b\}=\{c,d\cdot b\}=0$.  Furthermore, since $a$, $b$, $c$ and $d$ commute with every operator in $\set X\backslash \{Q,R\}$, so do $a\cdot c$ and $d\cdot b$.
 \item Since $b$ and $c$ are Pauli operators and thus square to the identity, we have that $a\cdot c\cdot c=a$ and $d\cdot b\cdot b=d$, and so $\genfun\paren{\{a,b,c,d\}}=\genfun\paren{\{a\cdot c,b,c,d\cdot b\}}$.
@@ -540,7 +546,7 @@ $\quad$
 \item the function $\Pi:\powerset(\pauligroup)\to\pauligroup$ is defined such that $\Pi(\set X):=\prod_{x\in \set X} x$ --- that is, it is the product of the operators in $\set X$.
 \item assuming we have a set of independent operators, $\set Q$, the function $\set G_{\set Q}:\genfun(\set Q)\to\powerset(\set Q)$ is defined (uniquely) such that for every $q\in\set Q$ we have that $q=\prod_{o\in\set G_{\set Q}(q)} o$;
 \item the function $w:\pauligroup\to \mathscr{N}$ is defined such that $w(o)$ gives the weight of $o$;
-\item the function $e_{\set S}:\centralizer_\pauligroup\paren{\set S}\to \paren{\powerset\circ\centralizer_\pauligroup}\paren{\set S}$ is defined such that $\set e_{\set S}(l)$ is the set of minimizers of $w$ over the set $\left\{o: o\in \centralizer_\pauligroup\paren{\set S}, \{o,l\}=0\right\}$ --- that is, it gives the undetectable errors with respect to $\set S$ acting on $l$ that are of minimum weight;
+\item the function $e_{\set S}:\centralizer_\pauligroup\paren{\set S}\to \paren{\powerset\circ\centralizer_\pauligroup}\paren{\set S}$ is defined such that $\set e_{\set S}(l)$ is the set of minimizers of $w$ over the set $$\left\{o: o\in \centralizer_\pauligroup\paren{\set S}, \{o,l\}=0\right\}$$ --- that is, it gives the undetectable errors with respect to $\set S$ acting on $l$ that are of minimum weight;
 \item the function $\om_{\set S}:\centralizer_\pauligroup\paren{\set S}\to\mathscr{N}$ is defined such that $\om_{\set S}:=w(o)$ for an arbitrarily chosen $o\in\circ \set e_{\set S}$ --- note that function is well-defined since all operators in the set $\set e_{\set S}$ have the same weight;
 \item the function $m_{\set S}:\centralizer_\pauligroup\paren{\set S}\times \centralizer_\pauligroup\paren{\set S} \to \mathscr{N}$ is defined such that $m_{\set S}(l,l'):=\min \{\om_{\set S}(l),\om_{\set S}(l')\}$ --- that is, it gives the smaller of the weights of the smallest weight errors acting on respectively $\set L$ and $\set L'$;
 \item the function $\lst M_{\set S}$ is defined such that $\lst M_{\set S}\paren{\lst P}$ is the sequence of $|\lst P|$ integers such that $\lst M_{\set S}\paren{\lst P}_i := m_{\set S}\paren{\lst P_i}$;
@@ -681,6 +687,7 @@ Table \ref{table:algorithm-optimization} contains a listing of pseudo-code that 
 %@+node:gcross.20110318151522.1388: *6* Pseudo-code
 %@+node:gcross.20110318151522.1389: *7* Optimize-Logical-Qubits
 \begin{table}
+{\scriptsize
 \begin{codebox}
 \Procname{$\proc{Optimize-Logical-Qubits}(\lst S,\lst G,\lst L)$}
 \li $N \gets |\lst L|$
@@ -754,7 +761,8 @@ Table \ref{table:algorithm-optimization} contains a listing of pseudo-code that 
         \End
     \End
 \end{codebox}
-\caption[Algorithm \proc{Optimize-Logical-Qubits}]{Algorithm which optimizes the logical qubits for a given subsystem code.} \label{table:algorithm-optimization}
+}
+\caption[Algorithm \proc{Optimize-Logical-Qubits}]{\small Algorithm which optimizes the logical qubits for a given subsystem code.} \label{table:algorithm-optimization}
 \end{table}
 %@+node:gcross.20110318151522.1390: *7* Fix-Logical-Qubits
 \begin{table}
@@ -804,7 +812,7 @@ Suppose we are given
 \item a set of pairs, $\set L\subseteq\centralizer_\pauligroup(\set S)$, conjugal with respect to $\set U(\set Q)\cup\set S$;
 \item and a set of Pauli operators $\set C$ such that $\genfun(\set C)=\centralizer_\pauligroup(\set S)$;
 \end{itemize}
-then $\optimizer(\set S,\set L)$ is a sequence of finite length, and if $(\set Q,\lst P,\lst s)$ is the last element in the sequence then $\lst P$ is an optimal choice of qubits such that $\genfun(\lst P)=\genfun(\set L)$, and furthermore it can be computed in a time that is in the set $O\paren{|\set C|^2+|\lst L|^2d3^d\choose{N}{d}}$\footnote{A function $f$ is said to be in the set $O(g)$ if $f$ is asymptotically bounded by some fixed constant times $g$;  formally $f\in O(g)$ if and only if there exists constants $c$ and $x_0$ such that $f(x)<c g(x)$ for all $x>x_0$.}, where $d:=\lst M(\lst P)_{|\lst P|}$\footnote{Recall that $\lst M(\lst P)_{|\lst P|}$ is the distance of the best qubit in the (optimized) code.}.
+then $\optimizer(\set S,\set L)$ is a sequence of finite length, and if $(\set Q,\lst P,\lst s)$ is the last element in the sequence then $\lst P$ is an optimal choice of qubits such that $\genfun(\lst P)=\genfun(\set L)$, and furthermore it can be computed in a time that is in the set $$O\paren{|\set C|^2+|\lst L|^2d3^d\choose{N}{d}}\footnote{A function $f$ is said to be in the set $O(g)$ if $f$ is asymptotically bounded by some fixed constant times $g$;  formally $f\in O(g)$ if and only if there exists constants $c$ and $x_0$ such that $f(x)<c g(x)$ for all $x>x_0$.},$$ where $d:=\lst M(\lst P)_{|\lst P|}$\footnote{Recall that $\lst M(\lst P)_{|\lst P|}$ is the distance of the best qubit in the (optimized) code.}.
 \end{theorem}
 
 The proof of this Theorem is rather technical and shall be split into several subsections.  First we shall prove the existence of a condition that suffices to prove that a choice of logical qubits is optimal.   Second we shall prove that the algorithm above constructs a choice satisfying this condition.  Third we shall prove that the running time of the algorithm has the claimed bound.  Finally we shall tie these results together to prove the Theorem above.
@@ -1092,9 +1100,8 @@ Examination of the definition reveals that $\set Q'$ and $\lst P'$ are construct
 
 If $\optimizer(\set S,\set L)_{i+1}$ was defined using Case 1 then let $(b,a):=\lst P_k$ and $(b',a'):=\lst P'_k$ where $k$ is the integer described in Case 1;  otherwise let $(a,b):=q$ be the pair selected from $\set Q$ in the definition and $(a',b')$ be the last element of $\lst P'$.  Note that in either case, $a=a'$.
 
-In both cases, observe that for every operator $o\in\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ we have that either $o$ or $o\cdot a$ is contained in $\set U(\set Q')\cup\set U(\lst P')$, and since $a$ is also contained in this set we see immediately that any operator in $\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ can be obtained from products of elements in $\set U(\set Q')\cup\set U(\lst P')$ (i.e., from an operator in $\set U(\set Q')\cup\set U(\lst P')$ times possibly $a$).  Thus we conclude that $\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}$.  Since $b'$ is the product of $b$ with elements in $\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}$, and $\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}$, we conclude that $b\in\genfun\paren{\set U(\set Q')\cup\set(\lst P')}$ and so $\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}$.
-
-Thus we have proven that $\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}=\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}=\genfun(\set L)$, and so we are done.
+In both cases, observe that for every operator $o\in\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ we have that either $o$ or $o\cdot a$ is contained in $\set U(\set Q')\cup\set U(\lst P')$, and since $a$ is also contained in this set we see immediately that any operator in $\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ can be obtained from products of elements in $\set U(\set Q')\cup\set U(\lst P')$ (i.e., from an operator in $\set U(\set Q')\cup\set U(\lst P')$ times possibly $a$).  Thus we conclude that $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}.$$  Since $b'$ is the product of $b$ with elements in $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}},$$ and $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')},$$ we conclude that $b\in\genfun\paren{\set U(\set Q')\cup\set(\lst P')}$ and so $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}.$$
+Thus we have proven that $$\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}=\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}=\genfun(\set L),$$ and so we are done.
 %@+node:gcross.20110318151522.1413: *7* The set generated stays in the centralizer
 \item
 
@@ -1176,7 +1183,7 @@ Suppose we are given
 \item a set of pairs, $\set L\subseteq\centralizer_\pauligroup(\set S)$, conjugal with respect to $\set U(\set Q)\cup\set S$;
 \item and a set of Pauli operators $\set C$ such that $\genfun(\set C)=\centralizer_\pauligroup(\set S)$;
 \end{itemize}
-then the time needed to compute the sequence $\optimizer(\set S,\set L)$ is in the set $O\paren{|\set C|^2+|\set L|(|\set L|+d)3^d\choose{N}{d}},$ where $d:=\lst M(\lst P)_{|\lst P|}$ and $(\set Q,\lst P,\lst S)$ is the last element in the sequence (i.e., $\lst P$ is the desired optimal choice of qubits).
+then the time needed to compute the sequence $\optimizer(\set S,\set L)$ is in the set $$O\paren{|\set C|^2+|\set L|(|\set L|+d)3^d\choose{N}{d}},$$ where $d:=\lst M(\lst P)_{|\lst P|}$ and $(\set Q,\lst P,\lst S)$ is the last element in the sequence (i.e., $\lst P$ is the desired optimal choice of qubits).
 \end{theorem}
 %@+node:gcross.20110318151522.1426: *6* Definitions
 %@+node:gcross.20110318151522.1427: *7* pseudo-generator
@@ -1257,7 +1264,7 @@ Now that we have the concept of a disjoint set of pseudo-generators and a result
 
 \begin{lemma}
 \label{lemma:minimal-weight-search}
-Given a set of pseudo-generators $\set G$ acting on $N$ physical qubits and a test function $f:\pauligroup\to\{0,1\}$ such that $f^{-1}(1)\cap\genfun(\set G)\ne\emptyset$, then a solution $o$ such that $f(o)=1$ and $\om_{\set S}(o)=\min_{o'\in \genfun(\set G), f(o')=1} w(o')$ can be computed in time $O\paren{(T+d)3^d\choose{|\set G|}{r}}$ where $d:=\min\paren{w(o),|\set G|}$ and $T$ is the time needed to compute $f$.
+Given a set of pseudo-generators $\set G$ acting on $N$ physical qubits and a test function $f:\pauligroup\to\{0,1\}$ such that $f^{-1}(1)\cap\genfun(\set G)\ne\emptyset$, then a solution $o$ such that $f(o)=1$ and $$\om_{\set S}(o)=\min\{w(o'):o'\in \genfun(\set G), f(o')=1\}$$ can be computed in time $O\paren{(T+d)3^d\choose{|\set G|}{r}}$ where $d:=\min\paren{w(o),|\set G|}$ and $T$ is the time needed to compute $f$.
 \end{lemma}
 
 \begin{remark}
@@ -1267,7 +1274,7 @@ This Lemma follows directly from the results in~\cite{White:2006fj}, though the 
 \begin{proof}
 Define $\set C_r$ to be the set of all operators such that if $o\in\set C_r$ then there is some subset of exactly $r$ pseudo-generators from $\set G$ such that $o$ is contained in their pseudo-product.  Note that $\cup_r \set C_r = \genfun(\set G)$, so for every operator $o$ in the search space there is an integer $r$ such that $o\in\set C_r$.  Corollary \ref{corolary:bound-on-pseudo-product} shows that we can evaluate $f$ on every element of the pseudo-product of $r$ pseudo-generators in time $O((T+r)3^r)$, so since there are $\choose{|\set G|}{r}$ ways to choose $r$ pseudo-generators from $\set G$ we conclude that we can search $\set C_r$ for a solution to $f(o)=1$ in time $O\paren{(T+r) 3^r \choose{|\set G|}{r}}$.
 
-From Lemma \ref{lemma:disjoint-pseudo-generators-bound} we conclude that $w(o)\ge r$ for every $o\in\set C_r$.  By extension this means that $w(o)\ge r$ for every $o\in\bigcup_{r'=r}^{|\set G|}\set C_{r'}$, and therefore that if $o\notin\bigcup_{r'=0}^{r-1}\set C_{r'}$ and $o\in\genfun(\set G)$ then $w(o)\ge r$.  Thus, if there exists an $r$ such that $r=\min_{o\in\bigcup_{r'=0}^{r-1}\set C_{r'},f(o)=1}w(o)$ then we know that $r=\min_{o\in\genfun(\set O),f(o)=1}w(o)$ --- that is, $r$ is \emph{exactly} the weight of the minimum weight solution to $f(o)=1$, since any operator in the search space that \emph{isn't} contained in $\bigcup_{r'=0}^{r-1}\set C_{r'}$ must have a weight of at least $r$.  Put another way, after having enumerated all of the elements in $\bigcup_{r'=0}^{r-1}\set C_{r'}$ we can check to see whether the smallest solution to $f$ we have seen so far (if any) has weight less than or equal to $r$, and if so we are done since we have found the minimal weight solution.
+From Lemma \ref{lemma:disjoint-pseudo-generators-bound} we conclude that $w(o)\ge r$ for every $o\in\set C_r$.  By extension this means that $w(o)\ge r$ for every $o\in\bigcup_{r'=r}^{|\set G|}\set C_{r'}$, and therefore that if $o\notin\bigcup_{r'=0}^{r-1}\set C_{r'}$ and $o\in\genfun(\set G)$ then $w(o)\ge r$.  Thus, if there exists an $r$ such that $r=\min\{w(o): o\in\bigcup_{r'=0}^{r-1}\set C_{r'},f(o)=1\}$ then we know that $r=\min\{w(o):o\in\genfun(\set O),f(o)=1\}$ --- that is, $r$ is \emph{exactly} the weight of the minimum weight solution to $f(o)=1$, since any operator in the search space that \emph{isn't} contained in $\bigcup_{r'=0}^{r-1}\set C_{r'}$ must have a weight of at least $r$.  Put another way, after having enumerated all of the elements in $\bigcup_{r'=0}^{r-1}\set C_{r'}$ we can check to see whether the smallest solution to $f$ we have seen so far (if any) has weight less than or equal to $r$, and if so we are done since we have found the minimal weight solution.
 
 Now consider the procedure of searching through each $\set C_r$ starting with $r=0$.  We know that we will eventually find at least one solution to $f(o)=1$, since in this Proposition we have assumed that such an operator exists in the search space (by the assumption that $f^{-1}(1)\cap\genfun(\set G)\ne\emptyset$).  Furthermore, employing this procedure we will find the minimal solution $o$ no \emph{later} than after we have searched through $\set C_r$ for $r=0\dots w(o)$, since at that point all of the unexamined operators have a weight greater than $w(o)$.  Thus, we conclude that we shall find the minimal weight solution after having searched at most all of the elements in $\bigcup_{r=0}^{\min(w(o),|\set G|)} C_r$, which we can do in time $$O\paren{\sum_{r=0}^{\min(w(o),|\set G|)}(T+r) 3^r \choose{|\set G|}{r}}\subseteq O\paren{(T+d) 3^d \choose{N}{d}},$$ where $d:=\min(w(o),|\set G|)$.
 \end{proof}
@@ -1346,7 +1353,7 @@ Given
 \item a set of disjoint pseudo-generator $\set G$ such that $\genfun(\set G)=\centralizer(\set S)$, and
 \item a non-empty set of Pauli operators $\set Q$ such that $\set Q\cap\set S=\emptyset$ and every operator in $\set Q$ is a member of a conjugal pair in relation to $\set Q \cup \set S$,
 \end{itemize}
-then a minimal weight undetectable error acting on any operator in $\set Q$ can be found in time $O\paren{(|\set Q|+d)3^d\choose{N}{d}}$ where $d:=\min\paren{w(o),N}$.
+then a minimal weight undetectable error acting on any operator in $\set Q$ can be found in time $$O\paren{(|\set Q|+d)3^d\choose{N}{d}}$$ where $d:=\min\paren{w(o),N}$.
 \end{lemma}
 
 \begin{proof}
@@ -1359,7 +1366,7 @@ $$f(o):=
 0 & \text{otherwise},
 \end{cases}
 $$
-Note that solutions to $f$ are undetectable errors acting on $\set Q$, and also that this function can be computed in time $O(|\set Q|)$ by checking the commutator for each element in $\set Q$.  Furthermore note that for every operator in $\set Q$ there is another operator in $\set Q$ which anti-commutes with it, and also that $\set Q\subset \centralizer_\pauligroup(\set S)$.  Thus, since $\set Q$ is non-empty, there is at least one operator $o\in\genfun(\set G)$ such that $f(o)=1$.  Thus, by Lemma \ref{lemma:minimal-weight-search}, we know that we can compute a minimal weight solution to $f$ in time $O\paren{(|\set Q|+d)3^d\choose{N}{d}}$ where $d:=\min\paren{w(o),N}$.
+Note that solutions to $f$ are undetectable errors acting on $\set Q$, and also that this function can be computed in time $O(|\set Q|)$ by checking the commutator for each element in $\set Q$.  Furthermore note that for every operator in $\set Q$ there is another operator in $\set Q$ which anti-commutes with it, and also that $\set Q\subset \centralizer_\pauligroup(\set S)$.  Thus, since $\set Q$ is non-empty, there is at least one operator $o\in\genfun(\set G)$ such that $f(o)=1$.  Thus, by Lemma \ref{lemma:minimal-weight-search}, we know that we can compute a minimal weight solution to $f$ in time $$O\paren{(|\set Q|+d)3^d\choose{N}{d}}$$ where $d:=\min\paren{w(o),N}$.
 \end{proof}
 %@+node:gcross.20110318151522.1434: *6* Lemma: Computing disjoint pseudo-generators
 \begin{remark}
@@ -1404,7 +1411,7 @@ Proof by induction.  For the base case, we observe that if $\set O$ is empty, th
 
 Now assume that this Lemma has been proven for sets of cardinality $n-1$, and suppose we are given a (non-empty) set $\set O$ of cardinality $n$.  Take any operator $o\in\set O$.  By recursive application of this Lemma, we know that we can construct the set $\set G':=\set G$ and the function $p':=p$ described in this Lemma given $\set O:=\set O\backslash\{o\}$ in time $O\paren{(n-1)^2}=O(n^2)$.
 
-Let $$o':=o\cdot \prod_{x\in\set U(\set G'),\atop\{o,p(x)\}=0} x.$$  Note that for every $x\in\set U(\set G')$, it must be that $o'$ commutes with $p'(x)$, since $o'$ is formed from a product that has either two factors that anti-commute with $p'(x)$ (namely, $o$ and $p'(x)$) or no operators that anti-commute with $p'(x)$.  If $o'$ is the identity operator, then let $\set G:=\set G'$ and $p:=p'$ and we are done.  Otherwise, there must be some operator $z\in\paren{\{X_k\}_k \cup \{Z_k\}_k}\slash\{p'(x):x\in\set U(\set G')\}$ that anti-commutes with $o$.  Define the function $f$ by
+Let $$o':=o\cdot \prod_{x\in\set U(\set G'),\,\,\{o,p(x)\}=0} x.$$  Note that for every $x\in\set U(\set G')$, it must be that $o'$ commutes with $p'(x)$, since $o'$ is formed from a product that has either two factors that anti-commute with $p'(x)$ (namely, $o$ and $p'(x)$) or no operators that anti-commute with $p'(x)$.  If $o'$ is the identity operator, then let $\set G:=\set G'$ and $p:=p'$ and we are done.  Otherwise, there must be some operator $z\in\paren{\{X_k\}_k \cup \{Z_k\}_k}\slash\{p'(x):x\in\set U(\set G')\}$ that anti-commutes with $o$.  Define the function $f$ by
 $$f(x) :=
 \begin{cases}
 x \cdot o' & \{x,z\}=0, \\
@@ -1442,6 +1449,7 @@ This follows immediately from Lemmas \ref{lemma:disjointness-equvalence} and \re
 \end{proof}
 %@+node:gcross.20110318151522.1435: *6* Pseudocode: Compute-Pseudo-Generators
 \begin{table}
+{\tiny
 \begin{codebox}
 \Procname{$\proc{Compute-Pseudogenerators}(\lst O)$}
 \li $\lst p \gets []$
@@ -1517,6 +1525,7 @@ This follows immediately from Lemmas \ref{lemma:disjointness-equvalence} and \re
     \End
 \li \Return $\lst G$
 \end{codebox}
+}
 \caption[Algorithm \proc{Compute-Pseudogenerators}]{Algorithm which computes a set of disjoint pseudo-generators that generates the input set of operators.} \label{table:compute-pseudo-generators}
 \end{table}
 %@+node:gcross.20110318151522.1436: *6* Proof of Theorem
@@ -1527,9 +1536,9 @@ We now have the tools that we need to analyze the running time of the algorithm.
 \begin{proof}[Proof of Theorem \ref{theorem:bound on running time}]
 First observe that from Lemma \ref{lemma:disjointness-equvalence} we conclude that we can compute a set of disjoint pseudo-generators $\set G$ such that $\genfun(\set G)=\genfun(\set C)=\centralizer_\pauligroup(\set S)$ in time $O(|\set C|^2)$.  We will assume that this set of pseudo-generators is implicitly available to us throughout the algorithm so that we do not need to compute it more than once.
 
-At each step of the algorithm, we first need to find an operator, $o$, that has an undetectable error of minimal weight inside a set which we know from Proposition \ref {proposition:properties of the algorithm} has at most $|\set L|$ elements.  By Lemma \ref{lemma:search for minimal weight undetectable error}, we conclude that this operator can be found in time $O\paren{(|\set L|+d)3^d\choose{N}{d}}$ where $d:=\min\paren{w(o),N}=w(o)$ (since the weight of any operator cannot be greater than $N$).  After this has been found, examination of the algorithm reveals that the computation performed afterward takes a running time in $O(|\set Q|+|\lst P|)=O(|\set L|)$, where the equality comes from Proposition \ref {proposition:properties of the algorithm}.  Thus, the total time needed for each step is in $O\paren{(|\set L|+d)3^d\choose{N}{d}+|\set L|}=O\paren{(|\set L|+d)3^d\choose{N}{d}}$.
+At each step of the algorithm, we first need to find an operator, $o$, that has an undetectable error of minimal weight inside a set which we know from Proposition \ref {proposition:properties of the algorithm} has at most $|\set L|$ elements.  By Lemma \ref{lemma:search for minimal weight undetectable error}, we conclude that this operator can be found in time $$O\paren{(|\set L|+d)3^d\choose{N}{d}}$$ where $d:=\min\paren{w(o),N}=w(o)$ (since the weight of any operator cannot be greater than $N$).  After this has been found, examination of the algorithm reveals that the computation performed afterward takes a running time in $O(|\set Q|+|\lst P|)=O(|\set L|)$, where the equality comes from Proposition \ref {proposition:properties of the algorithm}.  Thus, the total time needed for each step is in $$O\paren{(|\set L|+d)3^d\choose{N}{d}+|\set L|}=O\paren{(|\set L|+d)3^d\choose{N}{d}}.$$
 
-Let $(\set Q',\lst P',\lst s')$ be the second to last element of $\optimizer(\set S,\set L)$ and $(\set Q,\lst P,\lst s)$ the last element.  In the final step of the algorithm, we move the last remaining pair in $\set Q'=\{q\}$ over to $\lst P'$, which means that the operator $o$ with the minimal weight is a member of $q$.  From Proposition \ref {proposition:properties of the algorithm}, we know that that $\om_{\set S}(o)\ge m_{\set S}(\lst P'_i)$ for any $i$.  Thus, at each step of the algorithm before this one we know that we spent a time in $O\paren{(|\set L|+d)3^d\choose{N}{d}}$ where $d:=w(o)$ --- i.e., a time no greater than the time spent on the last step.  Since the algorithm requires at most $|\set L|$ steps we conclude that the total running time, including that needed to compute the set of pseudo-generators, is in $O\paren{|\set G|^2+|\set L|(|\set L|+d)3^d\choose{N}{d}}$.  Since $\om_{\set S}(o)=\lst M(\lst P)_{|\lst P|}$, we conclude that $d\equiv\lst M(\lst P)_{|\lst P|}$ (since there can be at most $N$ qubits in the choice), and so we are done.
+Let $(\set Q',\lst P',\lst s')$ be the second to last element of $\optimizer(\set S,\set L)$ and $(\set Q,\lst P,\lst s)$ the last element.  In the final step of the algorithm, we move the last remaining pair in $\set Q'=\{q\}$ over to $\lst P'$, which means that the operator $o$ with the minimal weight is a member of $q$.  From Proposition \ref {proposition:properties of the algorithm}, we know that that $\om_{\set S}(o)\ge m_{\set S}(\lst P'_i)$ for any $i$.  Thus, at each step of the algorithm before this one we know that we spent a time in $$O\paren{(|\set L|+d)3^d\choose{N}{d}}$$ where $d:=w(o)$ --- i.e., a time no greater than the time spent on the last step.  Since the algorithm requires at most $|\set L|$ steps we conclude that the total running time, including that needed to compute the set of pseudo-generators, is in $$O\paren{|\set G|^2+|\set L|(|\set L|+d)3^d\choose{N}{d}}.$$  Since $\om_{\set S}(o)=\lst M(\lst P)_{|\lst P|}$, we conclude that $d\equiv\lst M(\lst P)_{|\lst P|}$ (since there can be at most $N$ qubits in the choice), and so we are done.
 \end{proof}
 %@-others
 %@-others
@@ -1544,8 +1553,8 @@ In this section, we shall present an example of applying this algorithm to searc
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=1.5in]{images/2labelings-1}
-\includegraphics[width=1.5in]{images/2labelings-2}
+\includegraphics[width=2in]{images/2labelings-1}
+\includegraphics[width=2in]{images/2labelings-2}
 \end{center}
 \caption{
 \label{figure:2labelings}
@@ -1604,9 +1613,8 @@ A table listing the number of labelings for each tiling that were not redundant 
 In order to preserve the rotational symmetries of the tiling, it is important that the lattice be constructed such that the center of the lattice is at a point of rotational symmetry.  There is not a single unique center point that preserves all of the rotational symmetries of a given tiling, and furthermore for many tilings there are multiple rotational symmetry groups (known as ``wallpaper'' symmetry groups), each of which has a different set of center points.  We thus chose the center of our lattice by picking the largest of the wallpaper groups present in the tiling and choosing the center to give rise to the rotational symmetries in that group\footnote{Note that this approach does not mean that we have eliminated redundant labelings resulting from \emph{all} of the symmetries in the lattice.  For example, we have not eliminated labelings which are equivalent under rotations around a different point, nor which are equivalent under a glide-reflection symmetry.  It is certainly possible to eliminate these labelings, but we choose not to do so in this project for the sake of simplicity.  An implication of this is that for many codes we expect to see multiple labelings giving rise to them that are equivalent under symmetry transformations but not eliminated by our approach.}.  In table \ref{table:symmetries} we list the wallpaper symmetries for each of the 11 convex vertex-uniform tilings along with (where applicable) the particular symmetry group that we chose to utilize.
 
 \begin{table}
-\begin{tabular}{llr}
-\toprule
-Archimedean Tiling & Symmetries & Chosen\\
+\begin{tabular}{llr} \toprule
+Archimedean Tiling & Symmetries & Chosen\\ \midrule
 quadrille & p4m & p4m \\
 truncated quadrille & p4m & p4m \\
 snub quadrille & p4g, p4, and pg & p4 \\
@@ -1626,31 +1634,39 @@ A table listing the wallpaper symmetry groups (using crystallographic notation) 
 }
 \end{table}
 
-As is usually the case in physical systems, it is important to pay careful attention to the boundary conditions of the lattice.  In order to minimize boundary effects, we decided to put periodic boundary conditions on our lattices;  care had to be taken to impose the periodic boundary conditions in such a way as to preserve the rotational symmetry group.  For example, a boundary that only wraps from left to right and from top to bottom breaks some of the rotational symmetries for hexagonal tilings.  In Figure \ref{figure:boundaries} we illustrate how we placed the centers and the boundaries of the tilings.
+As is usually the case in physical systems, it is important to pay careful attention to the boundary conditions of the lattice.  In order to minimize boundary effects, we decided to put periodic boundary conditions on our lattices;  care had to be taken to impose the periodic boundary conditions in such a way as to preserve the rotational symmetry group.  For example, a boundary that only wraps from left to right and from top to bottom breaks some of the rotational symmetries for hexagonal tilings.  In Figures \ref{figure:boundaries1}  and \ref{figure:boundaries2} we illustrate how we placed the centers and the boundaries of the tilings.
 
 \begin{figure*}
 \centering
 \subfloat[quadrille]{{\includegraphics[width=2in]{images/quadrille}}}
-\subfloat[truncated quadrille]{{\includegraphics[width=2in]{images/truncated-quadrille}}}
-\subfloat[snub quadrille]{{\includegraphics[width=2in]{images/snub-quadrille}}}\\
+\subfloat[truncated quadrille]{{\includegraphics[width=2in]{images/truncated-quadrille}}}\\
+\subfloat[snub quadrille]{{\includegraphics[width=2in]{images/snub-quadrille}}}
 \subfloat[isosnub quadrille]{{\includegraphics[width=2in]{images/isosnub-quadrille}}}
+\caption{
+\label{figure:boundaries1}
+A figure illustrating how we placed the centers and boundaries for each of the quadrille tilings that we scanned.  The boundaries are periodic, so that edges that pass through one side of the boundary wrap around to the opposite side.  Edges and vertices \emph{on} a boundary are merged with the corresponding edges and vertices on the opposite edge.
+Note that under this scheme there can be no vertices on a corner.  For most tilings this will never happen, but it turns out that in the case of the deltille tiling there are vertices on the corners when the radius (smallest distance from the center to the boundary) is three times the radius of the unit cell;  we thus ignore deltille tilings of these sizes.
+}
+\end{figure*}
+
+\begin{figure*}
+\centering
 \subfloat[hextille]{{\includegraphics[width=2in]{images/hextille}}}
 \subfloat[truncated hextille]{{\includegraphics[width=2in]{images/truncated-hextille}}}\\
 \subfloat[deltille]{{\includegraphics[width=2in]{images/deltille}}}
-\subfloat[hexadeltille]{{\includegraphics[width=2in]{images/hexadeltille}}}
+\subfloat[hexadeltille]{{\includegraphics[width=2in]{images/hexadeltille}}}\\
 \subfloat[rhombihexadeltille]{{\includegraphics[width=2in]{images/rhombihexadeltille}}}
 \caption{
-\label{figure:boundaries}
-A figure illustrating how we placed the centers and boundaries for each of the tilings that we scanned.  The boundaries are periodic, so that edges that pass through one side of the boundary wrap around to the opposite side.  Edges and vertices \emph{on} a boundary are merged with the corresponding edges and vertices on the opposite edge.
-Note that under this scheme there can be no vertices on a corner.  For most tilings this will never happen, but it turns out that in the case of the deltille tiling there are vertices on the corners when the radius (smallest distance from the center to the boundary) is three times the radius of the unit cell;  we thus ignore deltille tilings of these sizes.
+\label{figure:boundaries2}
+A figure illustrating how we placed the centers and boundaries for each of the detille and hextille tilings that we scanned.  See the caption of Figure \ref{figure:boundaries2} for more details.
 }
 \end{figure*}
 
 Due to limits on our computational resources, we were limited in the size of the lattices that we could search with the algorithm.  We describe the size of the lattices using a quantity we call the `radius', which is an integral quantity equal to the length of the lattice divided by the length of the smallest lattice defined for that tiling;  the unit radius lattices are those illustrated in Figure {figure:boundaries}.  In Table \ref{table:maximum-radius-scanned} we show the maximum radius lattice that was completely scanned (i.e., such that every possible labeling was examined by the algorithm) for each tiling.
 
 \begin{table}
-\begin{tabular}{lcr}
-Tiling & Maximum Radius & \# Qubits\\
+\begin{tabular}{lcr} \toprule
+Tiling & Maximum Radius & \# Qubits\\ \midrule
 quadrille & 4 & 64\\
 truncated quadrille & 6 & 576\\
 snub quadrille & 5 & 200\\
@@ -1660,6 +1676,7 @@ truncated hextille & 5 & 600\\
 deltille & 8 & 256\\
 hexadeltille & 3 & 108\\
 rhombihexadeltille & 3 & 162\\
+\bottomrule
 \end{tabular}
 \caption[Lattice sizes scanned for each tiling]{
 \label{table:maximum-radius-scanned}
@@ -1671,36 +1688,48 @@ Since each labeling of every lattice results in a quantum code, we had to provid
 %@+node:gcross.20110318151522.1453: *4* Results
 \section{Results} \label{sec:results}
 
-In the previous subsection we described the search space to which we applied the algorithm in order to computationally find possible codes that can be implemented using systems with 2-body interactions and a lattice structure following nine of the eleven convex vertex-uniform tilings.  In this subsection we present the results of this search.  The codes that we found are shown in the plots appearing in Figures \ref{figure:results-quadrille} and \ref{figure:results-hextille}.  No plot appears for the deltille tiling because no codes were found for that tiling.  It is worth emphasizing that these codes indicated in these figures are \emph{all} of the (useful) codes that exist for the scanned lattices of that tiling given our constraints, since we scanned every possible labeling that was not redundant under a rotational symmetry transformation about the center.
+In the previous subsection we described the search space to which we applied the algorithm in order to computationally find possible codes that can be implemented using systems with 2-body interactions and a lattice structure following nine of the eleven convex vertex-uniform tilings.  In this subsection we present the results of this search.  The codes that we found are shown in the plots appearing in Figures \ref{figure:results-quadrille1}, \ref{figure:results-quadrille2}, \ref{figure:results-hextille1} and \ref{figure:results-hextille2}.  No plot appears for the deltille tiling because no codes were found for that tiling.  It is worth emphasizing that these codes indicated in these figures are \emph{all} of the (useful) codes that exist for the scanned lattices of that tiling given our constraints, since we scanned every possible labeling that was not redundant under a rotational symmetry transformation about the center.
 
 %@+<< Figures >>
 %@+node:gcross.20110318151522.1454: *5* << Figures >>
 \begin{figure*}
 \centering
-\subfloat[]{{\includegraphics[width=2.5in]{images/results-quadrille}}}
-\subfloat[]{{\includegraphics[width=3.85in]{images/results-isosnub-quadrille}}}\\
-\vspace{0.5in}
-\subfloat[]{{\includegraphics[width=3.17in]{images/results-truncated-quadrille}}}
-\hspace{0.35in}
-\subfloat[]{{\includegraphics[width=2.83in]{images/results-snub-quadrille}}}\\
+\subfloat[]{{\includegraphics[width=2.5in]{images/results-quadrille}}}\\
+\subfloat[]{{\includegraphics[width=3.85in]{images/results-isosnub-quadrille}}}
 \caption{
-\label{figure:results-quadrille}
-A figure containing plots of the results from scanning the (a) quadrille, (b) isosnub quadrille, (c) truncated quadrille and (d) snub quadrille tilings.  Every polygon in the plot corresponds to a code that was found with a distance equal to the number of sides of the polygon, so that triangles indicate distance three codes, squares indicate distance four codes, etc.  The position along the $x$-axis indicates the radius of the lattice where the code was found, where the radius is an integer defined to be the length of the lattice divided by the length of the smallest possible periodic lattice for the tiling;  it also indicates the number of physical qubits in the lattice where the code was found, which appears on the $x$-axis just under the value of the radius.  The position along the $y$-axis indicates the number of logical qubits with that distance in the code.
+\label{figure:results-quadrille1}
+A figure containing plots of the results from scanning the (a) quadrille and (b) isosnub quadrille.  Every polygon in the plot corresponds to a code that was found with a distance equal to the number of sides of the polygon, so that triangles indicate distance three codes, squares indicate distance four codes, etc.  The position along the $x$-axis indicates the radius of the lattice where the code was found, where the radius is an integer defined to be the length of the lattice divided by the length of the smallest possible periodic lattice for the tiling;  it also indicates the number of physical qubits in the lattice where the code was found, which appears on the $x$-axis just under the value of the radius.  The position along the $y$-axis indicates the number of logical qubits with that distance in the code.
 Note that in cases where multiple codes were found for the same radius and with the same number of logical qubits, multiple polygons are drawn, so that for example in plot (c) we see several cases in which a distance 3 code (triangle) and a distance 4 code (square) were found that were in lattices with the same radius and also had the same number of logical qubits.
 }
 \end{figure*}
 
 \begin{figure*}
 \centering
-\subfloat[]{{\includegraphics[width=4.5in]{images/results-hextille}}}
-\subfloat[]{{\includegraphics[width=2.17in]{images/results-rhombihexadeltille}}} \\
-\vspace{0.5in}
-\subfloat[]{{\includegraphics[width=2.83in]{images/results-truncated-hextille}}}
-\hspace{1.67in}
-\subfloat[]{{\includegraphics[width=2.17in]{images/results-hexadeltille}}} \\
+\subfloat[]{{\includegraphics[width=3.17in]{images/results-truncated-quadrille}}}\\
+\subfloat[]{{\includegraphics[width=2.83in]{images/results-snub-quadrille}}}
 \caption{
-\label{figure:results-hextille}
-A figure containing plots of the results from scanning the (a) hextille, (b) rhombihexadeltille, (c) truncated hextille and (d) hexadeltille tilings.  See the caption of Figure \ref{figure:results-quadrille} for an explanation of how to interpret these plots.
+\label{figure:results-quadrille2}
+A figure containing plots of the results from scanning the (a) truncated quadrille and (b) snub quadrille tilings.  See the caption of Figure \ref{figure:results-quadrille1} for an explanation of how to interpret these plots.
+}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\subfloat[]{{\includegraphics[width=4.5in]{images/results-hextille}}} \\
+\subfloat[]{{\includegraphics[width=2.17in]{images/results-rhombihexadeltille}}}
+\caption{
+\label{figure:results-hextille1}
+A figure containing plots of the results from scanning the (a) hextille and (b) rhombihexadeltille.  See the caption of Figure \ref{figure:results-quadrille1} for an explanation of how to interpret these plots.
+}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\subfloat[]{{\includegraphics[width=2.83in]{images/results-truncated-hextille}}} \\
+\subfloat[]{{\includegraphics[width=2.17in]{images/results-hexadeltille}}}
+\caption{
+\label{figure:results-hextille2}
+A figure containing plots of the results from scanning the (a) truncated hextille and (b) hexadeltille tilings.  See the caption of Figure \ref{figure:results-quadrille1} for an explanation of how to interpret these plots.
 }
 \end{figure*}
 %@-<< Figures >>
@@ -1730,13 +1759,13 @@ There are three kinds of codes that appear in this tiling where the number of qu
 \begin{figure*}
 \subfloat[distance 3 code labelings]{
 \label{figure:truncated-quadrille-code-3-labelings}
-\includegraphics[width=3.5in]{images/truncated-quadrille-code-3-labeling-1}
-\includegraphics[width=3.5in]{images/truncated-quadrille-code-3-labeling-2}
+\includegraphics[width=2.5in]{images/truncated-quadrille-code-3-labeling-1}
+\includegraphics[width=2.5in]{images/truncated-quadrille-code-3-labeling-2}
 }\\
 \subfloat[distance 4 code labelings]{
 \label{figure:truncated-quadrille-code-4-labelings}
-\includegraphics[width=3.5in]{images/truncated-quadrille-code-4-labeling-1} 
-\includegraphics[width=3.5in]{images/truncated-quadrille-code-4-labeling-2}}\\
+\includegraphics[width=2.5in]{images/truncated-quadrille-code-4-labeling-1} 
+\includegraphics[width=2.5in]{images/truncated-quadrille-code-4-labeling-2}}\\
 \caption{
 \label{figure:truncated-quadrille-code-labelings}
 A figure illustrating four labelings of the truncated quadrille tiling (on a radius 1 lattice) that result in a quantum code with distance 3/4 (in respectively \ref{figure:truncated-quadrille-code-3-labelings}/\ref{figure:truncated-quadrille-code-4-labelings}), and a number of distance logical qubits proportional to the square of the radius of the labeling.
@@ -1778,8 +1807,8 @@ A figure illustrating two of the labelings of the snub quadrille tiling (on a ra
 We only saw two labelings of the isosnub lattice that result in useful codes, both of which only have a single qubit that seems (assuming that the trend seen in Figure \ref{figure:results-hextille} can be extrapolated) to have a distance that grows with the radius of the lattice.  These two labelings are illustrated in Figure \ref{figure:isosnub-quadrille-code-r-labeling}.
 
 \begin{figure*}
-\includegraphics[width=3.5in]{images/isosnub-quadrille-code-labeling-1} % labeling #346
-\includegraphics[width=3.5in]{images/isosnub-quadrille-code-labeling-2} % labeling #764
+\includegraphics[width=3in]{images/isosnub-quadrille-code-labeling-1} % labeling #346
+\includegraphics[width=3in]{images/isosnub-quadrille-code-labeling-2} % labeling #764
 \caption{
 \label{figure:isosnub-quadrille-code-r-labeling}
 A figure illustrating two of the labelings of the isosnub quadrille tiling (on a radius 1 lattice) that result in a quantum code with a single qubit whose distance grows with the radius of the lattice.
@@ -1799,13 +1828,13 @@ It is interesting to observe that there is no distance/qubit count trade-off in 
 \begin{figure*}
 \subfloat[distance 3 code labelings] {
 \label{figure:hextille-code-3-labelings}
-\includegraphics[width=3.5in]{images/hextille-code-3-labeling-1} % labeling #9
-\includegraphics[width=3.5in]{images/hextille-code-3-labeling-2} % labeling #19
+\includegraphics[width=2.5in]{images/hextille-code-3-labeling-1} % labeling #9
+\includegraphics[width=2.5in]{images/hextille-code-3-labeling-2} % labeling #19
 }\\
 \subfloat[distance 4 code labelings] {
 \label{figure:hextille-code-4-labelings}
-\includegraphics[width=3.5in]{images/hextille-code-4-labeling-1} % labeling #7
-\includegraphics[width=3.5in]{images/hextille-code-4-labeling-2} % labeling #8
+\includegraphics[width=2.5in]{images/hextille-code-4-labeling-1} % labeling #7
+\includegraphics[width=2.5in]{images/hextille-code-4-labeling-2} % labeling #8
 }
 \caption{
 \label{figure:hextille-code-labelings}
@@ -1861,11 +1890,11 @@ The rhombihexadeltille tiling is the only tiling we have seen which has code bot
 \begin{figure*}
 \subfloat[distance 5 code labeling]{
 \label{figure:rhombihexadeltille-code-5-labeling}
-\includegraphics[width=4.75in]{images/rhombihexadeltille-code-5-labeling} % labeling #819916
+\includegraphics[width=4.15in]{images/rhombihexadeltille-code-5-labeling} % labeling #819916
 }\\
 \subfloat[distance 6 code labeling]{
 \label{figure:rhombihexadeltille-code-6-labeling}
-\includegraphics[width=4.75in]{images/rhombihexadeltille-code-6-labeling} % labeling #2316780
+\includegraphics[width=4.15in]{images/rhombihexadeltille-code-6-labeling} % labeling #2316780
 }
 \caption{
 \label{figure:rhombihexadeltille-code-56-labelings}
@@ -1878,9 +1907,9 @@ Two of labelings resulted in codes with the highest number of qubits -- 16 logic
 
 
 \begin{figure*}
-\includegraphics[width=4.75in]{images/rhombihexadeltille-code-4-labeling-1} % labeling #699975
+\includegraphics[width=4.15in]{images/rhombihexadeltille-code-4-labeling-1} % labeling #699975
 \\
-\includegraphics[width=4.75in]{images/rhombihexadeltille-code-4-labeling-2} % labeling #1740330
+\includegraphics[width=4.15in]{images/rhombihexadeltille-code-4-labeling-2} % labeling #1740330
 \caption{
 \label{figure:rhombihexadeltille-code-4-labelings}
 A figure illustrating two labelings of the rhombihexadeltille tiling (on a radius 2 lattice) that result in a quantum code with distance 4 and sixteen when applied to a radius 3 lattice.
