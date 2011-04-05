@@ -2066,10 +2066,10 @@ This factorization may be equivalently expressed in the form of the diagram in f
 \subfloat[
     Diagram representing the matrix product form of the ``W''-state.  Each possible ``walk'' from left to right generates a term in the state, as illustrated in \ref{fig:examplewalk}
     \label{fig:Wdiagram}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-2}}}
+]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-2}}}\\
 \subfloat[An example walk through the matrix product state illustrated in \ref{fig:Wdiagram}, which generates the term $\uparrow\uparrow\downarrow\uparrow$.
 \label{fig:examplewalk}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-4}}}
+]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-4}}}\\
 \subfloat[
     Mapping of edges to matrix elements.
     \label{fig:edgemap}
@@ -2161,7 +2161,7 @@ The ability to share states allows one to write down very compact
 \subfloat[
     Finite state automaton recognizing the W state.
     \label{fig:Wautomaton}
-]{\framebox[\columnwidth][c]{\includegraphics[width=\columnwidth]{images/mypaper-diagram-11}}}
+]{\framebox[\columnwidth][c]{\includegraphics[width=\columnwidth]{images/mypaper-diagram-11}}}\\
 \subfloat[
     Finite state automaton recognizing state with neighboring 1's.
     \label{fig:Neighbor-automaton}
@@ -2232,7 +2232,7 @@ $$XXII + IX\underline{\textbf{Z}}I + IIXX.$$
 \begin{figure}
 \subfloat[
     \label{fig:nolongerinvariant-automaton}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-14}}}
+]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-14}}}\\
 \subfloat[
     \label{fig:nolongerinvariant-mps}
 ]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-15}}}
@@ -2289,11 +2289,11 @@ $$\Psi^{\alpha\beta\gamma\delta} = \sum_{ijkl} A_{i} B_{ijk}^\alpha C_{kl}^\beta
 \subfloat[
     Matrix product state by itself
     \label{fig:box-line-mps}
-]{\framebox{\includegraphics{images/mypaper-diagram-17}}}
+]{\framebox{\includegraphics{images/mypaper-diagram-17}}}\\
 \subfloat[
     Expectation of an arbitrary operator
     \label{fig:box-line-expectation-arbitrary}
-]{\framebox{\includegraphics{images/mypaper-diagram-18}}}
+]{\framebox{\includegraphics{images/mypaper-diagram-18}}}\\
 \subfloat[
     Expectation of a matrix product operator.
     \label{fig:box-line-expectation-mpo}
@@ -2355,7 +2355,7 @@ $$\mathscr{H}^3 \cdot S_3 = \lambda \mathscr{N}^3\cdot S_3,$$
 \noindent and then picking the eigenvector $S^3$ with the smallest value for $\lambda$.  The cost of solving this eigenvalue problem depends only on the size of the site matrix $S^3$, not on the number of sites, $N$;  however, it also relies on $\mathscr{H}^3$, which in general is very expensive to calculate.
 
 \begin{figure}
-\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-27}}
+\framebox{\includegraphics[width=3.75in]{images/mypaper-diagram-27}}
 \caption{Tensor contractions used to compute $L_3$ and $R_3$}
 \label{fig:formation-of-LR}
 \end{figure}
@@ -2401,7 +2401,7 @@ To summarize: if we can factor our Hamiltonian into a matrix product operator, t
 \subfloat[
     Finite state automaton needed for operator in \ref{fig:2d-4X-operator} given the total ordering shown in \ref{fig:2d-total-ordering}
     \label{fig:2d-4X-FSA}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-32}}}
+]{\framebox{\includegraphics[width=4in]{images/mypaper-diagram-32}}}
 \caption{A total ordering is imposed on the 2D grid in \ref{fig:2d-total-ordering};  this allows us to write down a finite state automaton representation of the 4-$X$ operator shown in \ref{fig:2d-4X-operator}, but the resulting automaton in \ref{fig:2d-4X-FSA} is less than ideal.}
 \end{figure}
 
@@ -2426,15 +2426,15 @@ In this example, we see that there are many different types of factors that are 
 \subfloat[
     A diagram representing the tensor product structure of eqn. \eqref{crazy-tensor-product}.
     \label{crazy-diagram}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-22}}}
+]{\framebox{\includegraphics[width=4in]{images/mypaper-diagram-22}}}\\
 \subfloat[
     An invalid walk through \ref{crazy-diagram}.
     \label{crazy-diagram-bad-walk}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-23}}}
+]{\framebox{\includegraphics[width=4in]{images/mypaper-diagram-23}}}\\
 \subfloat[
     An acceptable walk through \ref{crazy-diagram}.
     \label{crazy-diagram-good-walk}
-]{\framebox{\includegraphics[width=\columnwidth]{images/mypaper-diagram-24}}}
+]{\framebox{\includegraphics[width=4in]{images/mypaper-diagram-24}}}
 \caption{Tensor product state diagrams}
 \end{figure}
 
@@ -2470,28 +2470,25 @@ The grey circles represent sites (or ``agents'') in our system, and the arrows r
 Each signal is an integer that corresponds to an index in a tensor;  it often proves convenient, though, to map these integers to names in order to make clear the working of the agent.  For example, table \ref{tbl:assign} gives the signal names that we use for the agent recognizing our 4-$X$ Hamiltonian.
 
 \begin{table}
-
 \subfloat[For convenience, labels are assigned to index numbers in order to give intuitive names to the signals.
     \label{tbl:assign}
 ]{
-\begin{tabular}{l|l}
-Name    & Index Number \\
-\hline
+\begin{tabular}{l|l} \toprule
+Name    & Index Number \\ \toprule
 Exterior & 0 \\
 Boundary w/ $X$ & 1 \\
 Boundary & 2 \\
 Interior w/ $X$ & 3 \\
-Interior & 4
+Interior & 4 \\
+\bottomrule
 \end{tabular}}
 
 \subfloat[The transition table defining the finite signaling agent.
     \label{tbl:transitions}
 ]{
-\begin{tabular*}{\columnwidth}{cllclll}
-& Input Signals & & Symbol & & Output Signals \\
-\hline
+\begin{tabular*}{\columnwidth}{cllclll} \toprule
+& Input Signals & & Symbol & & Output Signals \\ \toprule
 %\multicolumn{5}{c}{\begin{minipage}{5in}(The following matrix elements handle the case in which no $X$s have been place; the agent may (nondeterministically) choose to either start a square here or not.)\end{minipage}} \\
-\hline
  & \parbox{1in}{\noindent
 \begin{trivlist}
 \item[$\uparrow$] Exterior
@@ -2511,14 +2508,14 @@ Interior & 4
 \item[$\leftarrow$] Exterior
 \end{trivlist}}
  & $\longmapsto$ & $X$ & $\longmapsto$ &
-\parbox{1.25in}{\noindent
+\parbox{1.35in}{\noindent
 \begin{trivlist}
 \item[] Boundary w/ $X$ $\rightarrow$
 \item[] Boundary w/ $X$ $\downarrow$
 \end{trivlist}}\\
 \hline
 %\multicolumn{5}{c}{\begin{minipage}{5in}(These next matrix elements handle the case where one of two $X$s has been placed.)\end{minipage}} \\
-\parbox{1cm}{\includegraphics{images/grey-40}} & \parbox{1in}{
+\parbox{1cm}{\includegraphics{images/grey-40}} & \parbox{1.25in}{
 \begin{trivlist}
 \item[$\uparrow$] Boundary w/ $X$
 \item[$\leftarrow$] Exterior
@@ -2530,7 +2527,7 @@ Interior & 4
 \item[] Boundary $\downarrow$
 \end{trivlist}}\\
 \hline
-\parbox{1cm}{\includegraphics{images/grey-40}} &  \parbox{1in}{
+\parbox{1cm}{\includegraphics{images/grey-40}} &  \parbox{1.3in}{
 \begin{trivlist}
 \item[$\uparrow$] Exterior
 \item[$\leftarrow$] Boundary w/ $X$
@@ -2566,7 +2563,7 @@ Interior & 4
 \item[] Boundary $\downarrow$
 \end{trivlist}}\\
 \hline
-\parbox{1cm}{\includegraphics{images/grey-25}} & \parbox{1in}{
+\parbox{1cm}{\includegraphics{images/grey-25}} & \parbox{1.25in}{
 \begin{trivlist}
 \item[$\uparrow$] Interior w/ $X$
 \item[$\leftarrow$] Interior w/ $X$
@@ -2588,7 +2585,8 @@ Interior & 4
 \begin{trivlist}
 \item[] Interior $\rightarrow$
 \item[] Interior $\downarrow$
-\end{trivlist}}\\
+\end{trivlist}} \\
+\bottomrule
 \end{tabular*}
 }
 
@@ -2602,7 +2600,7 @@ We define an agent by specfying how it reacts to incoming signals.  In this case
 \subfloat [
     A term accepted by the agent
     \label{fig:active-agent-good}
-]{\framebox{\includegraphics[height=3in]{images/mypaper-diagram-34}}}
+]{\framebox{\includegraphics[height=3in]{images/mypaper-diagram-34}}}\\
 \subfloat [
     A term rejected by the agent due to intersecting boundaries
     \label{fig:active-agent-bad}
@@ -2829,13 +2827,13 @@ We shall now construct a \emph{finite state automaton} which computes this funct
 
 \begin{figure}
 \begin{center}
-\framebox{\includegraphics[width=2.5in]{images/diagram-1}}
-\caption{(color online) Finite state automata representation of a sum of exponentially decaying $XX$ interactions.}
+\framebox{\includegraphics[width=4in]{images/diagram-1}}
+\caption{Finite state automata representation of a sum of exponentially decaying $XX$ interactions.}
 \label{finite-state-automaton}
 \end{center}
 \end{figure}
 
-The automaton which computes the function representing our operator is illustrated in Fig. \ref{finite-state-automaton}.  States are indicated by circles, and transition rules are indicated by arrows labeled with a symbol and a weight  (1 if not otherwise specified).  An unconnected arrow designates the initial state (1), and shading designates the accept state (2).  A good way to think about what is going on is that terms are generated by each possible walk from state $1$ to state $2$.  So for example, by taking the path $1\!\!\!\to\!\!1\!\!\to\!\!3\!\!\to\!\!3\!\!\to\!\!3\!\!\to\!\!2$ we generate the term $(\alpha_1 \beta_1^2) \textbf{I} \otimes \textbf{X} \otimes \textbf{I}\otimes \textbf{I} \otimes \textbf{X}$;  summing over all walks for strings of the form $\texttt{I}\,\texttt{X}\,\texttt{I}^2\texttt{X}$ we obtain the desired coefficient $\sum_n \alpha_n \beta_n^2$.
+The automaton which computes the function representing our operator is illustrated in Fig. \ref{finite-state-automaton}.  States are indicated by circles, and transition rules are indicated by arrows labeled with a symbol and a weight  (1 if not otherwise specified).  An unconnected arrow designates the initial state (1), and shading designates the accept state (2).  A good way to think about what is going on is that terms are generated by each possible walk from state $1$ to state $2$.  So for example, by taking the path $1\!\to\!1\!\to\!3\!\to\!3\!\to\!3\!\to\!2$ we generate the term $(\alpha_1 \beta_1^2) \textbf{I} \otimes \textbf{X} \otimes \textbf{I}\otimes \textbf{I} \otimes \textbf{X}$;  summing over all walks for strings of the form $\texttt{I}\,\texttt{X}\,\texttt{I}^2\texttt{X}$ we obtain the desired coefficient $\sum_n \alpha_n \beta_n^2$.
 
 From this automaton, we immediately obtain a matrix product operator representation.  The initial and accept states give us the values for the left and right boundaries:  $\paren{L^{\mathcal{O}}}_k=\delta_{1,k}$ and $\paren{R^{\mathcal{O}}}_k=\delta_{2,k}$.  The elements of the operator tensor, $O^{\textbf{A}}_{i,j}$, are given by the weight on the $i\to j$ transition with the symbol corresponding to operator $\textbf{A}$ (0 if no such transition exists);  for example, we have that $O^{\textbf{X}}_{1,3}=\alpha_1$.  To get a feeling for why this works, observe that a run of the automaton is equivalent to starting with a vector giving initial weights on the states, multiplying this vector some number of times by a transition matrix, and then dotting the result with a vector that filters out all but the weights on the accept states;  this procedure is exactly equivalent to the form of equation \eqref{matrix-product-operator}.
 
@@ -2855,13 +2853,13 @@ Given this approximate matrix product factorization, we applied the algorithm in
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{images/residuals}
-\caption{(color online) Difference between the energy of the computed state and the energy of the exact ground state, plotted for each of the three exponential expansions that were employed.}
+\caption{Difference between the energy of the computed state and the energy of the exact ground state, plotted for each of the three exponential expansions that were employed.}
 \label{residuals}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{images/combined}
-\caption{(color online) (top) Decaying 3-, 6-, and 9-term exponential approximations to $1/r^2$ potential.  (bottom) Two-point correlator for selected values of $\chi$ using the the 9-term exponential approximation;  a residual of the correlator for each value of $\chi$ is plotted simultaneously and labeled by $\varepsilon_\chi$.}
+\caption{(top) Decaying 3-, 6-, and 9-term exponential approximations to $1/r^2$ potential.  (bottom) Two-point correlator for selected values of $\chi$ using the the 9-term exponential approximation;  a residual of the correlator for each value of $\chi$ is plotted simultaneously and labeled by $\varepsilon_\chi$.}
 \label{correlator}
 \label{expansion}
 \end{figure}
