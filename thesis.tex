@@ -16,8 +16,11 @@
     comment,
     graphicx,
     mathrsfs,
+    setspace,
     subfig
 }
+
+\onehalfspacing
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -66,8 +69,15 @@
 \begin{document}
 
 %@+others
-%@+node:gcross.20110318151522.1291: ** Title Page
+%@+node:gcross.20110609201536.1265: ** Front Matter
+\frontmatter
+
+%@+others
+%@+node:gcross.20110318151522.1291: *3* Title Page
+\thispagestyle{empty}
+
 \begin{center}
+\begin{singlespace}
 
 \textsc{\LARGE
 Weapons of Mass Simulation:\\
@@ -76,33 +86,146 @@ building a robust quantum\\[0.25cm]
 computer!
 }\\[1.5cm]
 
-\textsc{\Large Gregory Milton Crosswhite}\\[1.5cm]
+Gregory Milton Crosswhite\\[1.5cm]
 
-A thesis submitted in partial fulfillment of the requirements for the degree of\\[1.5cm]
+A dissertation submitted in partial fulfillment of the requirements for the degree of\\[1.5cm]
 
-Doctorate of Philosophy in Physics\\[1.5cm]
+Doctor of Philosophy in Physics\\[1.5cm]
 
 University of Washington\\[1.5cm]
 
 2011\\[1.5cm]
 
-Program Authorized to Offer Degree:
+Program Authorized to Offer Degree:\\
 Physics Department
 
+\end{singlespace}
 \end{center}
 
 \newpage
-%@+node:gcross.20110405161700.1400: ** Abstract Page
+%@+node:gcross.20110609201536.1269: *3* Signature Page
+\thispagestyle{empty}
+
 \begin{center}
-\textsc{\Large Abstract}
+\begin{singlespace}
+University of Washington\\
+Graduate School\\[1.5cm]
+
+This is to certify that I have examined this copy of a doctoral dissertation by\\[1.5cm]
+
+Gregory Milton Crosswhite\\[1.5cm]
+
+and have found that it is complete and satisfactory in all respects,\\
+and that any and all revisions required by the final\\
+examining committee have been made.\\[1.5cm]
+
+Chair of the Supervisory Committee:\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Dave Bacon\\[1.5cm]
+
+Reading Committee:\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Dave Bacon\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Boris Blinov\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Aram Harrow\\[1cm]
+\end{singlespace}
+\end{center}
+
+\newpage
+%@+node:gcross.20110609201536.1270: *3* Signature Page
+\thispagestyle{empty}
+
+\begin{center}
+\begin{singlespace}
+University of Washington\\
+Graduate School\\[1.5cm]
+
+This is to certify that I have examined this copy of a doctoral dissertation by\\[1.5cm]
+
+Gregory Milton Crosswhite\\[1.5cm]
+
+and have found that it is complete and satisfactory in all respects,\\
+and that any and all revisions required by the final\\
+examining committee have been made.\\[1.5cm]
+
+Chair of the Supervisory Committee:\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Dave Bacon\\[1.5cm]
+
+Reading Committee:\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Dave Bacon\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Boris Blinov\\[1cm]
+
+\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}\\
+Aram Harrow\\[1cm]
+\end{singlespace}
+\end{center}
+
+\newpage
+%@+node:gcross.20110609201536.1264: *3* Quote Slip
+\thispagestyle{empty}
+
+In presenting this dissertation in partial fulfillment of the requirements
+for the doctoral degree at the University of Washington, I agree that the 
+Library shall make its copies freely available for inspection.  I further 
+agree that extensive copying of the dissertation is allowable only for 
+scholarly purposes, consistent with ``fair us'' as prescribed in the U.S. 
+Copyright Law.  Requests for copying or reproduction of this dissertation 
+may be referred to ProQuest Information and Learning, 300 North Zeeb 
+Road, Ann Arbor, MI 48106-1346, 1-800-521-0600, to whom the author 
+has granted ``the right to reproduce and sell (a) copies of the manuscript in 
+microform and/or (b) printed copies of the manuscript made from 
+microform.'' \\[1.5cm]
+
+Signature: \underline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}\\[0.5cm]
+
+Date: \underline{\qquad\qquad\qquad}
+
+\newpage
+%@+node:gcross.20110405161700.1400: *3* Abstract Page
+\thispagestyle{empty}
+
+\begin{center}
+
+\begin{singlespace}
+University of Washington\\[1.5cm]
+
+\textbf{Abstract}\\[1.5cm]
+
+Weapons of Mass Simulation: smashing down the barriers to building a robust quantum computer!\\[1.5cm]
+
+Gregory Milton Crosswhite\\[1.5cm]
+
+Chair of the Supervisory Committee:\\
+Assistant Research Professor Dave Bacon\\
+Department of Computer Science and Engineering\\[1.5cm]
+\end{singlespace}
 \end{center}
 
 Quantum computation holds the potential to bring forth a new age of science and engineering when currently intractable problems can be routinely solved on a quantum computer.  Unfortunately, it is very difficult to design a quantum computer that is robust to noise.  In this thesis, we present two tools that leverage classical computational power to attack this problem.  The first tool, \emph{CodeQuest}, is an algorithm that computes the optimal quantum subsystem code that can be implemented using an input choice of Pauli measurement;  it proves particularly useful for searching through large sets of choices of measurements to see if any of them result in a useful code.  The second tool, \emph{Matrix Product States}, is an ansatz that one can use to compute the lowest-lying eigenspectra of a Hamiltonian by employing the variational method.  For each of these tools we describe both the theory behind them and the practice of using them to advance the science of designing robust quantum computers.
-%@+node:gcross.20110318151522.1295: ** Table of Contents
+
+\newpage
+%@-others
+%@+node:gcross.20110609201536.1266: ** Main Matter
+\mainmatter
+
+%@+others
+%@+node:gcross.20110318151522.1295: *3* Table of Contents
 \tableofcontents
-%@+node:gcross.20110318151522.1293: ** List of Tables
+%@+node:gcross.20110318151522.1293: *3* List of Tables
 \listoftables
-%@+node:gcross.20110314174620.1276: ** Introduction
+%@+node:gcross.20110314174620.1276: *3* Introduction
 \part{Introduction}
 
 When physicists discovered the laws of quantum mechanics, they were both excited and disappointed.  On the one hand, this new theory did a fantastic job of modeling all of the bizarre microscopic phenomena that they had been observing in their labs.  But on the other hand, the theory was fundamentally \emph{nondeterministic}, postulating that reality was generally not in a single observable state but rather existed in many states at once; upon measurement one state is selected at random and the rest discarded.  This made many physicists uncomfortable, as most famously expressed by Albert Einstein:
@@ -128,10 +251,10 @@ For both ground state quantum computing and adiabatic quantum computing, the key
 In Part \ref{part:Matrix Product States} of this thesis, we discuss a representation that meets all of these criteria known as ``matrix product states'' that have been shown to work very well in practice.  We shall present our own important insight that they are deeply connected to the formalism of \emph{finite state automata} (a fundamental construction in formal language theory) and show how this connection can be leveraged to simulate non-trivial Hamiltonians, including those with long-range interactions.  Finally, we shall present a simulation code that was written using these ideas, and show how it has been used to compute energy gaps in systems relevant to ground state and adiabatic computing, hence giving us insight into the viability of these methods.
 
 Finally, in Part \ref{part:Conclusions} we briefly present the conclusions of this thesis.
-%@+node:gcross.20110318151522.1287: ** CodeQuest
+%@+node:gcross.20110318151522.1287: *3* CodeQuest
 \part{CodeQuest}
 \label{part:CodeQuest}
-%@+node:gcross.20110318151522.1297: *3* Prelude
+%@+node:gcross.20110318151522.1297: *4* Prelude
 Quantum computers are a technological possibility because there exist methods for building these computers out of physical components that fail to operate in an error-free manner.  The theory behind achieving this makes up the field of quantum error correction~\cite{Shor:95a,Steane:96a,Steane:96b,Steane:96c,Knill:97a,Gottesman:97a} and fault-tolerant quantum computing~\cite{Shor:96a,Aharonov:97a,Knill:98a,Knill:98b,Preskill:98a,Aliferis:05a}. Of particular note is the threshold theorem for fault-tolerant quantum computing~\cite{Aharonov:97a,Knill:98a,Knill:98b,Aliferis:05a}.  This theorem says that if a quantum system decoheres slowly enough, and sufficiently precise control is maintained over the system, then effectively arbitrary error-free quantum computations can be performed.  The way that this is achieved is through the use of quantum information which is encoded across multiple quantum subsystems into a quantum error correcting code.
 
 Different quantum codes have different advantages and disadvantages for implementation in a fault-tolerant device~\cite{Cross:07a}.  In this paper we undertake a study of an important class of quantum codes, quantum stabilizer subsystem codes~\cite{Poulin:05a,Kribs:05a,Kribs:05b,Kribs:06a} generated by measurements that are tensor products of Pauli operators.  Part of the significance of this class of codes is that they can be used to implement \emph{passive} fault tolerance by turning the measurement operators into interaction terms forming a Hamiltonian that provide energetic protection against errors;  the first example of such an approach was the toric code and related models due to Kitaev~\cite{Kitaev:97c,Kitaev:03a}, and a plethora of related approaches have now been investigated~\cite{Barnes:00a,Bacon:01b,Jordan:05a,Weinstein:05b,Bacon:06a,Bacon:08b,Nayak:08a,Bombin:09a,Chesi:10a}.
@@ -141,7 +264,7 @@ Previous approaches for studying quantum subsystem codes have focused on using t
 In this part we present an algorithm that computes the optimal subsystem code for a given set of measurements consisting of tensors products of Pauli operators.  In the process of doing this we also develop a formalism that allows us to prove that the algorithm is correct and that the code it compute is indeed the optimal code for the given measurements.  We also prove bounds on the running time of the algorithm that show that the algorithm terminates (relatively) quickly when the optimal code is not very robust to errors.  Because of this property, the algorithm can be applied to sift through a class of possible measurements to determine which (if any) result in a robust code.
 
 To demonstrate the use of this algorithm, we focus on classes of measurement operators where each measurement is limited in action to two qubits --- that is, to operators taking the form $P_i \cdot Q_j$, where $P_i$ and $Q_j$ are Pauli operators acting on respectively the $i^{\text{th}}$ and $j^{\text{th}}$ qubit of the system;  examples of previous subsystem codes that have been constructed with this structure are the quantum compass model subsystem code~\cite{Bacon:06a} (including generalizations~\cite{Bacon:06b,Bravyi:10a}) and topological subsystem codes~\cite{Bombin:10a}.  In particular we focus on systems where the measurement operators only couple qubits that are neighboring on a periodic lattice arising from the convex uniform tilings of the plane.  We perform a systematic study of the codes on lattices arising from nine of the eleven such tilings, and present the results of this search.
-%@+node:gcross.20110318151522.1300: *3* Introduction
+%@+node:gcross.20110318151522.1300: *4* Introduction
 \chapter{Introduction}
 
 We begin by a brief review of the notion of quantum error correcting codes and in particular the subsystem stabilizer codes~\cite{Poulin:05a}.
@@ -187,7 +310,7 @@ $o := \bigotimes_i P_i$ where $P_i$ is the Pauli operator $P$ acting on the $i^{
 Approaches to answering this question typically involve applying theoretical analysis with varying degrees of cleverness.  In this paper we present an alternative approach.  In Section \ref{sec:algorithm}, we present an algorithm which for every set of local measurement operators computes a quantum subsystem code that arises from the algebra of these operators\footnote{We say that we compute `a' code rather than `the' code because there is almost never a unique solution, since among other transformations one can multiple every gauge and logical qubit operator by an element from the stabilizers and end up with an equivalent code.}.  Along the way we develop a formalism that allows us to prove not only that this algorithm is correct, but also that the code that it computes is \emph{optimal} in the sense that there exists no other code arising from the same set of measurements for which the distance of any of the logical qubits has been increased.  This property makes this algorithm useful for analyzing the properties of codes arising from measurements that are too overwhelming to analyze by hand.  
 
 We shall also show that an important property of this algorithm is that it terminates (relatively) quickly when the distance of the code is small, which allows it to be used not only to solve for individual codes, but also to search through entire classes of sets of measurements to see if any have high-distance qubits.  Motivated by previous results demonstrating the utility of codes implemented using systems on a lattice, we undertake a systematic investigation of codes where the measurement operators are restricted to the 2-body interactions arising from the edges of periodic lattices derived from the 11 regular tilings.  In Section \ref{sec:lattice} we discuss our approach for applying the algorithm to perform a systematic search for codes that can be implemented on these tilings, and we the present numerical results that we obtained. In Section \ref{sec:conclusion} we present our conclusions.
-%@+node:gcross.20110318151522.1301: *4* Notation
+%@+node:gcross.20110318151522.1301: *5* Notation
 \section{Notation}
 
 In this paper we adopt the following conventions for notation:
@@ -200,15 +323,15 @@ In this paper we adopt the following conventions for notation:
 \item \emph{collections} of \emph{integers} are denoted by using lower-case letters with either a tilde or an arrow above them, e.g. $\tilde k$ and $\vec k$;  and
 \item \emph{collections} of \emph{other kinds} of objects are typically denoted by capital letters in a fancy script.
 \end{itemize}
-%@+node:gcross.20110318151522.1370: *3* Theory
+%@+node:gcross.20110318151522.1370: *4* Theory
 \chapter{Theory} \label{sec:algorithm}
-%@+node:gcross.20110318151522.1371: *4* Stabilizers and gauge qubits
+%@+node:gcross.20110318151522.1371: *5* Stabilizers and gauge qubits
 \section{Construction of the Subsystem Code}
 
 \begin{remark}
 This subsection describes by way of a constructive proof an algorithm that given a set of measurement operators computes a quantum code that can be implemented by these operators.  For a listing of pseudo-code that implements this algorithm, see Table \ref{table:algo1} near the end of this subsection.
 \end{remark}
-%@+node:gcross.20110318151522.1372: *5* Introduce main theorem
+%@+node:gcross.20110318151522.1372: *6* Introduce main theorem
 Although conceptually a subsystem code is an isomorphism $T$ such that  $\mathscr{P}\approx^T \mathscr{S}\times\mathscr{G}\times\mathscr{Q}$ --- that is, an isomorphism between the \emph{physical} space of qubits and the \emph{computational} space of qubits in whose terms our computation is actually expressed --- we do not need to actually construct this isomorphism in order to be able to use the code.  Since all of our work will be done on the physical system anyway, it suffices to know the operators in the physical space $\mathscr{P}$ that are isomorphic to the qubit measurement operators of interest in the computational space $\mathscr{S}\times\mathscr{G}\times\mathscr{Q}$, and it is exactly the operators on $\mathscr{P}$ that the algorithm we present shall compute\footnote{If one really wanted to, one could explicitly construct the isomorphism $\mathscr{T}$ from these operators by computing the unitary operator which simultaneously diagonalizes a the maximal subset of commuting measurements from this set of operators on $\mathscr{P}$, but in practice this is not particularly useful.}.
 
 When one wants to define a qubit in terms of its measurement operators, it suffices to define two operators that anti-commute with each other but which commute with all of the others measurement operators that have been defined, since this gives us the $X$ and $Z$ measurements on the qubit which are sufficient to generate the full $Pauli$ group (minus phases).  Since working with such pairs of operators shall be a common theme in this algorithm, we shall introduce the following definition in order to simplify the language used to describe them.
@@ -248,7 +371,7 @@ This theorem follows, at least implicitly, from prior work on stabilizer codes~\
 
 The main work in the proof of this theorem will be performed by proving several related propositions.  First we shall show how the set $\set G$ and a sequence $\lst S$ are constructed from the sequence of operators $\lst O$.  Since we want our stabilizers to form an independent set of operators, we shall then show that through a Gaussian elimination procedure it is possible to extract a list of independent operators from a sequence $\lst S$ resulting in a set $\set S$.  Finally, we shall show how using this same Gaussian elimination procedure we can transform a subset of the operators of $\set S\cup\set G$ into a form that makes it trivial to compute the logical qubit operators $\set L$.
 \end{remark}
-%@+node:gcross.20110318151522.1373: *5* Construction of sequences
+%@+node:gcross.20110318151522.1373: *6* Construction of sequences
 \begin{proposition} \label{proposition-SG} Suppose that we are given a sequence of Pauli operators $\lst O\subseteq \pauligroup$.  Then there exists a sequence of Pauli operators $\lst S\subseteq\pauligroup$ and a set of Pauli operators $\set G\subseteq\pauligroup$ such that
 \begin{enumerate}
 \item all of the operators in $\lst S$ commute with each other and also all of the operators in $\lst G$; \label{stabs-commute-with-G}
@@ -283,7 +406,7 @@ Lastly, since $s\in \set G$, we can form any operator in $\lst S'$ with products
 
 We conclude by noting that since all of the operators in $\lst S$ and $\set G$ were formed from products of operators in $\lst O$, which are Pauli operators (i.e., members of the group $\pauligroup$), they are Pauli operators themselves.
 \end{proof}
-%@+node:gcross.20110318151522.1374: *5* Making them independent
+%@+node:gcross.20110318151522.1374: *6* Making them independent
 \begin{remark}
 A consequence of not requiring independence of the operators in $\lst O$ is that the operators $\lst S$ given by Proposition \ref{proposition-SG} are not necessarily independent.  Happily, since all of these operators can be expressed as tensor products of Pauli operators, we can construct a set of independent operators by performing an analog of Gaussian elimination.
 \end{remark}
@@ -331,7 +454,7 @@ l & i=n
 \end{aligned}
 $$ and we are done.
 \end{proof}
-%@+node:gcross.20110318151522.1375: *5* Construct the logical operators
+%@+node:gcross.20110318151522.1375: *6* Construct the logical operators
 \begin{remark}
 Proposition \ref{make-independent-using-elimination} is good for more than computing an independent set of generators from a commuting list of operators;  it is also the key ingredient in computing the logical qubit operators.
 \end{remark}
@@ -361,7 +484,7 @@ Next, to see that property \ref{L-are-conjugal-pairs} holds, observe that for ev
 
 Finally, to see that property \ref{L-completes-the-generators} holds, observe that since the operators in $\set S$ commute they can therefore be simultaneously diagonalized, which means that there is an automorphism on $\pauligroup$ that takes $\lst S_i\mapsto P_i^{[1]}$ for every $i=1 \dots n$.  The only operators that commute with every such $P_i^{[1]}$ are those which do not contain any factor of $P_i^{[0]}$ for $i=1 \dots n$, and so $$\centralizer_\pauligroup\paren{\{P_i^{[0]}\}_{i=1\dots n}} = \genfun\paren{\{P_i^{[1]}\}_{i=1 \dots n}\cup \{P_i^{[l]}\}_{i=n+1 \dots N, \,\, l=0,1}},$$ which has $2N-n$ generators.  Since the automorphism preserves the number of generators in the centralizer, we thus conclude that $\centralizer_\pauligroup(\set S)$ has exactly $2N-n$ generators.  Since $\set S\cup\set L$ contains independent operators which commute with every member of $\set S$, and furthermore $|\set S\cup\set L|=2N-n$, we thus conclude that $\genfun\paren{\set S\cup\set L}=\centralizer_\pauligroup(\set S)$.
 \end{proof}
-%@+node:gcross.20110318151522.1376: *5* Prove main theorem
+%@+node:gcross.20110318151522.1376: *6* Prove main theorem
 With these building blocks in place, we now prove the main theorem:
 
 \begin{proof}[Proof of Theorem \ref{theorem-SG}]
@@ -371,13 +494,13 @@ Now let $\set F$ be a maximal subset of commuting operators in $\set G$ --- i.e.
 $$\set L := \left\{m\cdot\paren{\prod_{f\in \set F,\,\,\{m,\text{conj}_{\set G}(f)\}=0} f }:\quad m \in\set M\right\}$$
 where $\text{conj}_{\set G}(F)$ is the conjugal partner of $F$ in the set $\set G$.  This guarantees that the operators in $\set L$ commute with every operator in $\set S\cup\set G$, and so we are done.
 \end{proof}
-%@+node:gcross.20110318151522.1377: *5* Pseudo-code
+%@+node:gcross.20110318151522.1377: *6* Pseudo-code
 \begin{remark}
 A pseudo-code representation of the algorithm described by Theorem \ref{theorem-SG} is given in Table \ref{table:algo1}.
 \end{remark}
 
 %@+others
-%@+node:gcross.20110318151522.1378: *6* Compute-Subsystem-Code
+%@+node:gcross.20110318151522.1378: *7* Compute-Subsystem-Code
 \begin{table}
 {\scriptsize
 \begin{codebox}
@@ -445,7 +568,7 @@ A pseudo-code representation of the algorithm described by Theorem \ref{theorem-
 }
 \caption[Algorithm \proc{Compute-Subsystem-Code}]{\small Algorithm which computes the subsystem code generated by a given list of measurement operators $\lst O$.  The subroutine \textsc{Gaussian-Elimination} is listed in Table \ref{table:gaussian-elimination}.} \label{table:algo1}
 \end{table}
-%@+node:gcross.20110318151522.1379: *6* Gaussian-Elimination
+%@+node:gcross.20110318151522.1379: *7* Gaussian-Elimination
 \begin{table}
 {\footnotesize
 \begin{codebox}
@@ -513,7 +636,7 @@ A pseudo-code representation of the algorithm described by Theorem \ref{theorem-
 \label{table:gaussian-elimination}
 \end{table}
 %@-others
-%@+node:gcross.20110318151522.1380: *4* Optimization
+%@+node:gcross.20110318151522.1380: *5* Optimization
 \section{Optimization of the Logical Qubits}
 
 \begin{remark}
@@ -521,9 +644,9 @@ A pseudo-code representation of the algorithm that will be described in this sec
 \end{remark}
 
 %@+<< Main body >>
-%@+node:gcross.20110318151522.1381: *5* << Main body >>
+%@+node:gcross.20110318151522.1381: *6* << Main body >>
 %@+others
-%@+node:gcross.20110318151522.1382: *6* Lemma:  Recombining generators
+%@+node:gcross.20110318151522.1382: *7* Lemma:  Recombining generators
 In general there are multiple sets of operators that satisfy the properties of \ref{theorem-SG}, as is illustrated by the following Lemma:
 
 \begin{lemma}
@@ -543,19 +666,19 @@ $\,$
 \item Since $b$ and $c$ are Pauli operators and thus square to the identity, we have that $a\cdot c\cdot c=a$ and $d\cdot b\cdot b=d$, and so $\genfun\paren{\{a,b,c,d\}}=\genfun\paren{\{a\cdot c,b,c,d\cdot b\}}$.
 \end{enumerate}
 \end{proof}
-%@+node:gcross.20110318151522.1383: *6* Definition: Undetectable error
+%@+node:gcross.20110318151522.1383: *7* Definition: Undetectable error
 As a result of this lemma, we see that we can take pairs of arbitrary conjugal pairs from sets $\set G$ and $\set L$ of Theorem \ref{theorem-SG} and replace them with different pairs per the recipe in Lemma \ref{combining-pairs} such that the properties of the theorem still hold.  So given that these sets are not unique, the natural question is:  What is the best choice of $\set G$ and $\set L$?  To answer this, we observe that another criteria we would like for our code to satisfy is that it be as robust to errors as possible;  in particular, we seek to maximize the difficulty of \emph{undetectable errors}, which is defined as follows:
 
 \begin{definition}
 Given a set $\set S\subseteq\pauligroup$ and operators $l\in\pauligroup$ and $e\in\centralizer_\pauligroup(\set S)$ which anti-commute (i.e., $\{l,e\}=0$), we say that $e$ is an \emph{undetectable error with respect to} $\set S$ \emph{acting on} $l$.
 \end{definition}
-%@+node:gcross.20110318151522.1384: *6* Definition: Weight
+%@+node:gcross.20110318151522.1384: *7* Definition: Weight
 We assume that the `difficulty' of an interaction between our physical system and its environment is related to the number of physical qubits in our system that are participating in the interaction.  Thus, the natural metric for measuring the relative difficulty of an error is given by its weight, which recall is defined as follows:
 
 \begin{definition}
 Given an operator $p\in\pauligroup$---which recalls means that $p$ is the tensor product of single-qubit Pauli unnormalized spin matrices---the \emph{weight} of $p$ is the number of single-qubit operators in the product which are non-trivial (i.e., not the identity).  So for example, the weight of $I\otimes I\otimes I$ is 0, the weight of $I\otimes Z\otimes I\otimes X$ is 2, and the weight of $Z\otimes X\otimes Y$ is 3.
 \end{definition}
-%@+node:gcross.20110318151522.1385: *6* Definition: Additional notation
+%@+node:gcross.20110318151522.1385: *7* Definition: Additional notation
 For convenience, we introduce the following additional notation:
 
 \begin{definition}
@@ -582,13 +705,13 @@ $\quad$
 \end{itemize}
 
 \end{definition}
-%@+node:gcross.20110318151522.1386: *6* Definition: Total ordering => Optimal choice of qubits
+%@+node:gcross.20110318151522.1386: *7* Definition: Total ordering => Optimal choice of qubits
 Given the notation above, we now precisely define what we mean by the ``best choice'' of logical qubits.
 
 \begin{definition}
 An \emph{optimal choice of qubits stabilized by $\set S$} is any choice of qubits, $\lst P$ stabilized by $\set S$, such that given any other choice of qubits, $\lst P'$, that is also stabilized by $\set S$ and which satisfies $(\genfun\circ \set U)(\lst P)=(\genfun\circ \set U)(\lst P')$, we have that $\lst M(\lst P)_i \ge \lst M(\lst P')_i$ for all $1\le i \le |\lst P|=|\lst P'|$.\footnote{Note that since $\lst P$ and $\lst P'$ are sequences of conjugal pairs without duplicates they are therefore independent, and so if $(\genfun\circ \set U)(\lst P)=(\genfun\circ \set U)(\lst P')$ then we know automatically that $|\lst P|=|\lst P'|$.}
 \end{definition}
-%@+node:gcross.20110318151522.1387: *6* Definition: Optimization procedure
+%@+node:gcross.20110318151522.1387: *7* Definition: Optimization procedure
 We now present an algorithm for computing the optimal choice of logical qubits from a set of input qubits.  The key insight upon which the algorithm is built is that undetectable errors acting on the space of logical qubits can never be eliminated entirely, so there will always be \emph{some} operator on which they act.  Thus, the goal of the optimization procedure is not to eliminate errors, but rather to \emph{contain} them, so that they act on as few operators as possible.
 
 The optimization algorithm works by starting with an empty (and therefore automatically optimal) choice of qubits and a set of `unoptimized' qubits, and making progress by gradually moving qubits from the unoptimized set into the choice in such a way that preserves the optimality of the choice.  The trick is that we want to delay as long as possible moving a qubit into the choice, until we have had every chance to improve it.  Thus, we additionally keep track of a subset of pairs in the choice whose second members have yet to be used to contain an error, and then use them as much as possible to fix errors.  That is, at every step in the algorithm, we scan for the minimal weight undetectable error acting on the set of operators consisting of both the second member of the pairs in this subset and all of the operators in the unoptimized set of qubits.  If the minimal weight error acts on an operator in the first category, then we remove the pair from the subset and use this operator to fix this error wherever it occurs in both the second members of pairs in the subset and the unoptimized qubits.  Otherwise, we pull out a qubit from the unoptimized set on which the error acts, use the first member in the pair to fix the error in the qubits remaining in the unoptimized subset, add the pair to the subset of qubits whose second members have yet to be used to contain an error, and then add it to the end of the choice.  At this point our choice turns out to still be optimal because if there had been a way to make the qubit we just added any better by recombining it with other qubits in the choice then we would have already done so by now.
@@ -703,8 +826,8 @@ $$
 
 Table \ref{table:algorithm-optimization} contains a listing of pseudo-code that uses the above algorithm to compute the optimal choice of qubits.  For the sake of completeness, it includes additional steps that pertain to the details of how the minimal weight operator is computed, which will be discussed in more detail in Section \ref{subsubsection:running time analysis}.
 
-%@+node:gcross.20110318151522.1388: *6* Pseudo-code
-%@+node:gcross.20110318151522.1389: *7* Optimize-Logical-Qubits
+%@+node:gcross.20110318151522.1388: *7* Pseudo-code
+%@+node:gcross.20110318151522.1389: *8* Optimize-Logical-Qubits
 \begin{table}
 {\scriptsize
 \begin{codebox}
@@ -783,7 +906,7 @@ Table \ref{table:algorithm-optimization} contains a listing of pseudo-code that 
 }
 \caption[Algorithm \proc{Optimize-Logical-Qubits}]{\small Algorithm which optimizes the logical qubits for a given subsystem code.} \label{table:algorithm-optimization}
 \end{table}
-%@+node:gcross.20110318151522.1390: *7* Fix-Logical-Qubits
+%@+node:gcross.20110318151522.1390: *8* Fix-Logical-Qubits
 \begin{table}
 \begin{codebox}
 \Procname{$\proc{Fix-Logical-Qubits}(\lst L,k,e,q_A,q_B)$}
@@ -812,7 +935,7 @@ Table \ref{table:algorithm-optimization} contains a listing of pseudo-code that 
 \end{codebox}
 \caption[Algorithm \proc{Fix-Logical-Qubits}]{Algorithm which `fixes' a subset of the logical qubits so that they are robust to a given error.} \label{table:fix-logical-qubits}
 \end{table}
-%@+node:gcross.20110318151522.1391: *6* Definition: Running time
+%@+node:gcross.20110318151522.1391: *7* Definition: Running time
 In addition to proving that the above algorithm successfully constructs an optimal choice of qubits, we shall also provide a bound on its running time.  In order to do this, we first need to precisely define what we mean by the running time for the purposes of this section.
 
 \begin{definition}
@@ -820,7 +943,7 @@ We say that a computation can be performed \emph{in time $x$} if the computation
 \end{definition}
 
 Of course, the number of products of Pauli operators is not the only metric that could serve as the gauge for the running time, but it suffices for our purposes.
-%@+node:gcross.20110318151522.1392: *6* Introduce Theorem
+%@+node:gcross.20110318151522.1392: *7* Introduce Theorem
 We now present the main result of this section.
 
 \begin{theorem}
@@ -839,19 +962,19 @@ The proof of this Theorem is rather technical and shall be split into several su
 %@-<< Main body >>
 
 %@+others
-%@+node:gcross.20110318151522.1393: *5* Optimality condition
+%@+node:gcross.20110318151522.1393: *6* Optimality condition
 \subsection{Optimality Condition}
 
 \label{optimal-generators}
 
 %@+others
-%@+node:gcross.20110318151522.1394: *6* Definition: Unimprovable set
+%@+node:gcross.20110318151522.1394: *7* Definition: Unimprovable set
 How do we know that a choice of qubits is optimal?  Intuitively, it should be sufficient to prove that a choice of qubits is optimal if we can show that there is no way that we can recombine qubits in the choice to form one or more qubits that are more robust than their component factors --- that is, there is no way that any qubit can be ``improved'' by its involvement in such a product.  This condition is stated formally in the following definition of \emph{unimprovable sets}:
 
 \begin{definition}
 An \emph{unimprovable set with respect to $\set S$} is a set of Pauli operators, $\set O$, such that for any subset, $\set X\subseteq \set O$, we have that $(\om_{\set S}\circ\prod)(\set X) = \min_{x\in\set X}\om_{\set S}(x)$.  We say that an unimprovable set $\set O$ \emph{extends to $\lst Q$} if for all subsets $\set X \subseteq \set O\cup\set Q$ such that $\set X\cap \set O \ne \emptyset$ we have that $(\om_{\set S}\circ\prod)(\set X) \le \min_{x\in\set X\cap \set O}\om_{\set S}(x)$.
 \end{definition}
-%@+node:gcross.20110318151522.1395: *6* Introduce Theorem
+%@+node:gcross.20110318151522.1395: *7* Introduce Theorem
 The following Theorem is the main result of this subsection that proves that this condition is indeed sufficient to show that a choice of logical qubits is optimal.
 
 \begin{theorem}
@@ -864,7 +987,7 @@ The intuition behind the proof of this Theorem is that because the set of first 
 
 To assist us in proving this Theorem, we shall first prove a number of useful Lemmas and Propositions.  We start with a simple Lemma that proves that taking a product of operators results in an operator that is no ``worse'' (with respect to its robustness to errors) than the worst operator in the product.
 \end{remark}
-%@+node:gcross.20110318151522.1396: *6* Lemma: Combinations cannot make things worse
+%@+node:gcross.20110318151522.1396: *7* Lemma: Combinations cannot make things worse
 \begin{lemma}
 \label{combinations-cannot-make-things-worse}
 For any set of operators $\set O$, we have that $(\om_{\set S}\circ \prod)(\set O) \ge \text{min}_{o\in \set O}\,\om_{\set S}\paren{o}$.
@@ -872,7 +995,7 @@ For any set of operators $\set O$, we have that $(\om_{\set S}\circ \prod)(\set 
 
 \begin{proof}[Proof of Lemma]
 Any undetectable error with respect to $\set S$ acting on $(\om_{\set S}\circ \prod)(\set O)$ must also act at least one of the operators in $\set O$ since otherwise it cannot anti-commute with the product. \end{proof}
-%@+node:gcross.20110318151522.1397: *6* Lemma: The lesser operator wins
+%@+node:gcross.20110318151522.1397: *7* Lemma: The lesser operator wins
 \begin{remark}
 In general, taking products of operators might result in an operator that is better than the worst operator in the product because errors will cancel each other out --- i.e., if two operators in the product anti-commute with an error then their product commutes with the error.  Thus, it is useful to state a condition under which we can be certain that this will not happen, so that the product is exactly as bad as the worst operator, which we do in the following Lemma.
 \end{remark}
@@ -885,11 +1008,11 @@ Suppose we are given two operators $a,b\in\pauligroup$ such that $\om_{\set S}(a
 \begin{proof}[Proof of Lemma]
 Since $\om_{\set S}(a)<\om_{\set S}(b)$, there must be an undetectable error with respect to $\set S$ that acts on $a$ but not on $b$;  thus, it must anti-commute with and hence act on the product $a\cdot b$, so that $\om_{\set S}(a\cdot b)\le \om_{\set S}(a)$.  Since $\om_{\set S}(a\cdot b)\ge \om_{\set S}(a)$ by Lemma \ref{lesser-operator-wins}, we conclude that $\om_{\set S}(a\cdot b) = \om_{\set S}(a)$.
 \end{proof}
-%@+node:gcross.20110318151522.1398: *6* Proposition: Bound on recombinations
+%@+node:gcross.20110318151522.1398: *7* Proposition: Bound on recombinations
 \begin{remark}
 Intuitively we should expect that it is not possible to take $n$ qubits and recombine them to form $n+k$ independent qubits where $k>0$.  To state this intuition in other terms, suppose we are given a set of conjugal pairs $\set C$ that are generated from some other set of conjugal pairs $\set D$.  We know that every pair in $\set C$ must have a member that includes a factor that is a first member of a pair in $\set D$ (since otherwise the members of the pair cannot anti-commute), so let $\set A$ be the set of first members of pairs in $\set D$.  Our intuition then tells us that $|\set C|\le |\set A|=|\set D|$.  The following Proposition states this fact formally:
 \end{remark}
-%@+node:gcross.20110318151522.1399: *7* Statement
+%@+node:gcross.20110318151522.1399: *8* Statement
 \begin{proposition}
 \label{bound-on-recombinations}
 Suppose we are given
@@ -905,7 +1028,7 @@ The basic idea behind the proof of this Proposition is that an analogue of Gauss
 
 The formal proof is somewhat technical and so we first introduce several Lemmas.  First we prove a small helper Lemma that shows that it is possible to take a conjugal pair in which a given generator appears and rearrange it so that the generator only appears in the first member of the pair.
 \end{remark}
-%@+node:gcross.20110318151522.1400: *7* Single pair rearrangement.
+%@+node:gcross.20110318151522.1400: *8* Single pair rearrangement.
 \begin{lemma}
 \label{single-pair-rearrangement}
 Let $A:=(a,b)$ with $\{a,b\}\subseteq\genfun(\set Q)$ be a conjugal pair with respect to some set $\set S$, and $o$ be some Pauli operator such that $o\in\set G_{\set Q}(A)$.  Then there exists a pair $B:=(c,d)$ such that
@@ -930,7 +1053,7 @@ $$
 $$
 Note that in any of the above cases, properties 1-3 are satisfied by construction, property 4 is satisfied because $c$ and $d$ are products of $a$ and $b$ which commute with every element in $\set S\backslash \{a,b\}$ and $\{c,d\}=0$, and finally property 5 is satisfied because $\{a,b\}\subseteq \genfun\paren{\{c,d\}}$ and $\{c,d\}\subseteq \genfun\paren{\{a,b\}}$.
 \end{proof}
-%@+node:gcross.20110318151522.1401: *7* Directed Gaussian elimination
+%@+node:gcross.20110318151522.1401: *8* Directed Gaussian elimination
 \begin{remark}
 This next Lemma contains the heart of this Proposition by introducing an analogue to a directed Gaussian elimination procedure.  Specifically, it shows that if we have a generator $a\in\set A$ that appears in one or more conjugal pairs, then we can take products of the conjugal pairs to eliminate it from appearing anywhere except in the first member of a single pair.
 \end{remark}
@@ -956,7 +1079,7 @@ Otherwise, apply Lemma \ref{single-pair-rearrangement}, setting $A:=X''$, $o:=a$
 
 Let $\set D:=\{X\}\cup\set D'$, and observe that $|\set D|=|\set D'|+1=|\set C\backslash \{X''\}|-1+1=|\set C|-1$, and also that $(\genfun\circ\set U)(\{Y\}\cup\set D)=(\genfun\circ\set U)(\{X,Y\}\cup\set D')=(\genfun\circ\set U)(\{X''\}\cup(\{Y'\}\cup\set D'))=(\genfun\circ\set U)(\{X''\}\cup(\set C'\backslash\{X''\}))=(\genfun\circ\set U)(\set C)$.  Furthermore, by the earlier recursive application of this Lemma we know that $a\notin\set G_{\set Q}(O)$ for every $O\in \set D'$, so since we have also established that $a\notin \set G_{\set Q}(X)$, we conclude that $a\notin\set G_{\set Q}(O)$ for every $O\in \set D$;  since also know that every such $O$ must also satisfy $\set G_{\set Q}(O)\cap \set A \ne \emptyset$, we conclude that every such $O$ satisfies $\set G_{\set Q}(O) \cap A\backslash\{a\}\ne\emptyset$.
 \end{proof}
-%@+node:gcross.20110318151522.1402: *7* Undirected Gaussian elimination
+%@+node:gcross.20110318151522.1402: *8* Undirected Gaussian elimination
 \begin{remark}
 This next Lemma provides the small but important result that we can always find a generator $a$ that appears somewhere in the conjugal pairs;  this has the consequence that we can now perform \emph{undirected} Gaussian elimination (in contrast to the \emph{directed} Gaussian elimination procedure described in the previous Lemma) by picking an arbitrary generator to eliminate rather than specifying a particular generator up-front.
 \end{remark}
@@ -969,7 +1092,7 @@ In the context of Proposition \ref{bound-on-recombinations}, there exists a Paul
 \begin{proof}
 Take any pair $Y'\in\set C$.  By the assumptions of Proposition \ref{bound-on-recombinations}, we know that $\set G(Y')\cap \set A \ne \emptyset$, which implies that there exists an element $a\in A$ such that either $a\in (\set G_{\set Q}\circ p_1)(Y')$ or $a\in (\set G_{\set Q}\circ p_2)(Y')$.  The existence of $Y$ and $\set D$ then follow immediately from the application of Lemma \ref{directed-gaussian-elimination-of-logicals}.
 \end{proof}
-%@+node:gcross.20110318151522.1403: *7* Elimination to create subset
+%@+node:gcross.20110318151522.1403: *8* Elimination to create subset
 \begin{remark}
 This final Lemma (inside the proof of Proposition \ref{bound-on-recombinations}) shows using Gaussian elimination that there must be a number of generators from $\set A$ present in the pairs in $\set C$ that is equal to the size of $\set C$, since otherwise we could recombine the pairs in $\set C$ to obtain a pair that includes no generator from $\set A$, contradicting the assumptions of Proposition \ref{bound-on-recombinations}.
 \end{remark}
@@ -994,7 +1117,7 @@ Second, observe that since $(\genfun\circ\set U)(\set X')=(\genfun\circ\set U)(\
 
 Finally, observe that for every $o\in\set O$ we either have that $o=a$, in which case $Y\in\set X$ and $o\in\set G_{\set Q}(Y)$, or $o\in \set A\backslash\{a\}$, in which case by recursive application of this Lemma we know that there is an operator $Z\in \set X'\subseteq \set X$ such that $o\in\set G_{\set Q}(Z)$.
 \end{proof}
-%@+node:gcross.20110318151522.1404: *7* Proof
+%@+node:gcross.20110318151522.1404: *8* Proof
 \begin{remark}
 With the preceding Lemmas having performed the heavy lifting, the proof of Proposition \ref{bound-on-recombinations} is quite simple.
 \end{remark}
@@ -1002,7 +1125,7 @@ With the preceding Lemmas having performed the heavy lifting, the proof of Propo
 \begin{proof}[Proof of Proposition \ref{bound-on-recombinations}]
 Proof by contradiction.  By Lemma \ref{elimination-to-create-subset}, there would have to exist a subset $\set O\subseteq\set A$ such that $|\set C|=|\set O|>|\set A|$, which is impossible.
 \end{proof}
-%@+node:gcross.20110318151522.1405: *6* Proof of Theorem
+%@+node:gcross.20110318151522.1405: *7* Proof of Theorem
 \begin{remark}
 With the preceding Lemmas and Propositions, we now have all of the tools that we need to prove Theorem \ref{theorem:optimality-condition}.  Again, the idea behind this proof is that because the first members of pairs in the choice are contained in an unimprovable set, one cannot take products of the qubits in the choice in order to improve them;  thus, the only way one could construct a better choice would by forming $n+k$ independent qubits from products of $n$ qubits (where $k>0$), which is disallowed by the result of Proposition \ref{bound-on-recombinations}.  Hence, there can be no better choice.
 \end{remark}
@@ -1015,18 +1138,18 @@ Take any conjugal pair $O:=(a,b)$ such that $\{a,b\}\in\genfun(\set C)$.  Since 
 We have now demonstrated that for every pair $O:=(a,b)$ such that $\{a,b\}\in\set \genfun(\set C)$, we must have $\set G(O)\cap\set A \ne\emptyset$.  Observe that this means that sets $\set C$ and $\set A$ match the descriptions in Proposition \ref{bound-on-recombinations} (letting set $\set Q:=\{\set P_i\}_i$), and thus we see that it is impossible for $|\set C|>|\set A|$, and so we have a contradiction.  We thus conclude that no such choice $\lst P'$ can exist.
 \end{proof}
 %@-others
-%@+node:gcross.20110318151522.1406: *5* Correctness of the algorithm
+%@+node:gcross.20110318151522.1406: *6* Correctness of the algorithm
 \subsection{Correctness of the Algorithm}
 
 %@+others
-%@+node:gcross.20110318151522.1407: *6* Introduce Theorem
+%@+node:gcross.20110318151522.1407: *7* Introduce Theorem
 We now prove that this algorithm is correct --- that is, that it terminates and outputs an optimal choice of logical qubits.  We do so by proving the following theorem, which is the main result of this section.
 
 \begin{theorem}
 \label{theorem:algorithm is correct}
 Given a set of commuting Pauli operators $\set S$ and a set of pairs $\set L\subseteq\centralizer_\pauligroup(\set S)$ conjugal in relation to $\set U(\set L)\cup\set S$, the sequence $\optimizer(\set S,\set L)$ is finite and if $(\set Q,\lst P,\lst s)$ is the last element then $\set Q=\emptyset$ and $\lst P$ is an optimal choice of logical qubits stabilized by $\set S$ such that $\genfun(\lst P)=\genfun(\set L)$.
 \end{theorem}
-%@+node:gcross.20110318151522.1408: *6* Lemma: An element can be moved from the extension to the unimprovable set
+%@+node:gcross.20110318151522.1408: *7* Lemma: An element can be moved from the extension to the unimprovable set
 \begin{remark}
 Before proving this Theorem, we shall first prove several related Lemmas and Propositions.
 
@@ -1049,7 +1172,7 @@ Now consider the case where $\set R\cap\set O'=\{o\}$.  In this case, by the ass
 
 Finally we consider the remaining case where $\{o\}\subset\set R\cap\set O'$. Let $\set Z := \set R\backslash\{o\}\ne\emptyset$.  Since $\set O$ extends to $\set X$ and $\set R\cap\set O=\set Z\cap\set O\ne\emptyset$, we know that $\om_{\set S}(x)\le \min_{a\in\set Z\cap\set O}\om_{\set S}(y)=:d$.  If $d \le \om_{\set S}(o)$, then $\om_{\set S}(r)\le d = \min_{a\in\set R\cap\set O'}\om_{\set S}(a)$, and we are done.  Otherwise, since $d> \om_{\set S}(o)$ we know that $h$ acts on $r$ since there can be no other operator in $\set Z$ that anti-commutes with $h$, and so $\om_{\set S}(r) \le w(h)\le\om_{\set S}(o)=\min_{a\in\set R\cap\set O'}\om_{\set S}(a)$
 \end{proof}
-%@+node:gcross.20110318151522.1409: *6* Lemma: Replacing element with product preserves unimprovability
+%@+node:gcross.20110318151522.1409: *7* Lemma: Replacing element with product preserves unimprovability
 \begin{remark}
 In Case 1 of the algorithm we take an element that is a member of an unimprovable set and replace it with the product of this element times some elements in the set to which the unimprovable set extends.  We want to show that this preserves the unimprovability of the set, and this is done in the following Lemma.
 \end{remark}
@@ -1066,7 +1189,7 @@ First note that since $\om_{\set S}(o')=\om_{\set S}(o)$, there is no element $z
 
 Thus we have shown that $\min_{a\in\set R\cap\set O'}\om_{\set S}(a)=\min_{a\in\set T\cap\set O}\om_{\set S}(a)$, and since our choice of $\set R$ was arbitrary we conclude that $\set O'$ is an unimprovable set that extends to $\set X$.
 \end{proof}
-%@+node:gcross.20110318151522.1410: *6* Lemma: Recombining extension elements preserves extension
+%@+node:gcross.20110318151522.1410: *7* Lemma: Recombining extension elements preserves extension
 \begin{remark}
 In both cases of the algorithm we replace a set to which an unimprovable set extends with a new set that a product of elements in the old set.  We want to show that the new set is also an extension of the unimprovable set, and this is proved by the following Lemma.
 \end{remark}
@@ -1079,7 +1202,7 @@ If $\set O$ is an unimprovable set with respect to $\set S$ that extends to $\se
 \begin{proof}
 Take any subset $\set R' \subseteq \set O\cup\set X'$ such that $\set A := \set R'\cap \set O \ne \emptyset$.  We need to show that $\om_{\set S}(x)\le\min_{y\in\set A}\om_{\set S}(y)$, where $x := \Pi(\set R')$.  Note that since $\set X'\subseteq\genfun(\set X)$, there exists a set $\set B\subseteq \set X$ such that $x = \Pi\paren{\set A\cup\set B}$, and so since $\set O$ extends to $\set X$ we conclude that $\om_{\set S}(x)\le\min_{y\in\set A}\om_{\set S}(y)$.  Since our choice of $\set R'$ was arbitrary, we conclude that that $\set O$ extends to $\set X'$.
 \end{proof}
-%@+node:gcross.20110318151522.1411: *6* Proposition: The set generated is an invariant
+%@+node:gcross.20110318151522.1411: *7* Proposition: The set generated is an invariant
 \begin{remark}
 Most of the heavy lifting in this section is performed in the following Proposition, which uses induction to prove a number of properties about the output of the algorithm at every step.
 \end{remark}
@@ -1112,7 +1235,7 @@ Also, when we say that we are assuming we are in ``Case 1'' or ``Case 2'', we me
 
 \begin{enumerate}
 %@+others
-%@+node:gcross.20110318151522.1412: *7* The set generated is an invariant
+%@+node:gcross.20110318151522.1412: *8* The set generated is an invariant
 \item
 
 Examination of the definition reveals that $\set Q'$ and $\lst P'$ are constructed entirely from products of elements in $\set Q$ and $\lst P$ so that $\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}\subseteq\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}$.
@@ -1121,35 +1244,35 @@ If $\optimizer(\set S,\set L)_{i+1}$ was defined using Case 1 then let $(b,a):=\
 
 In both cases, observe that for every operator $o\in\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ we have that either $o$ or $o\cdot a$ is contained in $\set U(\set Q')\cup\set U(\lst P')$, and since $a$ is also contained in this set we see immediately that any operator in $\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}$ can be obtained from products of elements in $\set U(\set Q')\cup\set U(\lst P')$ (i.e., from an operator in $\set U(\set Q')\cup\set U(\lst P')$ times possibly $a$).  Thus we conclude that $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}.$$  Since $b'$ is the product of $b$ with elements in $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}},$$ and $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)\backslash\{b\}}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')},$$ we conclude that $b\in\genfun\paren{\set U(\set Q')\cup\set(\lst P')}$ and so $$\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}\subseteq\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}.$$
 Thus we have proven that $$\genfun\paren{\set U(\set Q')\cup\set U(\lst P')}=\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}=\genfun(\set L),$$ and so we are done.
-%@+node:gcross.20110318151522.1413: *7* The set generated stays in the centralizer
+%@+node:gcross.20110318151522.1413: *8* The set generated stays in the centralizer
 \item
 
 This follows from the fact that $\set L\subseteq\centralizer_\pauligroup(\set S)\Rightarrow\genfun(\set L)\subseteq\centralizer_\pauligroup(\set S)$ and $\set U(\set Q)\cup\set U(\lst P)\subseteq\genfun\paren{\set U(\set Q)\cup\set U(\lst P)}=\genfun(\set L)$ (which we just proved).
-%@+node:gcross.20110318151522.1414: *7* |L| = 2(|Q| + |P|)
+%@+node:gcross.20110318151522.1414: *8* |L| = 2(|Q| + |P|)
 \item
 
 By construction, either $|\set Q'|=|\set Q|$ and $|\lst P'|=|\lst P$ (in Case 1) or $|\set Q'|=|\set Q|-1$ and $|\lst P'|=|\lst P|+1$ (in Case 2).  In either case we have that $2(|\set Q'|+|\lst P'|)=2(|\set Q|+|\lst P|)=|\set L|$.
-%@+node:gcross.20110318151522.1415: *7* |L| = |U(Q)+U(P)|
+%@+node:gcross.20110318151522.1415: *8* |L| = |U(Q)+U(P)|
 \item
 
 Since the elements in $\set L$ are members of conjugal pairs, they are therefore independent, and so we see that we need at least $|\set L|$ operators to generate $\genfun(\set L)$.  Thus we need $|\set L|\le|\set U(\set Q')\cap\set U(\lst P')|\le 2(|\set Q'|+|\lst P'|)=|\lst L|$,  where the second inequality comes from the fact that a pair can unpack to at most two operators, and the last equality comes from the previous conclusion.  We thus conclude that $|\set U(\set Q')\cap\set U(\lst P')|=|\lst L|$.
-%@+node:gcross.20110318151522.1416: *7* No operator is repeated
+%@+node:gcross.20110318151522.1416: *8* No operator is repeated
 \item
 
 By combining the previous two conclusions we see that $|\set U(\set Q')\cup\set U(\lst P')|=2(|\set Q'|+|\lst P'|)$;  if this conclusion were false (i.e., an operator were repeated somewhere) then we would have that $|\set U(\set Q')\cup\set U(\lst P')|<2(|\set Q'|+|\lst P'|)$, which is contradicts our earlier results.
-%@+node:gcross.20110318151522.1417: *7* Unimprovability is preserved
+%@+node:gcross.20110318151522.1417: *8* Unimprovability is preserved
 \item
 
 First assume that we are in Case 1.  Let $k$ be the integer described in this case, $(a,b):=\lst P_k$, and $(a',b'):=\lst P'_k$.  Note that $a\in\set O$, and by construction $a':=\Pi(\set A')$ where $\set A'\subseteq \set O\cup\set X$ and $\set A'\cap\set O=\{a\}$, and so since by the inductive hypothesis we know that $\set O$ is a unimprovable set that extends to $\set X$ we know that $\om_{\set S}(a')\le\om_{\set S}(a)$.  Since by the inductive hypothesis we also know that $\max_{o\in\set O}\om_{\set S}(o)\le\min_{x\in\set X}(x)$, by Lemma \ref{combinations-cannot-make-things-worse} we conclude that $\om_{\set S}(a')=\om_{\set S}(a)$.  Lemma \ref{lemma:replacing element with product preserves unimprovability} thus applies to our situation and allows us to conclude that $\set O'':=\paren{\set O\backslash\{a\}}\cup\{a'\}$ is an unimprovable set that extends to $\set X$.  Furthermore, since by construction $\set X'\subseteq\genfun(\set X)$ and $b\in\set X$, Lemma \ref{lemma:recombining extension elements preserves extension} allows us to conclude that $\set O''$ extends to $\{b\}\cup\set X'$.  By construction, there is an error of minimal weight that acts on $b$ but not on any other operator in $\set X'$, which means that by Lemma \ref{lemma:move-it-over} we conclude that $\set O''\cup\{b\}\equiv\set O'$ extends to $\set X'$.
 
 Now assume that we are in Case 2.  Note that the only change from $\set O$ to $\set O'$ is the addition of a single element $o$ that has an error that acts only on it but not on any other operator in $\set X'$.  Note that since $\{o\}\cup\set X'\subseteq\genfun(\set X)$ we conclude from Lemma \ref{lemma:recombining extension elements preserves extension} that $\set O$ extends to $\{o\}\cup\set X'$, and from Lemma \ref{lemma:move-it-over} we conclude that $\set O'$ extends to $\set X'$.
-%@+node:gcross.20110318151522.1418: *7* max w(O) <= min w(X)
+%@+node:gcross.20110318151522.1418: *8* max w(O) <= min w(X)
 \item
 
 First observe that since $\set X'\subseteq\genfun(\set X)$, we conclude from Lemma \ref{combinations-cannot-make-things-worse} that $\min_{x\in\set X}\om_{\set S}(x)\le\min_{x'\in\set X'}\om_{\set S}(x')$.
 
 The difference between $\set O$ and $\set O'$ is the addition of a minimizer of $\om_{\set S}$ over $\set X$, $o$, and possible also the replacement of a single element.  Since $\max_{a\in\set O}\om_{\set S}(a)\le\min_{a\in\set X}\om_{\set S}(a)\le\min_{a\in\set X'}\om_{\set S}(a)$, we conclude that since $\om_{\set S}(o)=\min_{a\in\set X}\om_{\set S}(a)$ that therefore $\max_{a\in\set O\cup\{o\}}\om_{\set S}(a)\le\min_{a\in\set X'}\om_{\set S}(a)$.  If $\set O'=\set O\cup\{o\}$ then we are done.  Otherwise, we are in Case 1 which means that we have also replaced an element in $\set O$;  however, the operator we have replaced it with is the product of an operator from $\set O$ and operators from $\set X$, and since $\set O$ is an unimprovable set that extends to $\set X$ we conclude that the replacement can be no better than the operator it is replacing.  Thus, $\max_{a\in\set O'}\om_{\set S}(a)\le\min_{a\in\set X'}\om_{\set S}(a)$.
-%@+node:gcross.20110318151522.1419: *7* om . p_1 = m
+%@+node:gcross.20110318151522.1419: *8* om . p_1 = m
 \item
 
 Since $\max_{a\in\set O'}\om_{\set S}(a)\le\min_{a\in\set X'}\om_{\set S}(a)$, we immediately conclude that $(\om_{\set S}\circ p_1)(\lst P'_i)=m_{\set S}(\lst P'_i)$ when $\lst a'_i=1$.  By the inductive hypothesis, we know that $(\om_{\set S}\circ p_1)(\lst P'_i)=m_{\set S}(\lst P'_i)$ where $\lst P'_i=\lst P_i$;  furthermore, in both cases the pairs at the locations where $\lst a_i=0$ are unchanged from $\lst P$ to $\lst P'$, and in each case this turns out to leave just a single location that we still need to examine.
@@ -1157,7 +1280,7 @@ Since $\max_{a\in\set O'}\om_{\set S}(a)\le\min_{a\in\set X'}\om_{\set S}(a)$, w
 In Case 1, this location is the index $k$ described in that case, where $\lst a_k=1$ and $\lst a'_k=0$.  Since $p_1(\lst P'_k)$ is the product of a single element of $\set O$ and elements from $\set X$, we conclude from the fact that $\set O$ is an unimprovable set that extends to $\set X$ that $(\om_{\set S}\circ p_1)(\lst P'_k)\le(\om_{\set S}\circ p_1)(\lst P_k)$.  By the inductive hypothesis we know that $\max_{a\in\set O}\om_{\set S}(a)\le\min_{a\in\set X}\om_{\set S}(a)$.  Because $p_2(\lst P'_k)$ is a product of elements from $\set X$ we conclude from Lemma \ref{combinations-cannot-make-things-worse} that $\min_{a\in\set X}\om_{\set S}(a)\le (\om_{\set S}\circ p_2)(\lst P'_k)$.  Since $p_1(\lst P)\in\set O$, we conclude that $(\om_{\set S}\circ p_1)(\lst P_k)\le\min_{a\in\set X}\om_{\set S}(a)$.  Combining all of these inequalities we reach the conclude that $(\om_{\set S}\circ p_1)(\lst P'_k)\le(\om_{\set S}\circ p_2)(\lst P'_k)$ and hence $(\om_{\set S}\circ p_1)(\lst P'_k)=m_{\set S}(\lst P'_k)$.
 
 In Case 2, this location is the end of the sequence $\lst P'$, but since the addition to the sequences is a pair of operators from $\set X$ such that the first member is a minimizer of $\om_{\set S}$ over $\set X$ we conclude that $(\om_{\set S}\circ p_1)(\lst P'_{|\lst P'|})=m_{\set S}(\lst P'_{|\lst P'|})$.
-%@+node:gcross.20110318151522.1420: *7* M(P) is ordered
+%@+node:gcross.20110318151522.1420: *8* M(P) is ordered
 \item
 
 By the inductive hypothesis we have that $\lst M_{\set S}(\lst P)_i=(\om_{\set S}\circ \om_{\set S})(\lst P_i)$, and we have just shown that $\lst M_{\set S}(\lst P')_i=(\om_{\set S}\circ \om_{\set S})(\lst P'_i)$.  By the inductive hypothesis we know that $\lst M_{\set S}(\lst P)$ is ordered, and so to prove that $\lst M_{\set S}(\lst P')$ is ordered we need only check the places in the sequence where $p_1(\lst P_i)\ne p_1(\lst P'_i)$.  In both cases there is exactly one location where the first member of a pair is modified from $\lst P$ to $\lst P'$.
@@ -1165,18 +1288,18 @@ By the inductive hypothesis we have that $\lst M_{\set S}(\lst P)_i=(\om_{\set S
 In Case 1, this is the index $k$ defined in that case, at which the first member was replaced with a product of that first member with elements in $\set X$.  Since this member is in $\set O$, and since $\max_{a\in\set O}\om_{\set S}(a)\le\min_{a\in\set X}\om_{\set S}(a)$ (by the inductive hypothesis), we conclude from the fact that $\set O$ is an unimprovable set that extends to $\set X$ that $(\om_{\set S}\circ p_1)(\lst P'_k)=(\om_{\set S}\circ p_1)(\lst P_k)$, and so we conclude that $\lst M_{\set S}(\lst P')$ is ordered.
 
 In Case 2, this is the end of the sequence $\lst P'$ where a pair was appended to $\lst P$.  Since the pair contains elements from $\set X$, and $\max_{a\in\set O}\om_{\set S}(a)\le\min_{a\in\set X}\om_{\set S}(a)$, we conclude that $\lst M_{\set S}(\lst P')_{|\lst P'|}\ge\lst M_{\set S}(\lst P)_i$ for $i<|\lst P'|$, and so we conclude that $\lst M_{\set S}(\lst P')$ is ordered.
-%@+node:gcross.20110318151522.1421: *7* P is a choice of qubits
+%@+node:gcross.20110318151522.1421: *8* P is a choice of qubits
 \item
 
 The fact that $\lst P$ is a choice of logical qubits stabilized by $\set S$ follows from directly from the previous conclusions.
-%@+node:gcross.20110318151522.1422: *7* P is optimal
+%@+node:gcross.20110318151522.1422: *8* P is optimal
 \item
 
 From the definition of an unimprovable set it is easy to see that since $\set O'$ is an unimprovable set that extends to $\set X'$, it also extends to $\set X'\cup\set O'=\set U(\set Q')\cup\set U(\lst P')$.  Since $\{p_1(q):q\in\lst P'\}\subseteq \set O'$ and $\set U(\lst P')\subseteq \set X'\cup\set O'$, it is also easy to see from the definition that $\{p_1(q):q\in\lst P'\}$ is an unimprovable set that extends to $\set U(\lst P')$ --- that is, taking subsets does not affect the property of unimprovability.  Thus, we conclude from Theorem \ref{theorem:optimality-condition} that $\lst P'$ is therefore an optimal choice of qubits.
 %@-others
 \end{enumerate}
 \end{proof}
-%@+node:gcross.20110318151522.1423: *6* Proof of Theorem
+%@+node:gcross.20110318151522.1423: *7* Proof of Theorem
 \begin{remark}
 Now that the heavy lifting has been done by the preceding Proposition, the proof of Theorem \ref{theorem:algorithm is correct} is relatively simple.
 \end{remark}
@@ -1185,13 +1308,13 @@ Now that the heavy lifting has been done by the preceding Proposition, the proof
 At every step in the algorithm, we either change an entry in $\lst s$ from 1 to 0 or remove an element from $\set Q$.  Since $\lst s$ is of finite length, as long as $\set Q$ is non-empty there will be a step at which another element is removed from it.  Thus, there is an index $k$ such that if $\lst O(\set S,\set L)_k=(\set Q,\lst P,\lst s)$ then $\set Q=\emptyset$, and by definition this is the last element of the sequence.  By Proposition \ref{proposition:properties of the algorithm} we know that $\lst P$ is optimal and also that $\genfun(\lst P)=\genfun(\lst L)$ (since $\set Q$ is empty), and so we are done.
 \end{proof}
 %@-others
-%@+node:gcross.20110318151522.1424: *5* Running time of the algorithm
+%@+node:gcross.20110318151522.1424: *6* Running time of the algorithm
 \subsection{Running Time of the Algorithm}
 
 \label{subsubsection:running time analysis}
 
 %@+others
-%@+node:gcross.20110318151522.1425: *6* Introduce Theorem
+%@+node:gcross.20110318151522.1425: *7* Introduce Theorem
 In this section we analyze the running time of the optimization algorithm;  the result is presented in the following Theorem.
 
 \begin{theorem}
@@ -1204,8 +1327,8 @@ Suppose we are given
 \end{itemize}
 then the time needed to compute the sequence $\optimizer(\set S,\set L)$ is in the set $$O\paren{|\set C|^2+|\set L|(|\set L|+d)3^d\choose{N}{d}},$$ where $d:=\lst M(\lst P)_{|\lst P|}$ and $(\set Q,\lst P,\lst S)$ is the last element in the sequence (i.e., $\lst P$ is the desired optimal choice of qubits).
 \end{theorem}
-%@+node:gcross.20110318151522.1426: *6* Definitions
-%@+node:gcross.20110318151522.1427: *7* pseudo-generator
+%@+node:gcross.20110318151522.1426: *7* Definitions
+%@+node:gcross.20110318151522.1427: *8* pseudo-generator
 \begin{remark}
 Before proving this Theorem, we shall first prove a number of related Lemmas and Propositions.
 
@@ -1221,7 +1344,7 @@ The key difference between binary strings and Pauli operators is that binary str
 \begin{definition}
 A \emph{pseudo-generator} is a set of either 1 or 2 Pauli operators.  In an abuse of notation, we extend the functions $\set U$ and $\genfun$ to be respectively $\set G\mapsto \bigcup_{\set g\in\set G} \set g$ and $\set G\mapsto (\genfun\circ\set U)(\set G)$ when applied to a set of pseudo-generators.
 \end{definition}
-%@+node:gcross.20110318151522.1428: *7* pseudo-product (plus bounding Lemma)
+%@+node:gcross.20110318151522.1428: *8* pseudo-product (plus bounding Lemma)
 \begin{remark}
 (The preceding definition does not follow that of White and Grassl exactly; it has been specialized to our situation for the sake of simplicity.)
 
@@ -1254,7 +1377,7 @@ Given a set of $r$ pseudo-generators, $\set G$, then the set $\set O:=\{f(o):o\i
 \begin{proof}
 From Lemma \ref{lemma:bound-on-pseudo-product} we know that there are at most $3^r$ operators in the pseudo-product, so $|\set O|\le 3^r$.  Furthermore, for every element in the set we first need to compute the corresponding operator in the pseudo-product, which requires $r$ time since it is the product of $r$ operators, and then we need to compute $f$, which by assumption requires a time in $O(T)$.
 \end{proof}
-%@+node:gcross.20110318151522.1429: *7* disjoint
+%@+node:gcross.20110318151522.1429: *8* disjoint
 \begin{remark}
 In order to be able to place a lower bound on binary strings that have yet to be examined in the Brouwer-Zimmermann enumeration, we need the generators of the binary strings over which we are searching to have the property that each generator has a column such that it is the only generator with a 1 in that column, so that products of $r$ generators must have at least weight $r$.  Because we want to similarly place a bound on unexamined products of pseudo-generators, we generalize this property with the following definition.
 \end{remark}
@@ -1276,7 +1399,7 @@ All of the operators in the pseudo-product of any $r$ (distinct) pseudo-generato
 \begin{proof}
 Every operator in the pseudo-product is the product of $r$ factors, each of which is associated with some distinct physical qubit $k$ such that it anti-commutes with either $X_k$ or $Z_k$ (or both) but every other factor commutes with both $X_k$ and $Z_k$;  thus, the product must anti-commute with at least $r$ single-qubit operators acting on distinct physical qubits, and so it must have a weight of at least $r$.
 \end{proof}
-%@+node:gcross.20110318151522.1430: *6* Lemma: Minimal weight search
+%@+node:gcross.20110318151522.1430: *7* Lemma: Minimal weight search
 \begin{remark}
 Now that we have the concept of a disjoint set of pseudo-generators and a result showing that an operator in a pseudo-product of $r$ of them must have a weight of at least $r$, we present in the following Lemma an algorithm for searching through the space spanned by the pseudo-generators for an operator satisfying a given property.
 \end{remark}
@@ -1297,7 +1420,7 @@ From Lemma \ref{lemma:disjoint-pseudo-generators-bound} we conclude that $w(o)\g
 
 Now consider the procedure of searching through each $\set C_r$ starting with $r=0$.  We know that we will eventually find at least one solution to $f(o)=1$, since in this Proposition we have assumed that such an operator exists in the search space (by the assumption that $f^{-1}(1)\cap\genfun(\set G)\ne\emptyset$).  Furthermore, employing this procedure we will find the minimal solution $o$ no \emph{later} than after we have searched through $\set C_r$ for $r=0\dots w(o)$, since at that point all of the unexamined operators have a weight greater than $w(o)$.  Thus, we conclude that we shall find the minimal weight solution after having searched at most all of the elements in $\bigcup_{r=0}^{\min(w(o),|\set G|)} C_r$, which we can do in time $$O\paren{\sum_{r=0}^{\min(w(o),|\set G|)}(T+r) 3^r \choose{|\set G|}{r}}\subseteq O\paren{(T+d) 3^d \choose{N}{d}},$$ where $d:=\min(w(o),|\set G|)$.
 \end{proof}
-%@+node:gcross.20110318151522.1431: *6* Pseudocode: Compute-Minimal-Weight-Operator
+%@+node:gcross.20110318151522.1431: *7* Pseudocode: Compute-Minimal-Weight-Operator
 \begin{table}
 \begin{codebox}
 \Procname{$\proc{Find-Weight-Minimizer}(f,\lst G)$}
@@ -1328,7 +1451,7 @@ Now consider the procedure of searching through each $\set C_r$ starting with $r
 \end{codebox}
 \caption[Algorithm \proc{Find-Weight-Minimizer}]{Algorithm which finds the minimal weight operator in a given generating set that satisfies a given predicate.  For the sake of convenience, we also allow the query function to return auxiliary information that is returned to the caller along with the minimal weight operator.} \label{table:find-weight-minimizer}
 \end{table}
-%@+node:gcross.20110318151522.1432: *6* Lemma: Bounds
+%@+node:gcross.20110318151522.1432: *7* Lemma: Bounds
 \begin{remark}
 The proceeding Lemma is rather general, so we shall show how it specializes to our case.  First, however, we use the following three Lemmas to prove that our search space is generated by exactly $N$ pseudo-generators.
 \end{remark}
@@ -1359,7 +1482,7 @@ For any set of commuting operators $\set S$ acting on $N$ physical qubits, if $\
 \begin{proof}
 Since $\centralizer_\pauligroup(\set S)$ contains a subset of $N$ independent commuting operators, so must $\genfun(\set G)$ and therefore $\set U(\set G)$;  thus, Lemma \ref{lemma:lower bound on number of disjoint pseudo-generators} implies that $|\set G|\ge N$, and combining this bound with that given by Lemma \ref{lemma:upper bound on number of disjoint pseudo-generators} we see that $|\set G|=N$.
 \end{proof}
-%@+node:gcross.20110318151522.1433: *6* Lemma: Minimal weight search (specialized)
+%@+node:gcross.20110318151522.1433: *7* Lemma: Minimal weight search (specialized)
 \begin{remark}
 We now prove a Lemma which shows how the search specializes to the case of our qubit optimization algorithm.
 \end{remark}
@@ -1387,7 +1510,7 @@ $$f(o):=
 $$
 Note that solutions to $f$ are undetectable errors acting on $\set Q$, and also that this function can be computed in time $O(|\set Q|)$ by checking the commutator for each element in $\set Q$.  Furthermore note that for every operator in $\set Q$ there is another operator in $\set Q$ which anti-commutes with it, and also that $\set Q\subset \centralizer_\pauligroup(\set S)$.  Thus, since $\set Q$ is non-empty, there is at least one operator $o\in\genfun(\set G)$ such that $f(o)=1$.  Thus, by Lemma \ref{lemma:minimal-weight-search}, we know that we can compute a minimal weight solution to $f$ in time $$O\paren{(|\set Q|+d)3^d\choose{N}{d}}$$ where $d:=\min\paren{w(o),N}$.
 \end{proof}
-%@+node:gcross.20110318151522.1434: *6* Lemma: Computing disjoint pseudo-generators
+%@+node:gcross.20110318151522.1434: *7* Lemma: Computing disjoint pseudo-generators
 \begin{remark}
 In order to make use of the preceding result, we need to have a set of disjoint pseudo-generators whose pseudo-product covers our search space.  However, we usually start instead with a set of ordinary Pauli operators that generate this space.  Thus, we shall now show that the former can be computed from the latter --- i.e., that given a set of Pauli operators, we can compute a set of disjoint pseudo-generators that spans the same space.  First we present a Lemma that provides a criteria sufficient to show that a set of pseudo-generators is distinct.
 \end{remark}
@@ -1466,7 +1589,7 @@ Given any set of Pauli operators, $\set O$, there exists a disjoint set of pseud
 \begin{proof}
 This follows immediately from Lemmas \ref{lemma:disjointness-equvalence} and \ref{lemma:computing-disjoint-pseudo-generators}.
 \end{proof}
-%@+node:gcross.20110318151522.1435: *6* Pseudocode: Compute-Pseudo-Generators
+%@+node:gcross.20110318151522.1435: *7* Pseudocode: Compute-Pseudo-Generators
 \begin{table}
 {\tiny
 \begin{codebox}
@@ -1547,7 +1670,7 @@ This follows immediately from Lemmas \ref{lemma:disjointness-equvalence} and \re
 }
 \caption[Algorithm \proc{Compute-Pseudogenerators}]{Algorithm which computes a set of disjoint pseudo-generators that generates the input set of operators.} \label{table:compute-pseudo-generators}
 \end{table}
-%@+node:gcross.20110318151522.1436: *6* Proof of Theorem
+%@+node:gcross.20110318151522.1436: *7* Proof of Theorem
 \begin{remark}
 We now have the tools that we need to analyze the running time of the algorithm.
 \end{remark}
@@ -1561,9 +1684,9 @@ Let $(\set Q',\lst P',\lst s')$ be the second to last element of $\optimizer(\se
 \end{proof}
 %@-others
 %@-others
-%@+node:gcross.20110318151522.1451: *3* Practice
+%@+node:gcross.20110318151522.1451: *4* Practice
 \chapter{Practice} \label{sec:lattice}
-%@+node:gcross.20110318151522.1452: *4* Methodology
+%@+node:gcross.20110318151522.1452: *5* Methodology
 \section{Methodology} \label{sec:methodology}
 
 In the previous section we presented an algorithm that computes the optimal subsystem code that can be implemented using a given set of measurements.  The procedure for optimizing the code requires an exponential amount of time, but fortunately the power of the exponential is a function of the distance of the best qubit in the code.   Because of this property, this algorithm can be effectively applied to search over a set of choices of measurement operators to see if there is any good choice for implementing a code, since it can (relatively) quickly skip over the bad choices of measurements.
@@ -1704,13 +1827,13 @@ A table in which we show the maximum radius lattice that was completely scanned 
 \end{table}
 
 Since each labeling of every lattice results in a quantum code, we had to provide some criteria for our search algorithm to decide whether a code was interesting enough to log.  We set our criteria relatively low:  a code was deemed to be interesting if there was at least one logical qubit with distance three, that is if there was at least one logical qubit such that a single arbitrary error on that qubit can be corrected.  This was done under the reasoning that as long as some of the logical qubits in a code are sufficiently useful to us to make implementing the code worthwhile, then we should not be troubled by the fact that there might be other logical qubits that are not useful because we can always ignore them (or, equivalently, classify them as gauge qubits).
-%@+node:gcross.20110318151522.1453: *4* Results
+%@+node:gcross.20110318151522.1453: *5* Results
 \section{Results} \label{sec:results}
 
 In the previous subsection we described the search space to which we applied the algorithm in order to computationally find possible codes that can be implemented using systems with 2-body interactions and a lattice structure following nine of the eleven convex vertex-uniform tilings.  In this subsection we present the results of this search.  The codes that we found are shown in the plots appearing in Figures \ref{figure:results-quadrille1}, \ref{figure:results-quadrille2}, \ref{figure:results-hextille1} and \ref{figure:results-hextille2}.  No plot appears for the deltille tiling because no codes were found for that tiling.  It is worth emphasizing that these codes indicated in these figures are \emph{all} of the (useful) codes that exist for the scanned lattices of that tiling given our constraints, since we scanned every possible labeling that was not redundant under a rotational symmetry transformation about the center.
 
 %@+<< Figures >>
-%@+node:gcross.20110318151522.1454: *5* << Figures >>
+%@+node:gcross.20110318151522.1454: *6* << Figures >>
 \begin{figure*}
 \centering
 \subfloat[]{{\includegraphics[width=2.5in]{images/results-quadrille}}}\\
@@ -1758,7 +1881,7 @@ Observe that two kinds of trends appear frequently in the results:  codes that g
 In the follow subsections we will focus on some specifics of the results for each of the tilings.
 
 %@+others
-%@+node:gcross.20110318151522.1455: *5* quadrille
+%@+node:gcross.20110318151522.1455: *6* quadrille
 \subsection{quadrille}
 
 For the quadrille lattice, we only saw one labeling, illustrated in Figure \ref{figure:quadrille-code-labeling}, that resulted in an interesting code.  This labeling corresponds to the compass model code, and the algorithm correctly found that the distance of the code grows linearly with the radius of the lattice and is exactly equal to the square root of the number of qubits in the lattice.  This result is not terribly surprising, but it is good to see that our search technique employing the algorithm can correctly duplicate known results.
@@ -1770,7 +1893,7 @@ For the quadrille lattice, we only saw one labeling, illustrated in Figure \ref{
 A figure illustrating the single labeling of the quadrille tiling (on a radius 2 lattice) that results in a useful quantum code.
 }
 \end{figure}
-%@+node:gcross.20110318151522.1456: *5* truncated quadrille
+%@+node:gcross.20110318151522.1456: *6* truncated quadrille
 \subsection{truncated quadrille}
 
 There are three kinds of codes that appear in this tiling where the number of qubits increases with the radius:  two where the distance is fixed at 4, and one where the distance is fixed at 3.  For the best two of these three kinds of codes, the number of logical qubits ($l$) is related to the radius ($r$) by $l=(2r-1)^2$.    Since the number of physical qubits ($n$) is given by $n=(4r)^2$, the number of logical qubits per physical qubit is thus given by $\frac{l}{n}=\paren{\half-\frac{1}{r}}^2$, a quantity which converges to $\frac{1}{4}$ as $r\to\infty$.  There were four labelings with this property that we saw in our search:  two with distance 3 qubits (illustrated in Figure \ref{figure:truncated-quadrille-code-3-labelings}), and two with distance 4 qubits (illustrated in Figure \ref{figure:truncated-quadrille-code-4-labelings}).
@@ -1790,7 +1913,7 @@ There are three kinds of codes that appear in this tiling where the number of qu
 A figure illustrating four labelings of the truncated quadrille tiling (on a radius 1 lattice) that result in a quantum code with distance 3/4 (in respectively \ref{figure:truncated-quadrille-code-3-labelings}/\ref{figure:truncated-quadrille-code-4-labelings}), and a number of distance logical qubits proportional to the square of the radius of the labeling.
 }
 \end{figure*}
-%@+node:gcross.20110318151522.1457: *5* snub quadrille
+%@+node:gcross.20110318151522.1457: *6* snub quadrille
 \subsection{snub quadrille}
 
 %@+at
@@ -1820,7 +1943,7 @@ Second, more usefully, we saw twelve labelings which result in a code that has o
 A figure illustrating two of the labelings of the snub quadrille tiling (on a radius 2 lattice) that result in a quantum code with a single qubit whose distance grows with the radius of the lattice.
 }
 \end{figure*}
-%@+node:gcross.20110318151522.1458: *5* isosnub quadrille
+%@+node:gcross.20110318151522.1458: *6* isosnub quadrille
 \subsection{isosnub quadrille}
 
 We only saw two labelings of the isosnub lattice that result in useful codes, both of which only have a single qubit that seems (assuming that the trend seen in Figure \ref{figure:results-quadrille1} can be extrapolated) to have a distance that grows with the radius of the lattice.  These two labelings are illustrated in Figure \ref{figure:isosnub-quadrille-code-r-labeling}.
@@ -1833,11 +1956,11 @@ We only saw two labelings of the isosnub lattice that result in useful codes, bo
 A figure illustrating two of the labelings of the isosnub quadrille tiling (on a radius 1 lattice) that result in a quantum code with a single qubit whose distance grows with the radius of the lattice.
 }
 \end{figure*}
-%@+node:gcross.20110318151522.1459: *5* deltille
+%@+node:gcross.20110318151522.1459: *6* deltille
 \subsection{deltille}
 
 We scanned this tiling up to a radius of eight;  no interesting codes were found in any of the 122 labelings.
-%@+node:gcross.20110318151522.1460: *5* hextille
+%@+node:gcross.20110318151522.1460: *6* hextille
 \subsection{hextille}
 
 In this tiling we saw four labelings which resulted in two kinds of interesting codes:  two of the labelings (illustrated in Figure \ref{figure:hextille-code-3-labelings}) resulted in codes of distance 3 that were present for every value of the radius, and two of the labelings (illustrated in Figure \ref{figure:hextille-code-4-labelings}) resulted in codes of distance 4 that were only present for \emph{even} values of the radius.  The former resulted in codes which had a number of logical qubits ($l_3$) given by $l_3=\frac{(r-1)(r-2)}{2}$, where $r$ is the radius, and the latter resulted in codes which had a number of logical qubits ($l_4$) given by $l_4=r(r+3)$.  Since the number of qubits ($n$) is given by $n=6r^2$, we have that the number of logical qubits per physical qubit for the distance and distance 4 codes were given respectively by $d_3=\frac{l_3}{n}=\frac{1}{12}\paren{1-\frac{1}{r}}\paren{1-\frac{2}{r}}$ and $d_4=\frac{l_4}{n}=\frac{1}{6}\paren{1+\frac{3}{r}}$;  as $r\to\infty$, we have that $d_3\to\frac{1}{12}$ and $d_4\to\frac{1}{6}$.
@@ -1860,7 +1983,7 @@ It is interesting to observe that there is no distance/qubit count trade-off in 
 A figure illustrating four labelings of the hextille tiling (on a radius 2 lattice) that result in a quantum code with distance 3/4 (in respectively \ref{figure:hextille-code-3-labelings}/\ref{figure:hextille-code-4-labelings}), and a number of distance logical qubits proportional to the square of the radius of the labeling.
 }
 \end{figure*}
-%@+node:gcross.20110318151522.1461: *5* truncated hextille
+%@+node:gcross.20110318151522.1461: *6* truncated hextille
 \subsection{truncated hextille}
 
 In the truncated hextille there are four kinds of codes where the number of qubit increases with the radius:  three with the distance fixed at 3, and one with the distance fixed at 4.
@@ -1885,7 +2008,7 @@ A figure illustrating two labelings of the truncated hextille tiling (on a radiu
 A figure illustrating two labelings of the truncated hextille tiling (on a radius 1 lattice) that result in a quantum code with distance 4 and a number of distance logical qubits proportional to the square of the radius of the labeling.
 }
 \end{figure}
-%@+node:gcross.20110318151522.1462: *5* hexadeltille
+%@+node:gcross.20110318151522.1462: *6* hexadeltille
 \subsection{hexadeltille}
 
 There are many codes that appear in the hexadeltille tiling, but it is difficult to draw conclusions about trends due to the limit on the size of the lattices that were scanned.  The good news, though, is that the reason why scanning larger radii was difficult is because there is a code in this tiling with a qubit whose distance grows with the radius of the lattice.  One of the nine labelings that we saw with this property is illustrated in Figure \ref{figure:hexadeltille-code-labeling}. 
@@ -1897,7 +2020,7 @@ There are many codes that appear in the hexadeltille tiling, but it is difficult
 A figure illustrating one of the labelings of the hexadeltille tiling (on a radius 1 lattice) that results in quantum code whose distance grows with the size of the tiling.
 }
 \end{figure}
-%@+node:gcross.20110318151522.1463: *5* rhombihexadeltille
+%@+node:gcross.20110318151522.1463: *6* rhombihexadeltille
 \subsection{rhombihexadeltille}
 
 This tiling is interesting because it had many more labelings that resulted in codes  than all of the other tilings combined;  specifically, for the rhombihexadeltille tiling we saw 48,807 labelings that resulted in useful codes, whereas for all of the other tilings combined we saw only 421 labelings that resulted in useful codes.  This is even more remarkable considering that the largest lattice we were able to scan for the rhombihexadeltille tiling was smaller than that the for most of the other tilings.
@@ -1935,7 +2058,7 @@ A figure illustrating two labelings of the rhombihexadeltille tiling (on a radiu
 }
 \end{figure*}
 %@-others
-%@+node:gcross.20110318151522.1464: *4* Discussion
+%@+node:gcross.20110318151522.1464: *5* Discussion
 \section{Discussion} \label{sec:discussion}
 
 There are few surprises in our results.  For example, the best code that we found that maximized the logical qubit distance per physical qubit was the compass model code in the quadrille tiling, which is already well-known.  Furthermore, all of the codes obeyed the upper bounds $kd\in O(n)$ and $d^2\in O(n)$ --- where $k$ is the number of logical qubits in the code, $d$ is the distance of the code, and $n$ is the number of physical qubits implementing the code --- that were derived in \cite{Bravyi:10a} for codes having spatially local generators.
@@ -1943,17 +2066,17 @@ There are few surprises in our results.  For example, the best code that we foun
 Some of the observed differences between the tilings are an artifact of the search space.  For example, every code found on the hextille tiling could also be implemented on the deltille tiling, but although we found two kinds of codes for the hextille tiling we found no codes for the deltille tilings.  This is because our search space included no way for the deltille tilings to ``knock out'' the middle qubits in each hexagonal tiling, and furthermore the hextille tiling search space included two classes of vertices which could have independent labelings whereas the deltille tiling search space had only one class of vertices.
 
 Although it is not clear how many of the codes we found will have practical applications, the success of this search demonstrates the feasibility of using brute-force computation to find useful codes within a constrained search space.
-%@+node:gcross.20110318151522.1466: *3* Conclusion
+%@+node:gcross.20110318151522.1466: *4* Conclusion
 \section{Conclusion}
 \label{sec:conclusion}
 
 In this part we have presented an algorithm for computing the optimal quantum subsystem code that can be implemented using a given set of measurements.  We have shown that although this algorithm requires exponential time in the worst case, this exponential is a function of the code distance, and so the algorithm terminates (relatively) quickly when the optimal code has low distance.  Because of this, the algorithm can be used to perform a brute-force search through a space of possible measurements in order to see which give rise to ``useful'' (high-distance) codes.  We demonstrated the feasibility of this approach by applying the algorithm to search for codes implemented on systems with lattice structures corresponding to nine of the eleven convex vertex-uniform tilings, and on all but one of these nine tilings we found useful codes.
 
 This algorithm should prove helpful in two kinds of ways in particular.  First, it can be applied in an exploratory setting to do the tedious work of computing the code resulting from a set of measurements so that the researcher can experiment with new ideas for choices of measurement to see how well they work.  Second, it can be applied to hone a `rough' idea for how a code might be implemented (such as a particular lattice configuration) into a concrete idea by scanning through the possible choices of the degrees of freedom to see if any result in useful codes; of course, cleverness can often come up with an answer more quickly than a computationally intensive search, but it is good to have the alternative of brute-force computation to fall back on when brute-force cleverness fails.
-%@+node:gcross.20110318151522.1469: ** Matrix Product States
+%@+node:gcross.20110318151522.1469: *3* Matrix Product States
 \part{Matrix Product States}
 \label{part:Matrix Product States}
-%@+node:gcross.20110318151522.1486: *3* Motivation
+%@+node:gcross.20110318151522.1486: *4* Motivation
 \chapter{Introduction}
 
 Straightforward representations of quantum systems tend to grow exponentially with increasing system size.  Thus, if one wants to have a hope of simulating a large quantum system, one needs to pick a clever method for representing it.  Such a representation needs to have three properties:  it must have a scaling law that makes large systems tractable, it needs to faithfully duplicate the properties of the original system, and it needs to allow one to compute expectation values without returning to the expensive representation.
@@ -1971,12 +2094,12 @@ Thus we see that it is incredibly useful to be able to write down a matrix facto
 In this part, we shall present such a method.  In Chapter \ref{sec:MPSTheory}, we shall begin with some background material that presents a pedagogical introduction to matrix product states.  Then we will introduce the key to our method:  a new type of diagram which allows one to visualize matrix product states in a way that makes transparent the type of state that they generate.  Although the application of these diagrams to matrix product states is novel, the diagrams themselves are not:  rather, they will be shown to be merely variants of complex weighted finite state automata.  Once this connection has been made, it will be shown how one can obtain a matrix product factorization of a state or operator by starting with an automaton which generates the ``pattern'' of the operator, and then translating this automaton into a set of matrix factors.  It will then be shown how this process generalizes to multiple dimensions.  We will have a brief intermezzo at this point where we discuss a variation of this approach that can be applied to infinite systems.
 
 In Chapter \ref{sec:MPSPractice}, we shall apply this method to study systems of relevance to \emph{adiabatic quantum computing}.  We shall first explain the motivation and the basic behind adiabatic quantum computing, and then we shall discuss a couple of the models implementing this idea that we explored using our code and the results that we obtained.
-%@+node:gcross.20110318151522.1484: *3* Theory
+%@+node:gcross.20110318151522.1484: *4* Theory
 \chapter{Theory}
 \label{sec:MPSTheory}
-%@+node:gcross.20110318151522.1471: *4* One-Dimensional Chains
+%@+node:gcross.20110318151522.1471: *5* One-Dimensional Chains
 \section{One-Dimensional Chains}
-%@+node:gcross.20110318151522.1472: *5* Background
+%@+node:gcross.20110318151522.1472: *6* Background
 \subsection{Background}
 
 Consider a quantum system with $N$ independent observables, such as the $Z$ spin components of a linear one-dimensional chain of spin-$\half$ particles.  In general, the representation of this system must be expressed as a tensor with $N$ indices, $A_{i_1,i_2,\dots,i_N}$.  Each element of this tensor represents the amplitude of the a particular system configuration; for example $A_{\downarrow\uparrow\uparrow\downarrow}$ gives the amplitude of a particular system of four particles being in the $\downarrow\uparrow\uparrow\downarrow$ state.  Part of the difficulty in simulating quantum mechanical systems lies from the fact that when one adds another particle to a system, one must add another index to the representing tensor.  Thus, the information needed to represent a quantum state in general grows exponentially with the number of particles.
@@ -2037,7 +2160,7 @@ In this paper, it will prove useful to distinguish between two types of indices:
 $$\Psi^{\alpha\beta\gamma\delta\dots} = \sum_{i,j,k,l} A_i^\alpha B_{ij}^\beta C_{jk}^\gamma D_{k}^\delta \dots,$$
 
 Note that we are not normalizing our states;  this will not be a concern for the purpose of our discussion.
-%@+node:gcross.20110318151522.1473: *5* Matrix Product Diagram
+%@+node:gcross.20110318151522.1473: *6* Matrix Product Diagram
 \subsection{Matrix Product Diagram}
 
 Consider the 4-particle ``W'' state,
@@ -2101,7 +2224,7 @@ This factorization may be equivalently expressed in the form of the diagram in F
 The arrows place an ordering on the indices.  They are not strictly necessary to define the diagrams, but they are useful because they allow one to view the diagram in terms of paths.  Specifically, each choice of indices corresponds to a ``walk'' from the left side of the diagram to the right.  For example, the choice $i=0, j=0, k=1$ corresponds to the walk as shown in \ref{fig:examplewalk}.
 
 Each possible walk from the left to the right generates a term in our sum, so that the walk shown in \ref{fig:examplewalk} generates the term $\uparrow\uparrow\downarrow\uparrow$.  As discussed earlier, edges which do not appear in the diagram correspond to vanishing matrix elements;  this may be thought of as disallowing a walk between certain nodes, as any term which tries to include nonexistent edges is multiplied by zero and thus does not contribute to the sum.  For example, in Figure \ref{fig:Wdiagram}, note that there is no path that returns to the top from the bottom (such as $i=0$, $j=1$, $k=0$).
-%@+node:gcross.20110318151522.1474: *6* Extension to Operators
+%@+node:gcross.20110318151522.1474: *7* Extension to Operators
 \subsubsection{Extension to Operators}
 
 We are not restricted to labeling edges of matrix product diagrams with states;  the tensors at each site may be objects with any number of superscript indices.  This allows us to factor operators as well as states, resulting in a matrix product operator\footnote{Matrix product operators were originally introduced by Verstraete, Garcia-Ripoll and Cirac \cite{cond-mat/0406426}, but they were used as density operators -- i.e., as representations of states, rather than of Hamiltonians or other physical operators.  McCulloch, however, later showed how many classes of physical operators can be factored, and discussed why it can be useful to write them in this form\cite{cond-mat/0701428}.}, which recall has the form,
@@ -2116,7 +2239,7 @@ $$\Psi^{(\alpha\beta\gamma\delta\dots)(\alpha'\beta'\gamma'\delta'\dots)} = \sum
 For example, if we were to take the matrix product representation for the W state, as given in \eqref{W-matrix-factorization}, and replace $\uparrow$ with the identity matrix and $\downarrow$ with the Pauli $Z$ spin matrix (which I will denote by \textbf{Z}) then we we would obtain the diagram in Figure \ref{fig:magfield}.
 
 This operator represents the action of a magnetic field in the $z$ direction coupling to each of the particles.
-%@+node:gcross.20110318151522.1475: *5* Weighted Finite Automata States
+%@+node:gcross.20110318151522.1475: *6* Weighted Finite Automata States
 \subsection{Weighted Finite Automata States}
 
 Up to this point we have considered our state to be an $N-$dimensional tensor, where $N$ is the number of observables.  Let us now use a different but equivalent description that is applicable when all of our observables are of the same kind (e.g., z-components of spin).  First, we define a set $\Sigma$ to be our ``alphabet'';  it contains all the possible values for our observable.  For example, for a spin-$\half$ chain, we shall choose $\Sigma:=\{0,1\}$ where $0$ labels the spin-up state and $1$ labels the spin-down state.  Then we may describe our state as a function which maps strings of length $N$ of the alphabet $\Sigma$ to complex numbers:  $f: \Sigma^N\to \mathbb{C}$.
@@ -2287,7 +2410,7 @@ $$
 $$
 
 Thus we see that when encoding translationally invariant behavior in an operator it is better to work with weighted finite automata, and when encoding position dependent behavior it is better to work with matrix product diagrams.
-%@+node:gcross.20110318151522.1476: *5* Calculation of Expectations
+%@+node:gcross.20110318151522.1476: *6* Calculation of Expectations
 \subsection{Calculation of Expectations}
 
 \label{calcexp}
@@ -2346,7 +2469,7 @@ $$\paren{E_1}_I \equiv \paren{E_1}_{(i,i',i'')}
                  = \sum_{\alpha,\alpha'} \paren{S^*_1}^{\alpha'}_{i'}\paren{O_1}^{\alpha'\alpha}_{i''}\paren{S_1}^{\alpha}_i, \dots$$
 
 \noindent thus forming the new tensor network shown in Figure \ref{fig:formation-of-transfer-matrices}, and then we contract the new network.  This procedure takes $O(3N)$ matrix multiplications, and the largest matrices that we ever need to form are the $E_n$ matrices.  Thus we see that computing expectation values for a matrix product operator is an $O(N)$ procedure\footnote{Upon completion of this work, we learned of similar results by \underline{$\quad$} in \underline{$\quad$}}.
-%@+node:gcross.20110318151522.1477: *5* Energy Minimization and Caching
+%@+node:gcross.20110318151522.1477: *6* Energy Minimization and Caching
 \subsection{Energy Minimization and Caching}
 
 \label{caching}
@@ -2402,9 +2525,9 @@ So once we have $R_1$, we already have $R_2$ through $R_N$.  Thus, if we start b
 The notion of using caching to speed up these calculations is not a new one;  the same process has already been described by Verstraete, Porras, and Cirac \cite{cond-mat/0404706}.  However, whereas their process is limited to one- and two-body operators, this new procedure works for any form of operator which can be written in matrix product form;  furthermore, the process is the same for all such operators, rather than requiring a new process for each class of operator -- e.g., one-body, two-body, etc.
 
 To summarize: if we can factor our Hamiltonian into a matrix product operator, then we can calculate our matrices $\mathscr{H}^i$ and $\mathscr{N}^i$ needed to optimize a site matrix from matrices which can be calculated using a recursion rule.  By caching the intermediate steps of the recursion, and moving through the sites to be optimized in order from left to right and back, we can calculate $\mathscr{H}^i$ and $\mathscr{N}^i$ in amortized $O(1)$ time.
-%@+node:gcross.20110318151522.1478: *4* Arbitrary-Dimensional Graph
+%@+node:gcross.20110318151522.1478: *5* Arbitrary-Dimensional Graph
 \section{Arbitrary-Dimensional Graph}
-%@+node:gcross.20110318151522.1479: *5* Motivation
+%@+node:gcross.20110318151522.1479: *6* Motivation
 \subsection{Motivation}
 
 \label{arbitrary-motivation}
@@ -2431,7 +2554,7 @@ Matrix product states were designed for studying one-dimensional systems, and th
 However, there is a price one pays for doing this.  Suppose that one wants to represent a Hamiltonian on a $6\times 6$ grid which consists of 4-site $X$ terms arranged in a square as shown in \ref{fig:2d-4X-operator}. The automata which encodes such a Hamiltonian takes the form shown in \ref{fig:2d-4X-FSA}.  The states in the middle (D-G) act as a memory which tell the automata how many sites it has walked past since the second $X$.  This needed so that the automata can put the last two $X$'s in the correct place on the following row.  The number of states required here grows with the number of columns in the grid.
 
 We see that although we can write down such an automata, and so form a matrix product representation of this operator, it is less than ideal because the representation depends on the size of the grid.  This comes from the fact that information can only flow in one direction;  ideally, we would like the information that an $X$ has been placed on one row to somehow go directly down one row rather than having to sweep through the rest of the current row first.  We could, of course, adjust the ordering to sweep down columns instead of across rows, but then we lose the ability to cheaply send information across a row;  using matrix product states, there is no way we can make it easy to communicate in two directions simultaneously.
-%@+node:gcross.20110318151522.1480: *5* Tensor Network Diagrams
+%@+node:gcross.20110318151522.1480: *6* Tensor Network Diagrams
 \subsection{Tensor Network Diagrams}
 
 \label{tensordiagram}
@@ -2464,7 +2587,7 @@ One possible diagram with the above tensor structure is that shown in \ref{crazy
 This rule for the rejoining of paths is just a restatement of the fact that only one value may be picked for each index for each term in the sum.
 
 Note that although there is a partial ordering on the steps in our walk, there is not a total ordering.  That is, although our arrowheads tell us that a link from C must be chosen before a link from E or F, they do not tell us whether a link from E should be chosen before F or vice versa.  This contrasts with the one-dimensional case, where there is a total ordering.
-%@+node:gcross.20110318151522.1481: *5* Weighted Finite Signaling Agents
+%@+node:gcross.20110318151522.1481: *6* Weighted Finite Signaling Agents
 \subsection{Weighted Finite Signaling Agents}
 
 Recall that in the previous part, we showed that matrix product diagrams are equivalent to defining a weighted finite automata which encodes the state.  If we wanted, we could similarly relate our generalized tensor network states to weighted finite automata.  There is a catch, though:  automata require the system to be in a concrete ``state'' at any moment in time, and they also require there to be a total ordering of the input.  Our tensor network state diagrams have neither of these properties.
@@ -2647,7 +2770,7 @@ Formally, a \emph{weighted nondeterministic finite signaling agent} is defined b
 
 This is very similar to the formal definition of a weighted nondeterministic finite automaton.  Note the addition of $A$, a set of so-called ``agent locations''.
 \end{comment}
-%@+node:gcross.20110318151522.1482: *5* Calculation of Expectations Using Recursion
+%@+node:gcross.20110318151522.1482: *6* Calculation of Expectations Using Recursion
 \subsection{Calculation of Expectations using Recursion}
 
 Assume that we have a tensor network state and a factorization of an operator which has the same network structure as the state.  As in Section \ref{calcexp}, we see that the expectation of the operator may be reduced to the contraction of a network of ``transfer matrices'';  for example, for the peculiar state shown in Section \ref{tensordiagram}, calculating the expectation of our operator is equivalent to contracting a tensor network of the form shown in Figure \ref{crazy-transfer-matrix-network}.
@@ -2690,7 +2813,7 @@ $$\sum_f A_{abcd} B_{defg} = C_{abcefg}.$$
 \noindent These extra indices result in ``double-bonds'' between tensors.  (We have already seen multi-bonds when computing the $E$ matrices, as shown in Figure \ref{fig:formation-of-LR}.)
 
 Thus, as we contract each row, the size of our tensors increases by some factor, which means that the cost of contracting a tensor network in general grows exponentially with the size of the network!  Fortunately, there is a lossy compression technique which involves approximating a row resulting from a contraction with a new row with fewer bonds;  this has been used successfully to model hard-core bosons in a 2D optical lattice\cite{cond-mat/0611522}.
-%@+node:gcross.20110326130640.1393: *4* Intermezzo: Infinite Systems
+%@+node:gcross.20110326130640.1393: *5* Intermezzo: Infinite Systems
 \section{Intermezzo: Infinite Systems}
 
 In this section, we present an algorithm which computes a translationally invariant MPS representation of the ground state of an infinite system.  The intuition behind our approach is as follows.  Suppose one were given an infinitely large, translationally invariant 1D quantum chain held at zero temperature.  If one were to add an additional site to this chain and allow the chain to relax, then one would expect that all of the old sites would remain unchanged, and the new site would change to match the rest.  If one could emulate the environment experienced by a single site in this infinite chain, then by embedding a site into this environment and allowing the system to relax, one would obtain a site which ``looks like'' all of the sites in our infinite chain, giving us a compact representation for the chain.
@@ -2708,10 +2831,10 @@ refine.  Furthermore, we incorporate matrix product operators into our
 approach which allow us to model systems with long-range interactions.
 
 The remainder of this section shall be organized as follows.  First, we shall review the matrix product formalism, and show how it allows us to construct a representation of a site embedded in and entangled with an environment.  Second, we shall outline the operation of an algorithm which uses an iteration procedure to approximate the effective environment of a site in an infinite chain;  we shall then explain how one can obtain the expected values of operators from the output of this algorithm.  Third, we shall explain how to obtain matrix product factorizations of Hamiltonians with exponentially decaying interactions.  Finally, we shall pull all of these ideas together and show how they can be applied to obtain an accurate MPS representation of the ground state of the Haldane-Shastry model---an exactly solvable model with long range interactions.
-%@+node:gcross.20110326130640.1394: *5* Algorithms
+%@+node:gcross.20110326130640.1394: *6* Algorithms
 \subsection{Algorithms}
 \label{algorithms}
-%@+node:gcross.20110326130640.1395: *6* Finding a MPS representation of the ground state
+%@+node:gcross.20110326130640.1395: *7* Finding a MPS representation of the ground state
 \subsubsection{Finding a MPS representation of the ground state}
 \label{main-algorithm}
 
@@ -2764,34 +2887,61 @@ There is a subtlety in this procedure, however, which is that one needs to take 
 Now we have all of the ingredients that we need to build our algorithm:  a way of expressing a chain as a site tensor embedded in an environment, and a way to relax a system in this representation constrained so that only the site tensor (and not its environment) is changed.  However, up to this point we have been working with a finite system; in order to apply these ideas to infinite systems, we shall modify our notation slightly to replace position labels with \emph{iteration labels}.  That is, we shall let $L^{\mexp{O}}_k$ and $R^{\mexp{O}}_k$ denote the infinite environment
 at iteration step $k$, and $S_k$ denote the inserted site at this iteration.  With this notation, the algorithm to find the ground state of a system is given in Table \ref{algorithm}. It is dominated by the costs of absorbing the site and operator tensors into the environment (in step 3b.iv, and in the Lanczos iteration in step 3a), which are respectively $O(cd\chi^3)$ and $O(c^2d^2\chi^2)$, with $c$ referring to the auxiliary dimension of the operator tensor.
 
+%@+at
+% \begin{table}
+% %\begin{ruledtabular}
+% \begin{tabular}{p{0.075in}p{0.15in}p{0.1in}p{2.8in}}
+% 1. & \multicolumn{3}{p{3.3in}}{Set $\chi=1$, and $L^{\mathcal{S}}=R^{\mathcal{S}}=1$.} \\
+% 2. & \multicolumn{3}{p{3.3in}}{Compute $L_1^{\mexp{O}}$ and $R_1^{\mexp{O}}$ for the Hamiltonian
+% (matrix product)
+% operator $\mathcal{H}$ and the identity operator $\mathcal{I}$.
+% (The latter, of course, has trivial boundaries.)
+% } \\
+% 3. & \multicolumn{3}{p{3.3in}}{Until convergence has been reached:} \\
+%    & (a) & \multicolumn{2}{p{2.9in}}{Use an eigenvalue solver (such as ARPACK \cite{arpack}) to obtain the minimal eigenvalue and corresponding eigenvector of the generalized eigenvalue problem $M^{\mexp{H}_k}S_k = \lambda M^{\mexp{I}_k} S_k.$  To accelerate convergence, feed in $S_{k-1}$ as a starting estimate for the eigenvector.
+% } \\
+%    & (b) & \multicolumn{2}{p{2.9in}}{If this is an odd-numbered step, then right-normalize $S_k$ and contract into the left boundary.  Specifically:} \\
+%    &     & i.  & Merge the superscript and first subscript index of $S_k$ to form a matrix, and compute the singular value decomposition (SVD), $U\cdot \Sigma\cdot V^\dagger$. \\
+%    &     & ii. & Set $\tilde S_k:=U\cdot V^\dagger$, and ungroup indices to return $\tilde S_k$ to its original rank-3 shape. \\
+%    &     & iii.& Compute $E_k^{\mexp{O}}$ for $\mathcal{H}$ and $\mathcal{I}$ using the normalized $\tilde S_k$. \\
+%    &     & iv. & Contract the site into the left boundary by setting $L_{k+1}^{\mexp{O}}:=L_{k}^{\mexp{O}}\cdot E^{\mexp{O}}_k$ and $R^{\mexp{O}}_{k+1}:=R_k^{\mexp{O}}$.  (This step ``absorbs'' the site into the environment.) \\
+%    & (c) & \multicolumn{2}{p{2.9in}}{If this is an even-numbered step, perform an analogous process, but \emph{left}-normalize $S_k$ by merging the superscript and \emph{second} index together before the SVD, and then contract the normalized site into the \emph{right}-boundary.} \\
+% 4. & \multicolumn{3}{p{3.3in}}{If a better approximation to the ground state is desired, then increase $\chi$ for the system and repeat step 3.  Increasing the dimension of a subscript can be done without altering the state by multiplying the adjoining tensors by a $\chi\times (\chi+\Delta\chi)$ matrix and its inverse;  this allows one to build on the work of previous iterations (and hence accelerate convergence), rather than having to start from scratch with the new $\chi$.
+% }
+% \end{tabular}
+% %\end{ruledtabular}
+% \caption{Algorithm to compute a (normalized) translationally invariant matrix product state representation of the ground state of an infinite chain.}
+% \label{algorithm}
+% \end{table}
+%@@c
+
 \begin{table}
-%\begin{ruledtabular}
-\begin{tabular}{p{0.075in}p{0.15in}p{0.1in}p{2.8in}}
-1. & \multicolumn{3}{p{3.3in}}{Set $\chi=1$, and $L^{\mathcal{S}}=R^{\mathcal{S}}=1$.} \\
-2. & \multicolumn{3}{p{3.3in}}{Compute $L_1^{\mexp{O}}$ and $R_1^{\mexp{O}}$ for the Hamiltonian
-(matrix product)
-operator $\mathcal{H}$ and the identity operator $\mathcal{I}$.
-(The latter, of course, has trivial boundaries.)
-} \\
-3. & \multicolumn{3}{p{3.3in}}{Until convergence has been reached:} \\
-   & (a) & \multicolumn{2}{p{2.9in}}{Use an eigenvalue solver (such as ARPACK \cite{arpack}) to obtain the minimal eigenvalue and corresponding eigenvector of the generalized eigenvalue problem $M^{\mexp{H}_k}S_k = \lambda M^{\mexp{I}_k} S_k.$  To accelerate convergence, feed in $S_{k-1}$ as a starting estimate for the eigenvector.
-} \\
-   & (b) & \multicolumn{2}{p{2.9in}}{If this is an odd-numbered step, then right-normalize $S_k$ and contract into the left boundary.  Specifically:} \\
-   &     & i.  & Merge the superscript and first subscript index of $S_k$ to form a matrix, and compute the singular value decomposition (SVD), $U\cdot \Sigma\cdot V^\dagger$. \\
-   &     & ii. & Set $\tilde S_k:=U\cdot V^\dagger$, and ungroup indices to return $\tilde S_k$ to its original rank-3 shape. \\
-   &     & iii.& Compute $E_k^{\mexp{O}}$ for $\mathcal{H}$ and $\mathcal{I}$ using the normalized $\tilde S_k$. \\
-   &     & iv. & Contract the site into the left boundary by setting $L_{k+1}^{\mexp{O}}:=L_{k}^{\mexp{O}}\cdot E^{\mexp{O}}_k$ and $R^{\mexp{O}}_{k+1}:=R_k^{\mexp{O}}$.  (This step ``absorbs'' the site into the environment.) \\
-   & (c) & \multicolumn{2}{p{2.9in}}{If this is an even-numbered step, perform an analogous process, but \emph{left}-normalize $S_k$ by merging the superscript and \emph{second} index together before the SVD, and then contract the normalized site into the \emph{right}-boundary.} \\
-4. & \multicolumn{3}{p{3.3in}}{If a better approximation to the ground state is desired, then increase $\chi$ for the system and repeat step 3.  Increasing the dimension of a subscript can be done without altering the state by multiplying the adjoining tensors by a $\chi\times (\chi+\Delta\chi)$ matrix and its inverse;  this allows one to build on the work of previous iterations (and hence accelerate convergence), rather than having to start from scratch with the new $\chi$.
-}
-\end{tabular}
-%\end{ruledtabular}
+\hrule
+\begin{enumerate}
+\item Set $\chi=1$, and $L^{\mathcal{S}}=R^{\mathcal{S}}=1$.
+\item Compute $L_1^{\mexp{O}}$ and $R_1^{\mexp{O}}$ for the Hamiltonian (matrix product) operator $\mathcal{H}$ and the identity operator $\mathcal{I}$. (The latter, of course, has trivial boundaries.)
+\item Until convergence has been reached:
+    \begin{enumerate}
+    \item Use an eigenvalue solver (such as ARPACK \cite{arpack}) to obtain the minimal eigenvalue and corresponding eigenvector of the generalized eigenvalue problem $M^{\mexp{H}_k}S_k = \lambda M^{\mexp{I}_k} S_k.$  To accelerate convergence, feed in $S_{k-1}$ as a starting estimate for the eigenvector.
+    \item If this is an odd-numbered step, then right-normalize $S_k$ and contract into the left boundary.  Specifically:
+        \begin{enumerate}
+            \item Merge the superscript and first subscript index of $S_k$ to form a matrix, and compute the singular value decomposition (SVD), $U\cdot \Sigma\cdot V^\dagger$.
+            \item Set $\tilde S_k:=U\cdot V^\dagger$, and ungroup indices to return $\tilde S_k$ to its original rank-3 shape.
+            \item Compute $E_k^{\mexp{O}}$ for $\mathcal{H}$ and $\mathcal{I}$ using the normalized $\tilde S_k$.
+            \item Contract the site into the left boundary by setting $L_{k+1}^{\mexp{O}}:=L_{k}^{\mexp{O}}\cdot E^{\mexp{O}}_k$ and $R^{\mexp{O}}_{k+1}:=R_k^{\mexp{O}}$.  (This step ``absorbs'' the site into the environment.)
+        \end{enumerate}
+    \item If this is an even-numbered step, perform an analogous process, but \emph{left}-normalize $S_k$ by merging the superscript and \emph{second} index together before the SVD, and then contract the normalized site into the \emph{right}-boundary.
+    \end{enumerate}
+\item If a better approximation to the ground state is desired, then increase $\chi$ for the system and repeat step 3.  Increasing the dimension of a subscript can be done without altering the state by multiplying the adjoining tensors by a $\chi\times (\chi+\Delta\chi)$ matrix and its inverse;  this allows one to build on the work of previous iterations (and hence accelerate convergence), rather than having to start from scratch with the new $\chi$.
+\end{enumerate}
+\hrule
+\vspace{0.5cm}
 \caption{Algorithm to compute a (normalized) translationally invariant matrix product state representation of the ground state of an infinite chain.}
 \label{algorithm}
 \end{table}
 
 We note here that this algorithm is unstable when applied directly to systems with anti-ferromagnetic interactions because ground states of such systems are not invariant under translations of one site.  Happily, since such systems are invariant under translations of \emph{two} sites, there is a simple fix:  work with blocks of two spins rather than one by setting $d=4$ and multiplying two of the operator tensors together to form a two-site operator tensor\footnote{Note that this approach does not scale well beyond two sites;  that is, given an interaction which is symmetric under translations of $n$ sites, blocking the sites together grows the size of the representation by a factor of $2^n$.  An alternative strategy is to add $n$ sites at a time to the center of the system, and then use a sweeping algorithm like that described in Ref. \cite{cond-mat/0404706} to optimize the site tensors;  the final representation is then given by $n$ site tensors rather than one.};  this only affects the inputs to the algorithm and does not require changing the algorithm itself.
-%@+node:gcross.20110326130640.1396: *6* Computing expected values of operators
+%@+node:gcross.20110326130640.1396: *7* Computing expected values of operators
 \subsubsection{Computing expected values of operators}
 \label{exp-algorithm}
 
@@ -2835,7 +2985,7 @@ It remains to extract $\alpha$ and $\beta$ from the respective matrices $A$ and 
 \caption{Algorithm to compute $\mexp{O}$ for general matrix product operator $\mathcal{O}$.}
 \label{MPO-expectation-algorithm}
 \end{table}
-%@+node:gcross.20110326130640.1397: *5* Matrix product factorization of exponentially decaying interactions
+%@+node:gcross.20110326130640.1397: *6* Matrix product factorization of exponentially decaying interactions
 \subsection{Matrix product factorization of exponentially decaying interactions}
 \label{automaton}
 
@@ -2859,7 +3009,7 @@ The automaton which computes the function representing our operator is illustrat
 From this automaton, we immediately obtain a matrix product operator representation.  The initial and accept states give us the values for the left and right boundaries:  $\paren{L^{\mathcal{O}}}_k=\delta_{1,k}$ and $\paren{R^{\mathcal{O}}}_k=\delta_{2,k}$.  The elements of the operator tensor, $O^{\textbf{A}}_{i,j}$, are given by the weight on the $i\to j$ transition with the symbol corresponding to operator $\textbf{A}$ (0 if no such transition exists);  for example, we have that $O^{\textbf{X}}_{1,3}=\alpha_1$.  To get a feeling for why this works, observe that a run of the automaton is equivalent to starting with a vector giving initial weights on the states, multiplying this vector some number of times by a transition matrix, and then dotting the result with a vector that filters out all but the weights on the accept states;  this procedure is exactly equivalent to the form of equation \eqref{matrix-product-operator}.
 
 This process is easily extended to include terms with arbitrary spin coupling interactions, such as $\sigma^X\sigma^Y$, $\sigma^Y\sigma^Y$, $\sigma^Z\sigma^Z$, etc.  Furthermore, one can combine a sum of several such interactions into a single automaton by having them all share the same starting and ending states. 
-%@+node:gcross.20110326130640.1398: *5* Case study: Haldane-Shastry Model
+%@+node:gcross.20110326130640.1398: *6* Case study: Haldane-Shastry Model
 \subsection{Results:  Haldane-Shastry Model}
 
 Now we pull all of the ideas from the previous sections together and apply them to tackle the Haldane-Shastry model.\cite{PhysRevLett.60.635,PhysRevLett.60.639}  In the infinite limit this model is given by the Hamiltonian $\mathcal{H} = \sum_i \sum_r \vec{\sigma}_i\cdot\vec{\sigma}_{i+r}/r^2$,  which features an anti-ferromagnetic dipole interaction which falls off with the square of the distance between sites.  (Note that since this model features anti-ferromagnetic interactions, we need to work with blocks of two sites, as discussed at the end of Section \ref{main-algorithm}.)  Although $\mathcal{H}$ cannot be expressed exactly as a matrix product operator, we can approximate it arbitrarily well by a sum of exponentially decaying interactions, $\mathcal{H}\approx  \sum_i \sum_r \vec{\sigma}_i\cdot\vec{\sigma}_{i+r}\paren{\sum_n \alpha_n \beta_n^{r-1}}$ (with $\alpha_n\in\mathbb{R}$ and $|\beta_n| \le 1$), which can be factored exactly using the technique in Section \ref{automaton}.  Since there are three spin-coupling interactions, $\sigma^X_i\sigma^X_{i+r}$, $\sigma^Y_i\sigma^Y_{i+r}$, and $\sigma^Z_i\sigma^Z_{i+r}$, which we combine into a single automaton as discussed at the end of Section \ref{automaton}, we obtain an automaton with a number of states equal to three times the number of terms in the expansion, $N$, plus two more for the starting and ending states;  this quantity gives us the size of the auxiliary dimension for the corresponding matrix product operator, $c=3N+2$.
@@ -2886,16 +3036,16 @@ Given this approximate matrix product factorization, we applied the algorithm in
 \end{figure}
 
 For the 9-term expansion, we also computed the two-point correlator -- that is, $C(r):=\exp{\sigma^X \otimes I^{\otimes (r-1)}\otimes\sigma^X}$ -- using the algorithm given in Section \ref{exp-algorithm} for computing the expected value of a local operator.  The result for several values of $\chi$ is plotted in Fig. \ref{correlator} against the exact value from Ref. \cite{PhysRevLett.60.639}.  Note that our approximation gets good agreement up to some length, after which it becomes a constant.  This is because the algorithm is attempting to approximate this correlator using a sum of decaying exponentials plus a constant term, analogously to how we used a sum of decaying exponentials to approximate the $1/r^2$ interactions;  by increasing $\chi$, we are increasing the number of terms available to track the correlator, which results in systematic improvement.
-%@+node:gcross.20110318151522.1483: *4* Conclusion
+%@+node:gcross.20110318151522.1483: *5* Conclusion
 \section{Conclusion}
 
 In this chapter, we have introduced a new type of diagram for representing matrix product states.  We used this to demonstrate that there is a formal equivalence between matrix product states/operators and complex-weighted finite state automata.  This equivalence was used to present a systematic method by which one could factor a matrix product operator.  We then showed how a matrix product factorization of an operator allows one to compute expectations of that operator in $O(N)$ time, and to perform energy minimization at an amortized cost of only $O(1)$ per step.  A generalization of this procedure was presented that allows one to carry the same process through for systems with many dimensions.  A variant of this procedure was presented that allows one to work with infinitely large systems.
 
 As a closing remark, we note that this new formalism is interesting not only because of its practical application in simulating physical systems, but also because it relates our ability to efficiently simulate physical systems with a broader theory (the automata hierarchy/formal language theory) which deals with the fundamental limits of computation.  It would be interesting to see whether there are other insights from this theory that could be used to improve techniques for simulating physical systems.
-%@+node:gcross.20110318151522.1487: *3* Practice
+%@+node:gcross.20110318151522.1487: *4* Practice
 \chapter{Practice}
 \label{sec:MPSPractice}
-%@+node:gcross.20110331165234.1396: *4* Adiabatic Quantum Computing
+%@+node:gcross.20110331165234.1396: *5* Adiabatic Quantum Computing
 \section{Introduction to Adiabatic Quantum Computing}
 
 In the previous chapter we presented an algorithm for simulating finite one-dimensional systems.  In this chapter we shall demonstrate how this algorithm can be used to gather important information about physical systems that are important to the field of quantum computing.
@@ -2907,7 +3057,7 @@ Fortunately, there is a variantion on the approach of ground-state quantum compu
 The key factor that determines the running time of an adiabatic quantum computation is the size of the gap between the ground and lowest excited states, since this dictates how quickly one can change the Hamiltonian while staying in the adiabatic regime.  In general computing this quantity analytically is very difficult, and this is where the formalism in the previous chapter comes into play.  We have written a code we call \texttt{Nutcracker} which implements the ideas presented in the preceding chapter in a very efficient manner.  This provides us with a computational tool that we can use to numerically estimate the energy gaps of Hamiltonians and hence evaluate the viability of candidate systems for adiabatic quantum computation.
 
 In this chapter we shall specifically consider two candidates for adiabatic quantum computing that share a similar philosophy in their approach:  they both contain particles arranged in a one-dimensional chain, and the Hamiltonians are designed such that at the beginning of the computation the information is localized on one side of the chain, and at the end of the computation the information is localized on the other side of the chain.  That is, as the Hamiltonian is adiabatically transformed from its initial to its final configuration, the quantum information is teleported across the system and simultaneously has some number of quantum gates applied to it.  In Section \ref{sec:MizelModel} we shall discuss and numerically analyze the Hamiltonian presented by Mizel in~\cite{Mizel2010}, and in Section \ref{sec:BaconFlammiaModel} we shall discuss and numerically analyze the Hamiltonian presented by Bacon and Flammia in~\cite{Bacon2009}.
-%@+node:gcross.20110331165234.1397: *4* Mizel Model
+%@+node:gcross.20110331165234.1397: *5* Mizel Model
 \section{Mizel Model}
 \label{sec:MizelModel}
 
@@ -2948,7 +3098,7 @@ Although Mizel provided arguments suggesting that the system had a  energy gap t
 \end{figure}
 
 The results are plotted in Figure \ref{plot:mizel}.  They provide strong evidence that the energy gap does indeed asymptotically converge to a constant as the size of the system grows in size.  This was actually somewhat surprising since it is rare to run into this kind of ``good news'' when studying candidates for adiabatic quantum computing.  Unfortunately, these results also show that the energy gap shrinks precipitously as $\Lambda$ increases, which is a large strike against this model.  For this reason and others we eventually decided against putting more resources into studying this particular model.
-%@+node:gcross.20110331165234.1398: *4* Bacon-Flammia Model
+%@+node:gcross.20110331165234.1398: *5* Bacon-Flammia Model
 \section{Bacon-Flammia Model}
 \label{sec:BaconFlammiaModel}
 
@@ -2981,16 +3131,32 @@ The disadvantage of the scheme just discussed is that it requires a great deal o
 \label{plot:qtrans}
 For selected system sizes we generated 200 random choices of $\{\theta\}_i$ and computed the energy gap.  Above are plotted the minimum, maximum, average, and standard deviation of these data for each system size;  note that the plot uses a log-log scale.  Also plotted is the exact solution for the ``non-twisted'' (i.e., $\forall_i\theta_i=0$) case, as well as the polynomial $4.97n^{-1}$ obtained from a least-squares fit to the data.}
 \end{figure}
-%@+node:gcross.20110331165234.1399: ** Conclusion
+%@+node:gcross.20110331165234.1399: *3* Conclusion
 \part{Conclusion}
 \label{part:Conclusions}
 
 Quantum computing has the potential to open new frontiers to humanity by unlocking problems that are currently intractable.  However, in order for this potential to be fulfilled we need to be able to engineer systems that can perform quantum computations reliably.  In this thesis we have discussed the theory and practice behind two computation tools that have been created to advance this end.  In Part \ref{part:CodeQuest} we discussed \texttt{CodeQuest}, which assists us in designing error-correcting codes for shielding quantum information from errors, and in Part \ref{part:Matrix Product States} we discussed \emph{matrix product states}, which assist us in designing Hamiltonians with have strong energetic barriers to provide protection against nose.  Although these two tools are very different in the particular problems that they solve and the techniques used to solve them, they are united in their ultimate goal of advancing our ability to engineer robust systems for quantum computing.
 
 Although we do not yet have quantum computers available to help us solve the engineering difficulties we face in building them, we do have powerful classical computers that we can use to bootstrap our way there.  The ultimate end of the specific techniques advanced in this thesis is to make themselves obsolete by enabling the construction of the first quantum computer, which will open the door to the use of quantum algorithms that will hopefully be far more powerful for solving quantum engineering challenges than the classical algorithms we have just discussed.
-%@+node:gcross.20110316123044.1278: ** Bibliography
+%@-others
+%@+node:gcross.20110609201536.1267: ** Back Matter
+\backmatter
+
+%@+others
+%@+node:gcross.20110316123044.1278: *3* Bibliography
 \bibliography{thesis}
 \bibliographystyle{plain}
+%@+node:gcross.20110609201536.1268: *3* Vita
+\newpage
+
+\thispagestyle{plain}
+
+\begin{center}
+\textbf{VITA}
+\end{center}
+
+Gregory Milton Crosswhite was born in Beltsville, Maryland.  For his undergraduate education he attended the nearby the University of Maryland, College Park, where he earned separate Bachelor in Science degrees in Math, Physics, and Computer Science.  For his graduate education he decided to move across the country, and in 2011 he earned a Doctor of Philosophy at the University of Washington in Physics.
+%@-others
 %@-others
 
 \end{document}
